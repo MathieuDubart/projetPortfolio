@@ -19,7 +19,10 @@ app.listen(port, () => {
 
 app.get('/', (request, response)=>{
 
-    const userRequest = axios.get('/user', {
+
+    response.send("coucou");
+
+    /*const userRequest = axios.get('/user', {
         params: { access_token: accessToken }
     }); //.then((apiResponse)=>{
     //     console.log(request.query.user);
@@ -32,6 +35,6 @@ app.get('/', (request, response)=>{
 
     axios.all([userRequest, projectsRequest]).then(axios.spread((...apiResponses) => {
         response.render('pages/index', {userInfo: apiResponses[0].data});
-    }));
+    }));*/
 
 });
