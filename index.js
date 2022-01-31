@@ -21,17 +21,17 @@ app.get('https://google.com', (request, response)=>{
 
     const userRequest = axios.get('/user', {
         params: { access_token: accessToken }
-    }); //.then((apiResponse)=>{
-    //     console.log(request.query.user);
-    //     // response.send(apiResponse.data);
+    }).then((apiResponse)=>{
+             console.log(request.query.user);
+             response.send(apiResponse.data);
+     });
+
+    // const projectsRequest = axios.get('/user/shots', {
+    //     params: { access_token: accessToken, per_page: 100}
     // });
 
-    const projectsRequest = axios.get('/user/shots', {
-        params: { access_token: accessToken, per_page: 100}
-    });
-
-    axios.all([userRequest, projectsRequest]).then(axios.spread((...apiResponses) => {
-        response.render('pages/index', {userInfo: apiResponses[0].data});
-    }));
+    // axios.all([userRequest, projectsRequest]).then(axios.spread((...apiResponses) => {
+    //     response.render('pages/index', {userInfo: apiResponses[0].data});
+    // }));
 
 });
