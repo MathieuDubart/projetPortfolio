@@ -17,7 +17,7 @@ app.listen(port, () => {
 
 });
 
-app.get('/dribbble.com', (request, response)=>{
+app.get('/', (request, response)=>{
 
     const userRequest = axios.get('/user', {
         params: { access_token: accessToken }
