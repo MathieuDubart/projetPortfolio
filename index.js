@@ -17,7 +17,7 @@ app.listen(port, () => {
 
 });
 
-app.get('/', (request, response)=>{
+app.get('https://google.com', (request, response)=>{
 
     const userRequest = axios.get('/user', {
         params: { access_token: accessToken }
