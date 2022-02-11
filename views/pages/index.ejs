@@ -4,5 +4,10 @@
 <img src=" <%= userInfo.avatar_url %> ">
 <h3> <%= userInfo.name %> </h3>
 <p> <%= userInfo.location %> </p>
+<% userShots.forEach( projets => { %>
+    <p>  <%= projets.title %> </p> <br/>
+    <img src="<%= projets.images["two_x"] %>"> <br/>
+    
+<% })  %>
 
 </html>
