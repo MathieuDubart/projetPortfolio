@@ -3,8 +3,10 @@ require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 
+
 //recupérer les variables ENV
 const app = express();
+app.use(express.static('public'));
 app.set('view engine', 'ejs');
 const port = process.env.PORT;
 const accessToken = process.env.ACCESS_TOKEN;

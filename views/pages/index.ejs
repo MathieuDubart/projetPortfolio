@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <link rel="stylesheet" href="/style.css">
+</head>
 
 <img src=" <%= userInfo.avatar_url %> ">
 <h3> <%= userInfo.name %> </h3>
 <p> <%= userInfo.location %> </p>
+<div id="gallery"> 
 <% userShots.forEach( projets => { %>
-    <p>  <%= projets.title %> </p> <br/>
+    
+    <!-- <p>  <%= projets.title %> </p> <br/> -->
     <img src="<%= projets.images["two_x"] %>"> <br/>
     
+    
 <% })  %>
+</div>
 
 </html>
