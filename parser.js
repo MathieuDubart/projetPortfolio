@@ -9,45 +9,40 @@ class Parser {
 
   bioParserFunction(userInfo){
     // parser
-    // console.log(userInfo.bio);
+    // string from bio dribbble
     let bio_str = userInfo.bio;
 
+    // first split on ";"
+    // bio_array => []
     const bio_array = bio_str.split(';');
-    // console.log(bio_array);
-    let bio_array2 = [];
-    let bio_array3 = [];
 
+    let array_splitted_on_equals = [];
+    // split bio_array on "="
+    // array_splitted_on_equals = [['text_bio', 'Hello | I'm Nils...'], [...]]
     bio_array.forEach(el => {
-      bio_array2.push(el.split("=", 2));
+      array_splitted_on_equals.push(el.split("="));
     })
 
-    for (let i=0; i<bio_array2.length; i++ ) {
-      bio_array2[i].forEach(elm => {
-        bio_array3.push(elm.split("|"));
-      })
+    // array2d to object [[],[]] => {prop: str}
+    const entries = new Map(array_splitted_on_equals);
+    const user_param = Object.fromEntries(entries);
+
+    // split les values pour obtenir des tableaux
+    // en parcourant l'objet et split sur "|"
+    // user_param => { prop1: ['value1','value2',...], prop2:['value1', 'value2',...], ...}
+    for (let property in user_param) {
+      let value = `${user_param[property]}`;
+      let value_array = value.split("|");
+      user_param[property] = value_array;
     }
-
-    // console.log(bio_array2);
-    console.log(bio_array3);
-
-    return bio_array2;
+    console.log(user_param);
+    return user_param;
   }
 
 }
 
 module.exports = Parser;
 
-
-
-// object js :
-// const nom = new Object();
-// nom.propriété = 'valeur';
-
-// split str to array :
-// const array = str.split(' ');
-
-// var str = 'one:two;three';
-// str.split(':').pop().split(';')[0]; // returns 'two'
 
 // current directory :
 // __dirname
