@@ -21,11 +21,11 @@ class Parser {
       bio_array2.push(el.split("=", 2));
     })
 
-    // for (let i=0; i<bio_array2.length; i++ ) {
-    //   bio_array2[i].forEach(elm => {
-    //     bio_array3.push(elm.split("|"));
-    //   })
-    // }
+    for (let i=0; i<bio_array2.length; i++ ) {
+      bio_array2[i].forEach(elm => {
+        bio_array3.push(elm.split("|"));
+      })
+    }
 
     // console.log(bio_array2);
     console.log(bio_array3);
