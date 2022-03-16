@@ -1,48 +1,36 @@
-//importer les libs
+ //importer les libs
 require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
+const DribbbleClient = require ("./dribbbleClient.js");
+const Parser = require ("./parser.js");
+
+const dribbbleClient = new DribbbleClient("NILS");
+const parser = new Parser();
+
+const userInfo = {
+   "name": "gerard",
+   "bio": "text_bio = Hello, | I'm Nils, a creative developper student | I'm Nils, a ingenious developper student; colors = #000000 | #FFFFFF | #6c5985; font_names = Roboto | Poppins",
+   "links": { "web": "https://google.com",
+              "twitter" : "https://twitter.com/zaynbsn",
+              "instagram": "https://instagram.com/orelsan"
+            }
+};
+
+console.log(parser.bioParserFunction(userInfo));
+
+let parsed_bio = parser.bioParserFunction(userInfo);
 
 
-//recupérer les variables ENV
-const app = express();
-app.use(express.static('public'));
-app.set('view engine', 'ejs');
-const port = process.env.PORT;
-const accessToken = process.env.ACCESS_TOKEN;
+// object js :
+// const nom = new Object();
+// nom.propriété = 'valeur';
 
-//set axios default url
-axios.defaults.baseURL = process.env.API_URL;
+// split str to array :
+// const array = str.split(' ');
 
+// var str = 'one:two;three';
+// str.split(':').pop().split(';')[0]; // returns 'two'
 
-app.listen(port, () => {
-
-});
-
-app.get('/', (request, response)=>{
-
-
-    //response.send("coucou");
-
-    const userRequest = axios.get('/user', {
-        params: { access_token: accessToken }
-    });//.then((apiResponse)=>{
-    //     console.log(request.query.user);
-    //     response.send(apiResponse.data);
-    // });
-
-    const projectsRequest = axios.get('/user/shots', {
-        params: { access_token: accessToken, per_page: 100}
-    });//.then((apiResponse)=>{
-    //     console.log(request.query.user);
-    //     response.send(apiResponse.data);
-    // });
-
-
-    axios.all([userRequest, projectsRequest]).then(axios.spread((...apiResponses) => {
-        response.render('pages/index', {userInfo: apiResponses[0].data,
-            userShots: apiResponses[1].data});
-    }));
-
-});
-
+// current directory :
+// __dirname
