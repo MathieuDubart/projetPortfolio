@@ -17,7 +17,7 @@ const userInfo = {
             }
 };
 
-console.log(parser.bioParserFunction(userInfo));
+// console.log(parser.bioParserFunction(userInfo));
 
 let parsed_bio = parser.bioParserFunction(userInfo);
 
