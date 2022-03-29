@@ -43,18 +43,14 @@ app.get('/', (request, response)=>{
   let requestShots = dribbbleClient.getRequestForShotsAbout(username);
   const callback = (responseFromDribble) => {
 
-    console.log(responseFromDribble[0].data.bio.removeLineBreak().decodeHTML());
-    response.charset = "UTF-8";
-    response.set({ 'content-type': 'application/json; charset=utf-8' })
-    response.render('pages/test.ejs', {userInfo: responseFromDribble[0].data,
-        userShots: responseFromDribble[1].data});
-
     let userInfoResponse = responseFromDribble[0].data.bio.removeLineBreak().decodeHTML()
     // let shotsResponse = responseFromDribble[1].data.bio.decodeHTML()
 
     //call to parser
     let parsed_bio = parser.bioParserFunction(userInfoResponse);
     console.log(parsed_bio);
+
+    response.render('pages/test.ejs', {parsed_bio: parsed_bio});
 
   //   response.send({userInfo: responseFromDribble[0].data,
   //       userShots: responseFromDribble[1].data});

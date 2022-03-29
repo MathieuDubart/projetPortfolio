@@ -39,7 +39,7 @@ class Parser {
       let value_array = value.split("|");
       user_param[property] = value_array;
     }
-    console.log(user_param);
+    return user_param;
   }
 }
 
