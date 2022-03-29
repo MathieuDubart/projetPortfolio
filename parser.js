@@ -12,9 +12,11 @@ class Parser {
     // string from bio dribbble
     let bio_str = userInfo.bio;
 
+
     // first split on ";"
     // bio_array => []
     const bio_array = bio_str.split(';');
+
 
     let array_splitted_on_equals = [];
     // split bio_array on "="
@@ -23,9 +25,11 @@ class Parser {
       array_splitted_on_equals.push(el.split("="));
     })
 
+
     // array2d to object [[],[]] => {prop: str}
     const entries = new Map(array_splitted_on_equals);
     const user_param = Object.fromEntries(entries);
+
 
     // split les values pour obtenir des tableaux
     // en parcourant l'objet et split sur "|"
@@ -35,8 +39,14 @@ class Parser {
       let value_array = value.split("|");
       user_param[property] = value_array;
     }
-    console.log(user_param);
-    return user_param;
+    
+
+    // const keys_user_param = Object.keys(user_param);
+    // console.log("keys :");
+    // console.log(keys_user_param);
+    // console.log("user_param :");
+    // console.log(user_param);
+    // return user_param;
   }
 
 }
