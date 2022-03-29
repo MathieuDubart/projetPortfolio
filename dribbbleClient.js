@@ -6,7 +6,7 @@ class DribbbleClient {
   /**
   * documentation
   */
-  
+
   constructor(){
       this.axios = require('axios');
       // set axios default url
@@ -16,7 +16,6 @@ class DribbbleClient {
     #getApiTokenFor(username) {
       let upperUsername = username.toUpperCase();
       const accessToken = process.env[upperUsername];
-      console.log(accessToken);
       return accessToken;
     }
 
@@ -30,7 +29,7 @@ class DribbbleClient {
     getRequestForShotsAbout(username) {
       let accessToken = this.#getApiTokenFor(username);
       return this.axios.get('/user/shots', {
-          params: { access_token: accessToken, per_page: 100 }
+          params: { access_token: accessToken }
       });
     }
 

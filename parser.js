@@ -10,19 +10,19 @@ class Parser {
   bioParserFunction(userInfo){
     // parser
     // string from bio dribbble
-    let bio_str = userInfo.bio;
+    let bio_str = userInfo;
 
 
     // first split on ";"
     // bio_array => []
-    const bio_array = bio_str.split(';');
+    const bio_array = bio_str.split(';;');
 
 
     let array_splitted_on_equals = [];
     // split bio_array on "="
     // array_splitted_on_equals = [['text_bio', 'Hello | I'm Nils...'], [...]]
     bio_array.forEach(el => {
-      array_splitted_on_equals.push(el.split("="));
+      array_splitted_on_equals.push(el.split("=="));
     })
 
 
@@ -39,16 +39,8 @@ class Parser {
       let value_array = value.split("|");
       user_param[property] = value_array;
     }
-    
-
-    // const keys_user_param = Object.keys(user_param);
-    // console.log("keys :");
-    // console.log(keys_user_param);
-    // console.log("user_param :");
-    // console.log(user_param);
-    // return user_param;
+    console.log(user_param);
   }
-
 }
 
 module.exports = Parser;
