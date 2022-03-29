@@ -35,21 +35,7 @@ app.get('/', (request, response)=>{
   dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
 })
 
-app.get('/hello', (request, response)=>{
-    response.send("hi");
-})
-
 const parser = new Parser();
-
-const userInfoTest = {
-   "name": "gerard",
-   "bio": "text_bio = Hello, | I'm Nils, a creative developper student | I'm Nils, a ingenious developper student; colors = #000000 | #FFFFFF | #6c5985; font_names = Roboto | Poppins",
-   "links": { "web": "https://google.com",
-              "twitter" : "https://twitter.com/zaynbsn",
-              "instagram": "https://instagram.com/orelsan"
-            }
-};
-
 let parsed_bio = parser.bioParserFunction(userInfoTest);
 
 // current directory :
