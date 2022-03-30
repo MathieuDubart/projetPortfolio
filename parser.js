@@ -41,6 +41,25 @@ class Parser {
     }
     return user_param;
   }
+
+  removePTag(str){
+    return str.replace(/<p>|<\/p>/g, '');
+  }
+
+  removeATagAndHrefAndRelAndLinkFromString (str){
+    let string = str.replace(/<a href=".*?"/g, 'https://');
+    let url = string.replace(/rel=".*?">|<\/a>/g, '');
+    return url.replace(/\s/g, '');
+  }
+
+  // removeATagAndHrefAndRelAndLinkFromArray (array){
+  //   let array_cleaned = [];
+  //   array.forEach(el => {
+  //     array_cleaned.push(this.removeATagAndHrefAndRelAndLinkFromString(el));
+  //   });
+  //   return array_cleaned;
+  // }
+  
 }
 
 module.exports = Parser;

@@ -31,7 +31,7 @@ String.prototype.decodeHTML = function() {
 
 String.prototype.removeLineBreak = function() {
   return this.replace(/\n/g, '');
-}
+};
 
 app.get('/', (request, response)=>{
   username = request.query.name;
@@ -44,13 +44,22 @@ app.get('/', (request, response)=>{
   const callback = (responseFromDribble) => {
 
     let userInfoResponse = responseFromDribble[0].data.bio.removeLineBreak().decodeHTML()
-    // let shotsResponse = responseFromDribble[1].data.bio.decodeHTML()
+    let userShotsResponse = responseFromDribble[1].data[0].description.removeLineBreak().decodeHTML()
+
+    // console.log(responseFromDribble[1].data);
 
     //call to parser
     let parsed_bio = parser.bioParserFunction(userInfoResponse);
-    console.log(parsed_bio);
+    console.log(parsed_bio.font_family);
 
-    response.render('pages/test.ejs', {parsed_bio: parsed_bio});
+    parsed_bio.font_family[0] = parser.removeATagAndHrefAndRelAndLinkFromString(parsed_bio.font_family[0]);
+    console.log(parsed_bio.font_family[0]);
+
+    let tagRemovedDesc = parser.removePTag(userShotsResponse);
+    let parsed_desc = parser.bioParserFunction(tagRemovedDesc);
+    // console.log(parsed_desc);
+
+    response.render('pages/test.ejs', {parsed_bio: parsed_bio, parsed_desc: parsed_desc});
 
   //   response.send({userInfo: responseFromDribble[0].data,
   //       userShots: responseFromDribble[1].data});
@@ -58,6 +67,10 @@ app.get('/', (request, response)=>{
 
   dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
 })
+
+let test = '<a href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap"></a>';
+let parsingTest = parser.removeATagAndHrefAndRelAndLinkFromString(test);
+console.log(parsingTest);
 
 
 // current directory :
