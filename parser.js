@@ -1,65 +1,74 @@
 class Parser {
 
-
-
   constructor(userInfo) {
 
   }
 
+// ####################################### PARSING PARTIALS RESPONSE FROM DRIBBBLE ##########################################
 
-  bioParserFunction(userInfo){
+  parsingInfos(userInfo){
     // parser
-    // string from bio dribbble
-    let bio_str = userInfo;
-
+    // string from dribbble
+    let dribbbleInfoStr = userInfo;
 
     // first split on ";"
     // bio_array => []
-    const bio_array = bio_str.split(';;');
+    const dribbbleInfoArray = dribbbleInfoStr.split(';;');
 
-
-    let array_splitted_on_equals = [];
+    let arraySplittedOnEquals = [];
     // split bio_array on "="
     // array_splitted_on_equals = [['text_bio', 'Hello | I'm Nils...'], [...]]
-    bio_array.forEach(el => {
-      array_splitted_on_equals.push(el.split("=="));
+    dribbbleInfoArray.forEach(el => {
+      arraySplittedOnEquals.push(el.split("=="));
     })
 
-
     // array2d to object [[],[]] => {prop: str}
-    const entries = new Map(array_splitted_on_equals);
-    const user_param = Object.fromEntries(entries);
-
+    const entries = new Map(arraySplittedOnEquals);
+    const dribbbleParam = Object.fromEntries(entries);
 
     // split les values pour obtenir des tableaux
     // en parcourant l'objet et split sur "|"
     // user_param => { prop1: ['value1','value2',...], prop2:['value1', 'value2',...], ...}
-    for (let property in user_param) {
-      let value = `${user_param[property]}`;
+    for (let property in dribbbleParam) {
+      let value = `${dribbbleParam[property]}`;
       let value_array = value.split("|");
-      user_param[property] = value_array;
+      dribbbleParam[property] = value_array;
     }
-    return user_param;
+    return dribbbleParam;
   }
+
+// ############################################# REMOVING ALL TAGS #####################################################
 
   removePTag(str){
     return str.replace(/<p>|<\/p>/g, '');
   }
 
-  removeATagAndHrefAndRelAndLinkFromString (str){
-    let string = str.replace(/<a href=".*?"/g, 'https://');
-    let url = string.replace(/rel=".*?">|<\/a>/g, '');
+  removeATag(str, separator){
+    return str.replace(/<a href=".*?"/g, separator);
+  }
+
+  removeHref(str) {
+    return str.replace(/rel=".*?">|<\/a>/g, '');
+  }
+
+  removeRel(str) {
+    let url = str.replace(/rel=".*?">|<\/a>/g, '');
+    //remove space after 'https://' (potential bug)
     return url.replace(/\s/g, '');
   }
 
-  // removeATagAndHrefAndRelAndLinkFromArray (array){
-  //   let array_cleaned = [];
-  //   array.forEach(el => {
-  //     array_cleaned.push(this.removeATagAndHrefAndRelAndLinkFromString(el));
-  //   });
-  //   return array_cleaned;
-  // }
-  
+  removeAllTags(str, separator){
+    return this.removeRel(this.removeHref(this.removeATag(str, separator)));
+  }
+
+  removeAllTagsFromArray (array){
+    let array_cleaned = [];
+    array.forEach(el => {
+      array_cleaned.push(this.removeAllTags(el));
+    });
+    return array_cleaned;
+  }
+
 }
 
 module.exports = Parser;

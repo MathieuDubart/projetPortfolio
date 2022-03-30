@@ -46,17 +46,16 @@ app.get('/', (request, response)=>{
     let userInfoResponse = responseFromDribble[0].data.bio.removeLineBreak().decodeHTML()
     let userShotsResponse = responseFromDribble[1].data[0].description.removeLineBreak().decodeHTML()
 
-    // console.log(responseFromDribble[1].data);
+    //parsing bio
+    let parsed_bio = parser.parsingInfos(userInfoResponse);
+    parsed_bio.font_family[0] = parser.removeAllTags(parsed_bio.font_family[0], 'https://');
+    // console.log(parsed_bio.font_family[0]);
 
-    //call to parser
-    let parsed_bio = parser.bioParserFunction(userInfoResponse);
-    console.log(parsed_bio.font_family);
-
-    parsed_bio.font_family[0] = parser.removeATagAndHrefAndRelAndLinkFromString(parsed_bio.font_family[0]);
-    console.log(parsed_bio.font_family[0]);
-
+    //parsing desc post
     let tagRemovedDesc = parser.removePTag(userShotsResponse);
-    let parsed_desc = parser.bioParserFunction(tagRemovedDesc);
+    let parsed_desc = parser.parsingInfos(tagRemovedDesc);
+    parsed_desc.background[0] = parser.removeAllTags(parsed_desc.background[0], '');
+
     // console.log(parsed_desc);
 
     response.render('pages/test.ejs', {parsed_bio: parsed_bio, parsed_desc: parsed_desc});
@@ -67,10 +66,6 @@ app.get('/', (request, response)=>{
 
   dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
 })
-
-let test = '<a href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap"></a>';
-let parsingTest = parser.removeATagAndHrefAndRelAndLinkFromString(test);
-console.log(parsingTest);
 
 
 // current directory :
