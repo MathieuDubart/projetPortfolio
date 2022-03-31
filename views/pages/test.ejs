@@ -8,23 +8,34 @@
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="./index.js"></script>
-    <link  rel="stylesheet" href="<%- parsed_bio.font_family[0] %>">
+    <link  rel="stylesheet" href="<%- parsed_bio.font_family[1] %>">
 
     <style>
       p{
-        color: red;
+        color: <%- parsed_bio.colors[2] %>;
+        font-family: <%- parsed_bio.font_family[1] %>;
       }
 
       body{
         background-image: url('<%- parsed_setting_desc.background[0] %>');
       }
+
     </style>
 </head>
 
 
 <body>
 
-    <p> <%- parsed_bio.colors %></p>
+  <% projectsDesc.forEach(projet => {
+      projet.textes.forEach(text => { %>
+        <p> <%- text %> </p>
+      <% })
+      projet.images.forEach(img => { %>
+        <img src="<%- img %>">
+      <% })
+  }) %>
+
+
 
 </body>
 </html>

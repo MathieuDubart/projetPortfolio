@@ -19,9 +19,11 @@ app.listen(port, () => {
 });
 
 app.get('/', (request, response)=>{
-  username = request.query.name;
+  let username;
   if (username == undefined) {
-    username = "NILS";
+    username = "MATHIEU";
+  }else{
+    username = request.query.name;
   }
 
   let shotsArray = [];
@@ -66,7 +68,7 @@ app.get('/', (request, response)=>{
 
 
 
-    response.render('pages/test.ejs', {parsed_bio: parsed_bio, parsed_setting_desc: parsed_setting_desc});
+    response.render('pages/test.ejs', {parsed_bio: parsed_bio, parsed_setting_desc: parsed_setting_desc, projectsDesc: projectsDesc});
   }
 
   dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
