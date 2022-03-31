@@ -12,12 +12,12 @@ class Parser {
     let dribbbleInfoStr = userInfo;
 
     // first split on ";"
-    // bio_array => []
+    // dribbbleInfoArray => []
     const dribbbleInfoArray = dribbbleInfoStr.split(';;');
 
     let arraySplittedOnEquals = [];
-    // split bio_array on "="
-    // array_splitted_on_equals = [['text_bio', 'Hello | I'm Nils...'], [...]]
+    // split dribbbleInfoArray on "="
+    // arraySplittedOnEquals = [['text_bio', 'Hello | I'm Nils...'], [...]]
     dribbbleInfoArray.forEach(el => {
       arraySplittedOnEquals.push(el.split("=="));
     })
@@ -61,10 +61,10 @@ class Parser {
     return this.removeRel(this.removeHref(this.removeATag(str, separator)));
   }
 
-  removeAllTagsFromArray (array){
+  removeAllTagsFromArray (array, separator){
     let array_cleaned = [];
     array.forEach(el => {
-      array_cleaned.push(this.removeAllTags(el));
+      array_cleaned.push(this.removeAllTags(el, separator));
     });
     return array_cleaned;
   }

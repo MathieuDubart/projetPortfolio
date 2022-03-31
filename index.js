@@ -17,6 +17,7 @@ app.listen(port, () => {
   console.log("Server is running on : http://localhost:" + port );
 });
 
+
 // decode char html issue
 String.prototype.decodeHTML = function() {
     var map = {"gt":">", "lt":"<", "quot":"\"", "amp":"&"};
@@ -39,12 +40,14 @@ app.get('/', (request, response)=>{
     username = "NILS";
   }
 
+  let shotsArray = [];
   let requestUser = dribbbleClient.getRequestForInformationAbout(username);
   let requestShots = dribbbleClient.getRequestForShotsAbout(username);
-  const callback = (responseFromDribble) => {
+  const callback = (dribbbleResponse) => {
 
-    let userInfoResponse = responseFromDribble[0].data.bio.removeLineBreak().decodeHTML()
-    let userShotsResponse = responseFromDribble[1].data[0].description.removeLineBreak().decodeHTML()
+    let userInfoResponse = dribbbleResponse[0].data.bio.removeLineBreak().decodeHTML()
+    let dribbbleSettingsDesc = dribbbleResponse[1].data[dribbbleResponse[1].data.length - 1].description.removeLineBreak().decodeHTML()
+    console.log("dribbbleSettingsDesc: " + dribbbleSettingsDesc);
 
     //parsing bio
     let parsed_bio = parser.parsingInfos(userInfoResponse);
@@ -52,21 +55,47 @@ app.get('/', (request, response)=>{
     // console.log(parsed_bio.font_family[0]);
 
     //parsing desc post
-    let tagRemovedDesc = parser.removePTag(userShotsResponse);
-    let parsed_desc = parser.parsingInfos(tagRemovedDesc);
-    parsed_desc.background[0] = parser.removeAllTags(parsed_desc.background[0], '');
+    let tagRemovedDesc = parser.removePTag(dribbbleSettingsDesc);
+    let parsed_setting_desc = parser.parsingInfos(tagRemovedDesc);
+    parsed_setting_desc.background[0] = parser.removeAllTags(parsed_setting_desc.background[0], '');
+    console.log(parsed_setting_desc);
 
-    // console.log(parsed_desc);
+    //pushing projects in an array
+    let projects = [];
+    for (let i=0; i < dribbbleResponse[1].data.length - 1; i++) {
+      console.log("//////DRIBBLE REPONSE//////: "+ dribbbleResponse[1].data[i].description);
+      projects.push(dribbbleResponse[1].data[i].description.removeLineBreak().decodeHTML());
+    }
 
-    response.render('pages/test.ejs', {parsed_bio: parsed_bio, parsed_desc: parsed_desc});
+    //removing tags from each project in the array
+    projects.forEach(project => {
+      let testParsingPosts = parser.parsingInfos(parser.removePTag(project));
+      testParsingPosts.images = parser.removeAllTagsFromArray(testParsingPosts.images, '');
+      // console.log(testParsingPosts);
+    })
 
-  //   response.send({userInfo: responseFromDribble[0].data,
-  //       userShots: responseFromDribble[1].data});
+
+// ------------------------------- BROUILLONS ---------------------------//
+
+// console.log("dribbbleResponse[1].data: " + dribbbleResponse[1].data);
+
+// foreach sur dribbbleResponse[1].data
+// dribbbleResponse[1].data.forEach( projects => {
+//
+// });
+
+// console.log("//////DRIBBLE REPONSE//////: "+ dribbbleResponse[1].data[0])
+
+//---------------------------------------------------------------------//
+
+
+
+    response.render('pages/test.ejs', {parsed_bio: parsed_bio, parsed_setting_desc: parsed_setting_desc});
   }
 
   dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
-})
 
+})
 
 // current directory :
 // __dirname
