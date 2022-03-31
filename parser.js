@@ -69,6 +69,23 @@ class Parser {
     return array_cleaned;
   }
 
+  removeAllFromShotsDesc(dribbbleResponse){
+    let array = [];
+    for (let i=0; i < dribbbleResponse.length - 1; i++) {
+      array.push(dribbbleResponse[i].description.removeLineBreak().decodeHTML());
+    }
+
+    let projectsDesc = [];
+    array.forEach(project => {
+      let parsingPosts = this.parsingInfos(this.removePTag(project));
+      parsingPosts.images = this.removeAllTagsFromArray(parsingPosts.images, '');
+      projectsDesc.push(parsingPosts);
+      // console.log(parsingPosts);
+    })
+
+    return projectsDesc;
+  }
+
 }
 
 module.exports = Parser;

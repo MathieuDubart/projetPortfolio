@@ -10,11 +10,21 @@
     <script src="./index.js"></script>
     <link  rel="stylesheet" href="<%- parsed_bio.font_family[0] %>">
 
+    <style>
+      p{
+        color: red;
+      }
+
+      body{
+        background-image: url('<%- parsed_setting_desc.background[0] %>');
+      }
+    </style>
 </head>
+
 
 <body>
 
-
+    <p> <%- parsed_bio.colors %></p>
 
 </body>
 </html>

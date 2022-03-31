@@ -5,6 +5,7 @@ const axios = require('axios');
 const url = require('url');
 const DribbbleClient = require ("./dribbbleClient.js");
 const Parser = require ("./parser.js");
+require("./prototypeFunctions");
 
 const port = process.env.PORT;
 
@@ -16,23 +17,6 @@ app.set('view engine', 'ejs');
 app.listen(port, () => {
   console.log("Server is running on : http://localhost:" + port );
 });
-
-
-// decode char html issue
-String.prototype.decodeHTML = function() {
-    var map = {"gt":">", "lt":"<", "quot":"\"", "amp":"&"};
-    return this.replace(/&(#(?:x[0-9a-f]+|\d+)|[a-z]+);?/gi, function($0, $1) {
-        if ($1[0] === "#") {
-            return String.fromCharCode($1[1].toLowerCase() === "x" ? parseInt($1.substr(2), 16)  : parseInt($1.substr(1), 10));
-        } else {
-            return map.hasOwnProperty($1) ? map[$1] : $0;
-        }
-    });
-};
-
-String.prototype.removeLineBreak = function() {
-  return this.replace(/\n/g, '');
-};
 
 app.get('/', (request, response)=>{
   username = request.query.name;
@@ -60,19 +44,11 @@ app.get('/', (request, response)=>{
     parsed_setting_desc.background[0] = parser.removeAllTags(parsed_setting_desc.background[0], '');
     console.log(parsed_setting_desc);
 
-    //pushing projects in an array
-    let projects = [];
-    for (let i=0; i < dribbbleResponse[1].data.length - 1; i++) {
-      console.log("//////DRIBBLE REPONSE//////: "+ dribbbleResponse[1].data[i].description);
-      projects.push(dribbbleResponse[1].data[i].description.removeLineBreak().decodeHTML());
-    }
+    //pushing projects desc in an array
+    let projectsDesc = parser.removeAllFromShotsDesc(dribbbleResponse[1].data);
 
-    //removing tags from each project in the array
-    projects.forEach(project => {
-      let testParsingPosts = parser.parsingInfos(parser.removePTag(project));
-      testParsingPosts.images = parser.removeAllTagsFromArray(testParsingPosts.images, '');
-      // console.log(testParsingPosts);
-    })
+    console.log(projectsDesc);
+    // console.log("//////TEST PARSING POST//////: " + testParsingPosts);
 
 
 // ------------------------------- BROUILLONS ---------------------------//
@@ -86,7 +62,7 @@ app.get('/', (request, response)=>{
 
 // console.log("//////DRIBBLE REPONSE//////: "+ dribbbleResponse[1].data[0])
 
-//---------------------------------------------------------------------//
+//----------------------------------------------------------------------//
 
 
 
