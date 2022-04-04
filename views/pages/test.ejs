@@ -18,6 +18,8 @@
 
       body{
         background-image: url('<%- parsed_setting_desc.background[0] %>');
+        background-position: center;
+        background-repeat: repeat-y;
       }
 
     </style>
@@ -26,14 +28,16 @@
 
 <body>
 
-  <% projectsDesc.forEach(projet => {
-      projet.textes.forEach(text => { %>
-        <p> <%- text %> </p>
-      <% })
-      projet.images.forEach(img => { %>
-        <img src="<%- img %>">
-      <% })
+
+  <% projectGalleryArray.forEach(item => {
+      if (functions.isImg(item) == false){ %>
+        <p> <%- item %> </p>
+    <% }else{ %>
+        <img src="<%- item %>">
+    <% }
   }) %>
+
+
 
 
 

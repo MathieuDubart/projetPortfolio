@@ -6,6 +6,7 @@ const url = require('url');
 const DribbbleClient = require ("./dribbbleClient.js");
 const Parser = require ("./parser.js");
 require("./prototypeFunctions");
+const functions = require('./functions');
 
 const port = process.env.PORT;
 
@@ -50,25 +51,37 @@ app.get('/', (request, response)=>{
     let projectsDesc = parser.removeAllFromShotsDesc(dribbbleResponse[1].data);
 
     console.log(projectsDesc);
+
+    const alternate = (array1, array2) =>{
+    // on crée un tableau vide qui va contenir les valeurs alternées
+    let newArray = [];
+    let bool = true;
+    // on parcours les deux tableaux
+    for (let i = 0; i < array1.length; i++){
+      if(bool){
+        // on ajoute les valeurs alternées dans le tableau newArray
+        newArray.push(array2[i]);
+        newArray.push(array1[i]);
+        bool = false;
+      }else{
+        newArray.push(array1[i]);
+        newArray.push(array2[i]);
+        bool = true;
+      }
+    }
+    // on retourne le tableau newArray
+    return newArray;
+}
+let projectGalleryArray = alternate(projectsDesc[0].images, projectsDesc[0].textes);
+
     // console.log("//////TEST PARSING POST//////: " + testParsingPosts);
 
-
-// ------------------------------- BROUILLONS ---------------------------//
-
-// console.log("dribbbleResponse[1].data: " + dribbbleResponse[1].data);
-
-// foreach sur dribbbleResponse[1].data
-// dribbbleResponse[1].data.forEach( projects => {
-//
-// });
-
-// console.log("//////DRIBBLE REPONSE//////: "+ dribbbleResponse[1].data[0])
-
-//----------------------------------------------------------------------//
-
-
-
-    response.render('pages/test.ejs', {parsed_bio: parsed_bio, parsed_setting_desc: parsed_setting_desc, projectsDesc: projectsDesc});
+    response.render('pages/test.ejs', {parsed_bio: parsed_bio,
+                                      parsed_setting_desc: parsed_setting_desc,
+                                      projectsDesc: projectsDesc,
+                                      projectGalleryArray: projectGalleryArray,
+                                      functions: functions
+                                     });
   }
 
   dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
