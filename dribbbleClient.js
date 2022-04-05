@@ -33,9 +33,47 @@ class DribbbleClient {
       });
     }
 
-    fetchApiResponse(requests, callback) { // request is an Array
-      this.axios.all(requests).then(this.axios.spread((...apiResponses) => {
-          callback(apiResponses);
+    fetchApiResponse(requests, callback, response) { // request is an Array
+      this.axios.all(requests).then(this.axios.spread((...dribbbleResponse) => {
+
+        const Parser = require ("./parser.js");
+        const parser = new Parser();
+        require("./prototypeFunctions");
+        const helper = require('./helper');
+
+        let userInfoResponse = dribbbleResponse[0].data.bio.removeLineBreak().decodeHTML()
+        let dribbbleSettingsDesc = dribbbleResponse[1].data[dribbbleResponse[1].data.length - 1].description.removeLineBreak().decodeHTML()
+        console.log("dribbbleSettingsDesc: " + dribbbleSettingsDesc);
+
+        //parsing bio
+        let parsed_bio = parser.parsingInfos(userInfoResponse);
+        parsed_bio.lien_cv[0] = parser.removeAllTags(parsed_bio.lien_cv[0], 'https://');
+        parsed_bio.lien_book[0] = parser.removeAllTags(parsed_bio.lien_book[0], 'https://');
+
+
+        //parsing desc post
+        let tagRemovedDesc = parser.removePTag(dribbbleSettingsDesc);
+        let parsed_setting_desc = parser.parsingInfos(tagRemovedDesc);
+        parsed_setting_desc.background[0] = parser.removeAllTags(parsed_setting_desc.background[0], '');
+        console.log(parsed_setting_desc);
+
+        //pushing projects desc in an array
+        let projectsDesc = parser.removeAllFromShotsDesc(dribbbleResponse[1].data);
+
+        console.log(projectsDesc);
+
+        let projectGalleryArray = helper.alternate(projectsDesc[1].images, projectsDesc[1].textes);
+
+        console.log(parsed_bio);
+
+
+          callback({userInfos: dribbbleResponse[0].data,
+                                            parsed_bio: parsed_bio,
+                                            parsed_setting_desc: parsed_setting_desc,
+                                            projectsDesc: projectsDesc,
+                                            projectGalleryArray: projectGalleryArray,
+                                            helper: helper
+                                           });
       }));
     }
 }

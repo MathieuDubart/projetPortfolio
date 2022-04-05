@@ -14,27 +14,31 @@
             <h1>CONTACT ME</h1>
             <div id="socialMedia">
                 <div class="socialMediaIcons" id="mailInfo">
-                <a><img src="https://icon-library.com/images/e-mail-icon-png/e-mail-icon-png-11.jpg"></a>
-                    <p>nom.prenom@edu.gobelins.fr</p>
+                <a href="mailto:<%- parsed_bio.email %>"><img src="https://icon-library.com/images/e-mail-icon-png/e-mail-icon-png-11.jpg"></a>
+                    <p> <%- parsed_bio.email %></p>
                 </div>
                 <div class="socialMediaIcons" id="linkedInInfo">
-                    <a><img src="https://cdn-icons-png.flaticon.com/512/61/61109.png"></a>
-                    <p>nom.prenom</p>
+                    <a href="<%- userInfos.links.linkedin %>"><img src="https://cdn-icons-png.flaticon.com/512/61/61109.png"></a>
+                    <p> <%- parsed_bio.linkedin %> </p>
                 </div>
                 <div class="socialMediaIcons" id="instagramInfo">
-                    <a><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png"></a>
-                    <p>@username</p>
+                    <a href="<%- userInfos.links.instagram %>"><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png"></a>
+                    <p><%- parsed_bio.instagram %></p>
                 </div>
             </div>
             <h2>WANT MORE ?</h2>
             <div id="wantMore"></div>
                 <div class="wantMoreIcons" id="CV">
-                    <a><img src="https://www.mymagic.ch/wp-content/uploads/2020/09/download-logo-png-image-77292.png"></a>
-                    <p>curriculum_vitae</p>
+                    <a href="<%- parsed_bio.lien_cv %>" target="_blank">
+                      <img src="https://www.mymagic.ch/wp-content/uploads/2020/09/download-logo-png-image-77292.png">
+                    </a>
+                    <p>Curriculum Vitae</p>
                 </div>
                 <div class="wantMoreIcons" id="portfolio">
-                    <a><img src="https://www.mymagic.ch/wp-content/uploads/2020/09/download-logo-png-image-77292.png"></a>
-                    <p>portfolio_de_ouf</p>
+                    <a href="<%- parsed_bio.lien_book %>" target="_blank">
+                      <img src="https://www.mymagic.ch/wp-content/uploads/2020/09/download-logo-png-image-77292.png">
+                    </a>
+                    <p>Portfolio</p>
                 </div>
             </div>
         </div>
@@ -126,7 +130,7 @@
             }
             #QRcode img{
                 margin-left:15%;
-                margin-right:15%;               
+                margin-right:15%;
             }
 
             .footer{
@@ -134,7 +138,7 @@
             }
         }
 
-        @media screen and (max-width: 500px){ 
+        @media screen and (max-width: 500px){
 
             footer{
                 display:grid;
