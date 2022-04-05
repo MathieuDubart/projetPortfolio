@@ -22,9 +22,10 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.listen(port, () => {
-  console.log("Server is running on : http://localhost:" + port );
+  console.log("Server is running on : http://localhost:" + port + "/mathieu" );
 });
 
+//################### HOME PAGE APP.GET ###################//
 
 app.get('/:name', (request, response)=>{
   response.redirect('home');
@@ -49,6 +50,8 @@ app.get('/:name/home', (request, response)=>{
 
 })
 
+//################### CONTACT APP.GET ####################//
+
 app.get('/:name/contact', (request, response)=>{
   let username = request.params.name;
   if (username == undefined) {
@@ -65,6 +68,90 @@ app.get('/:name/contact', (request, response)=>{
 
 
   dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
+
+})
+
+//################### ARTWORKS APP.GET ####################//
+
+app.get('/:name/artworks', (request, response)=>{
+  let username = request.params.name;
+  if (username == undefined) {
+    username = "MATHIEU";
+  }
+
+  let shotsArray = [];
+  let requestUser = dribbbleClient.getRequestForInformationAbout(username);
+  let requestShots = dribbbleClient.getRequestForShotsAbout(username);
+
+  const callback = (dribbbleResponse) => {
+    response.render('pages/artworks.ejs', dribbbleResponse);
+  }
+
+
+  dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
+
+})
+
+//################### ABOUT ME APP.GET ###################//
+
+app.get('/:name/about-me', (request, response)=>{
+  let username = request.params.name;
+  if (username == undefined) {
+    username = "MATHIEU";
+  }
+
+  let shotsArray = [];
+  let requestUser = dribbbleClient.getRequestForInformationAbout(username);
+  let requestShots = dribbbleClient.getRequestForShotsAbout(username);
+
+  const callback = (dribbbleResponse) => {
+    response.render('pages/aboutMe.ejs', dribbbleResponse);
+  }
+
+
+  dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
+
+})
+
+ //################### LAB APP.GET ###################//
+
+  app.get('/:name/lab', (request, response)=>{
+    let username = request.params.name;
+    if (username == undefined) {
+      username = "MATHIEU";
+    }
+
+    let shotsArray = [];
+    let requestUser = dribbbleClient.getRequestForInformationAbout(username);
+    let requestShots = dribbbleClient.getRequestForShotsAbout(username);
+
+    const callback = (dribbbleResponse) => {
+      response.render('pages/labs.ejs', dribbbleResponse);
+    }
+
+
+    dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
+
+})
+
+//################### PROJET PAGE APP.GET ###################//
+
+ app.get('/:name/projet', (request, response)=>{
+   let username = request.params.name;
+   if (username == undefined) {
+     username = "MATHIEU";
+   }
+
+   let shotsArray = [];
+   let requestUser = dribbbleClient.getRequestForInformationAbout(username);
+   let requestShots = dribbbleClient.getRequestForShotsAbout(username);
+
+   const callback = (dribbbleResponse) => {
+     response.render('pages/projetPage.ejs', dribbbleResponse);
+   }
+
+
+   dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
 
 })
 

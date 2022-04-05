@@ -31,7 +31,7 @@ class Parser {
     // user_param => { prop1: ['value1','value2',...], prop2:['value1', 'value2',...], ...}
     for (let property in dribbbleParam) {
       let value = `${dribbbleParam[property]}`;
-      let value_array = value.split("_|_");
+      let value_array = value.split("|");
       dribbbleParam[property] = value_array;
     }
     return dribbbleParam;
