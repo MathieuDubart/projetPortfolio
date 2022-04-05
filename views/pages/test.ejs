@@ -29,8 +29,8 @@
 <body>
 
 
-  <% projectGalleryArray.forEach(item => {
-      if (functions.isImg(item) == false){ %>
+    <% projectGalleryArray.forEach(item => {
+      if (helper.isImg(item) == false){ %>
         <p> <%- item %> </p>
     <% }else{ %>
         <img src="<%- item %>">

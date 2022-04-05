@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/contactHead'); %>
+</head>
+<body class="container col sm-12">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="contactMe">
+            <h1>CONTACT ME</h1>
+            <div id="socialMedia">
+                <div class="socialMediaIcons" id="mailInfo">
+                <a><img src="https://icon-library.com/images/e-mail-icon-png/e-mail-icon-png-11.jpg"></a>
+                    <p>nom.prenom@edu.gobelins.fr</p>
+                </div>
+                <div class="socialMediaIcons" id="linkedInInfo">
+                    <a><img src="https://cdn-icons-png.flaticon.com/512/61/61109.png"></a>
+                    <p>nom.prenom</p>
+                </div>
+                <div class="socialMediaIcons" id="instagramInfo">
+                    <a><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png"></a>
+                    <p>@username</p>
+                </div>
+            </div>
+            <h2>WANT MORE ?</h2>
+            <div id="wantMore"></div>
+                <div class="wantMoreIcons" id="CV">
+                    <a><img src="https://www.mymagic.ch/wp-content/uploads/2020/09/download-logo-png-image-77292.png"></a>
+                    <p>curriculum_vitae</p>
+                </div>
+                <div class="wantMoreIcons" id="portfolio">
+                    <a><img src="https://www.mymagic.ch/wp-content/uploads/2020/09/download-logo-png-image-77292.png"></a>
+                    <p>portfolio_de_ouf</p>
+                </div>
+            </div>
+        </div>
+        <div id="QRcode">
+            <img src="https://res.cloudinary.com/dizziweb-365p/images/w_300,h_300,c_fill/f_auto,q_auto/v1638452224/qrcode-dizziweb/qrcode-dizziweb.png?_i=AA">
+        </div>
+    </main>
+
+    <footer class="footer col sm-12">
+        <%- include('../partials/footer'); %>
+    </footer>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+
+        body, html{
+            height:100%;
+        }
+
+        .container{
+            margin:0px;
+            width:100vw;
+            height:100vh;
+        }
+
+        .contactMe{
+            margin-top:2em;
+            margin-left:22%;
+            margin-bottom:1em;
+        }
+        .contactMe h1{
+            font-family: 'Big Shoulders Display', cursive;
+            font-size:80px;
+            margin-bottom:80px;
+        }
+        .contactMe h2{
+            font-family: 'Big Shoulders Display', cursive;
+            font-size:60px;
+            margin-top:1em;
+        }
+        .socialMediaIcons img{
+            max-width:50px;
+        }
+        .socialMediaIcons p{
+            margin-left:50px;
+            margin-top:10px;
+        }
+        .wantMoreIcons p{
+            margin-top:20px;
+            margin-left:50px;
+        }
+        .wantMoreIcons img{
+            max-width:80px;
+        }
+        #mailInfo{
+            display:flex;
+            margin: 20px;
+        }
+        #linkedInInfo{
+            display:flex;
+            margin: 20px;
+        }
+        #instagramInfo{
+            display:flex;
+            margin: 20px;
+        }
+        #CV{
+            display:flex;
+        }
+        #portfolio{
+            display:flex;
+        }
+        #QRcode{
+            margin-top:-500px;
+            margin-right:10%;
+            float:right;
+        }
+        #QRcode img{
+            width:25em;
+        }
+
+        @media (max-width: 1250px) {
+
+            #QRcode{
+                display:contents;
+            }
+            #QRcode img{
+                margin-left:15%;
+                margin-right:15%;               
+            }
+
+            .footer{
+                position:relative
+            }
+        }
+
+        @media screen and (max-width: 500px){ 
+
+            footer{
+                display:grid;
+                text-align:center;
+                background-color:red;
+            }
+        }
+    </style>
+</body>
+</html>

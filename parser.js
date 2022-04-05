@@ -31,7 +31,7 @@ class Parser {
     // user_param => { prop1: ['value1','value2',...], prop2:['value1', 'value2',...], ...}
     for (let property in dribbbleParam) {
       let value = `${dribbbleParam[property]}`;
-      let value_array = value.split("|");
+      let value_array = value.split("_|_");
       dribbbleParam[property] = value_array;
     }
     return dribbbleParam;
@@ -49,6 +49,10 @@ class Parser {
 
   removeHref(str) {
     return str.replace(/rel=".*?">|<\/a>/g, '');
+  }
+
+  removeBrackets(str){
+      return str.replace(/"((".*?"))"/g, '');
   }
 
   removeRel(str) {

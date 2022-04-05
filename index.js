@@ -6,7 +6,7 @@ const url = require('url');
 const DribbbleClient = require ("./dribbbleClient.js");
 const Parser = require ("./parser.js");
 require("./prototypeFunctions");
-const functions = require('./functions');
+const helper = require('./helper');
 
 const port = process.env.PORT;
 
@@ -52,35 +52,35 @@ app.get('/', (request, response)=>{
 
     console.log(projectsDesc);
 
-    const alternate = (array1, array2) =>{
-    // on crée un tableau vide qui va contenir les valeurs alternées
-    let newArray = [];
-    let bool = true;
-    // on parcours les deux tableaux
-    for (let i = 0; i < array1.length; i++){
-      if(bool){
-        // on ajoute les valeurs alternées dans le tableau newArray
-        newArray.push(array2[i]);
-        newArray.push(array1[i]);
-        bool = false;
-      }else{
-        newArray.push(array1[i]);
-        newArray.push(array2[i]);
-        bool = true;
-      }
+const alternate = (array1, array2) =>{
+  // on crée un tableau vide qui va contenir les valeurs alternées
+  let newArray = [];
+  let bool = true;
+  // on parcours les deux tableaux
+  for (let i = 0; i < array1.length; i++){
+    if(bool){
+      // on ajoute les valeurs alternées dans le tableau newArray
+      newArray.push(array2[i]);
+      newArray.push(array1[i]);
+      bool = false;
+    }else{
+      newArray.push(array1[i]);
+      newArray.push(array2[i]);
+      bool = true;
     }
-    // on retourne le tableau newArray
-    return newArray;
+  }
+  // on retourne le tableau newArray
+  return newArray;
 }
-let projectGalleryArray = alternate(projectsDesc[0].images, projectsDesc[0].textes);
+let projectGalleryArray = alternate(projectsDesc[1].images, projectsDesc[1].textes);
 
     // console.log("//////TEST PARSING POST//////: " + testParsingPosts);
 
-    response.render('pages/test.ejs', {parsed_bio: parsed_bio,
+    response.render('pages/contact.ejs', {parsed_bio: parsed_bio,
                                       parsed_setting_desc: parsed_setting_desc,
                                       projectsDesc: projectsDesc,
                                       projectGalleryArray: projectGalleryArray,
-                                      functions: functions
+                                      helper: helper
                                      });
   }
 
