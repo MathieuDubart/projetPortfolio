@@ -4,6 +4,7 @@ require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const url = require('url');
+const cors = require('cors');
 const port = process.env.PORT;
 
 const DribbbleClient = require ("./dribbbleClient.js");
@@ -11,7 +12,7 @@ const dribbbleClient = new DribbbleClient();
 
 const app = express();
 
-
+app.use(cors());
 //################### SETTING SERVER ####################//
 
 app.use(express.static('public'));
@@ -24,11 +25,11 @@ app.listen(port, () => {
 
 app.get('/:name', (request, response)=>{
   let username = request.params.name;
-    console.log(username);
-  response.redirect('/' + username + '/home');
+  response.redirect(username + '/home');
 })
 
 app.get('/:name/home', (request, response)=>{
+  console.log(request.params.name);
   let username = request.params.name;
   if (username == undefined) {
     username = "MATHIEU";
@@ -124,7 +125,7 @@ app.get('/:name/about-me', (request, response)=>{
 
 //################### PROJET PAGE APP.GET ###################//
 
- app.get('/:name/projet', (request, response)=>{
+ app.get('/:name/project', (request, response)=>{
    let username = request.params.name;
    if (username == undefined) {
      username = "MATHIEU";

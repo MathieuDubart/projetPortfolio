@@ -15,12 +15,15 @@ class DribbbleClient {
 
     #getApiTokenFor(username) {
       let upperUsername = username.toUpperCase();
+      // console.log(upperUsername);
       const accessToken = process.env[upperUsername];
       return accessToken;
     }
 
     getRequestForInformationAbout(username) {
+      // console.log(username);
       let accessToken = this.#getApiTokenFor(username);
+      // console.log(accessToken);
       return this.axios.get('/user', {
           params: { access_token: accessToken }
       });
@@ -49,6 +52,7 @@ class DribbbleClient {
         let parsed_bio = parser.parsingInfos(userInfoResponse);
         parsed_bio.lien_cv[0] = parser.removeAllTags(parsed_bio.lien_cv[0], 'https://');
         parsed_bio.lien_book[0] = parser.removeAllTags(parsed_bio.lien_book[0], 'https://');
+        // console.log(parsed_bio);
 
 
         //parsing desc post
@@ -56,9 +60,6 @@ class DribbbleClient {
         let parsed_setting_desc = parser.parsingInfos(tagRemovedDesc);
         parsed_setting_desc.background[0] = parser.removeAllTags(parsed_setting_desc.background[0], '');
         // console.log(parsed_setting_desc);
-
-        // console.log("DRIBBBLERESPONSE[1].DATA : ");
-        // console.log(dribbbleResponse[1].data);
 
         //pushing projects desc in an array
         let projectsDesc = parser.removeAllFromShotsDesc(dribbbleResponse[1].data);
@@ -70,13 +71,13 @@ class DribbbleClient {
         // console.log(parsed_bio);
 
 
-          callback({userInfos: dribbbleResponse[0].data,
-                                            parsed_bio: parsed_bio,
-                                            parsed_setting_desc: parsed_setting_desc,
-                                            projectsDesc: projectsDesc,
-                                            projectGalleryArray: projectGalleryArray,
-                                            helper: helper
-                                           });
+        callback({userInfos: dribbbleResponse[0].data,
+                              parsed_bio: parsed_bio,
+                              parsed_setting_desc: parsed_setting_desc,
+                              projectsDesc: projectsDesc,
+                              projectGalleryArray: projectGalleryArray,
+                              helper: helper
+                             });
       }));
     }
 }
