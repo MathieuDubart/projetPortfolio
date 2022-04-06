@@ -24,6 +24,7 @@ app.listen(port, () => {
 
 app.get('/:name', (request, response)=>{
   let username = request.params.name;
+    console.log(username);
   response.redirect('/' + username + '/home');
 })
 
@@ -32,8 +33,7 @@ app.get('/:name/home', (request, response)=>{
   if (username == undefined) {
     username = "MATHIEU";
   }
-
-  let shotsArray = [];
+  // console.log(username);
   let requestUser = dribbbleClient.getRequestForInformationAbout(username);
   let requestShots = dribbbleClient.getRequestForShotsAbout(username);
 
@@ -53,8 +53,6 @@ app.get('/:name/contact', (request, response)=>{
   if (username == undefined) {
     username = "MATHIEU";
   }
-
-  let shotsArray = [];
   let requestUser = dribbbleClient.getRequestForInformationAbout(username);
   let requestShots = dribbbleClient.getRequestForShotsAbout(username);
 
@@ -74,8 +72,6 @@ app.get('/:name/artworks', (request, response)=>{
   if (username == undefined) {
     username = "MATHIEU";
   }
-
-  let shotsArray = [];
   let requestUser = dribbbleClient.getRequestForInformationAbout(username);
   let requestShots = dribbbleClient.getRequestForShotsAbout(username);
 
@@ -95,8 +91,6 @@ app.get('/:name/about-me', (request, response)=>{
   if (username == undefined) {
     username = "MATHIEU";
   }
-
-  let shotsArray = [];
   let requestUser = dribbbleClient.getRequestForInformationAbout(username);
   let requestShots = dribbbleClient.getRequestForShotsAbout(username);
 
@@ -116,8 +110,6 @@ app.get('/:name/about-me', (request, response)=>{
     if (username == undefined) {
       username = "MATHIEU";
     }
-
-    let shotsArray = [];
     let requestUser = dribbbleClient.getRequestForInformationAbout(username);
     let requestShots = dribbbleClient.getRequestForShotsAbout(username);
 
@@ -137,8 +129,6 @@ app.get('/:name/about-me', (request, response)=>{
    if (username == undefined) {
      username = "MATHIEU";
    }
-
-   let shotsArray = [];
    let requestUser = dribbbleClient.getRequestForInformationAbout(username);
    let requestShots = dribbbleClient.getRequestForShotsAbout(username);
 
