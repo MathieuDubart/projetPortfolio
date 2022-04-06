@@ -12,25 +12,35 @@ const dribbbleClient = new DribbbleClient();
 
 const app = express();
 
-app.use(cors());
 //################### SETTING SERVER ####################//
+app.use(cors());
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.listen(port, () => {
-  console.log("Server is running on : http://localhost:" + port + "/mathieu" );
+  console.log("Server is running on : http://localhost:" + port + "/'insert-username'" );
 });
 
 //################### HOME PAGE APP.GET ###################//
+
+app.get('/favicon.ico', (req,res)=>{
+ console.log('favicon loaded');
+})
 
 app.get('/:name', (request, response)=>{
   let username = request.params.name;
   response.redirect(username + '/home');
 })
 
-app.get('/:name/home', (request, response)=>{
-  console.log(request.params.name);
+app.get('/:name/', (request, response)=>{
   let username = request.params.name;
+  response.redirect('home');
+})
+
+
+app.get('/:name/home', (request, response)=>{
+  let username = request.params.name;
+  console.log(username);
   if (username == undefined) {
     username = "MATHIEU";
   }
@@ -41,7 +51,6 @@ app.get('/:name/home', (request, response)=>{
   const callback = (dribbbleResponse) => {
     response.render('pages/home.ejs', dribbbleResponse);
   }
-
 
   dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
 
