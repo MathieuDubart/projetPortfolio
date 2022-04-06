@@ -1,0 +1,38 @@
+<div class="socialMediaIcons" id="mailInfo">
+<a href="mailto:<%- parsed_bio.email %>" target="_blank"><img src="https://icon-library.com/images/e-mail-icon-png/e-mail-icon-png-11.jpg"></a>
+    <p> <%- parsed_bio.email %></p>
+</div>
+<div class="socialMediaIcons" id="linkedInInfo">
+    <a href="<%- userInfos.links.linkedin %>" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/61/61109.png"></a>
+    <p> <%- parsed_bio.linkedin %> </p>
+</div>
+<div class="socialMediaIcons" id="instagramInfo">
+    <a href="<%- userInfos.links.instagram %>" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png"></a>
+    <p><%- parsed_bio.instagram %></p>
+</div>
+
+
+<style>
+  .contactMe{
+      margin-top:2em;
+      margin-left:22%;
+      margin-bottom:1em;
+  }
+  .contactMe h1{
+      font-family: 'Big Shoulders Display', cursive;
+      font-size:80px;
+      margin-bottom:80px;
+  }
+  .contactMe h2{
+      font-family: 'Big Shoulders Display', cursive;
+      font-size:60px;
+      margin-top:1em;
+  }
+  .socialMediaIcons img{
+      max-width:50px;
+  }
+  .socialMediaIcons p{
+      margin-left:50px;
+      margin-top:10px;
+  }
+  </style>

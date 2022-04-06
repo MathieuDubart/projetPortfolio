@@ -11,13 +11,10 @@
 
     <main>
         <div id="personnalLogo">
-            <img src="">
-            <p>Inserer Image SVG ICI</p>
+            <img src="<%- parsed_bio.image_home[0] %>"  id="imgHome">
         </div>
         <div id="socialMedias">
-            <a href="<%- userInfos.links.instagram %>" target="_blank"><img id="instagramIcon" src="https://icones.pro/wp-content/uploads/2021/02/instagram-icone-noir.png"></a>
-            <a href="<%- userInfos.links.linkedin %>" target="_blank"><img id="linkedInIcon" src="https://cdn-icons-png.flaticon.com/512/61/61109.png"></a>
-            <a href="https://dribbble.com" target="_blank"><img id="dribbbleIcon" src="https://cdn.iconscout.com/icon/free/png-256/dribbble-33-90225.png"></a>
+            <%- include('../partials/socialMedia'); %>
         </div>
         <div id="personnalText">
             <p> <%- parsed_bio.text_bio[0] %> <%- parsed_bio.text_bio[1] %></p>
@@ -39,41 +36,16 @@
     }
 
     #personnalLogo{
-        background-color:red;
         width:25em;
         height:25em;
         margin-top:5%;
         margin-left:50%;
         margin-right:20em;
     }
-    #personnalLogo p{
-        text-align:center;
-        margin-top:100px;
-    }
 
-    #socialMedias{
-        width: fit-content;
-        height: fit-content;
-        position:absolute;
-        display:grid;
-        float:right;
-        margin-left:90%;
-        margin-top:-30vh;
-        /* border: 1px solid red; */
-    }
-    /* #socialMedias a{
-        max-width:3em;
-        margin-bottom:1.5em;
-    } */
-    #socialMedias a{
-      width: 50px;
-      height: 50px;
-      margin: 8px;
-      /* border: 1px solid black; */
-    }
-    #instagramIcon, #linkedInIcon, #dribbbleIcon{
-      width: 50px;
-      height: 50px;
+    #imgHome{
+        height: 100%;
+        width: 100%;
     }
 
     #personnalText{

@@ -52,6 +52,7 @@ class DribbbleClient {
         let parsed_bio = parser.parsingInfos(userInfoResponse);
         parsed_bio.lien_cv[0] = parser.removeAllTags(parsed_bio.lien_cv[0], 'https://');
         parsed_bio.lien_book[0] = parser.removeAllTags(parsed_bio.lien_book[0], 'https://');
+        parsed_bio.image_home = parser.removeAllTagsFromArray(parsed_bio.image_home, 'https://');
         // console.log(parsed_bio);
 
 
