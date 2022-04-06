@@ -33,7 +33,7 @@ class DribbbleClient {
       });
     }
 
-    fetchApiResponse(requests, callback, response) { // request is an Array
+    fetchApiResponse(requests, callback) { // request is an Array
       this.axios.all(requests).then(this.axios.spread((...dribbbleResponse) => {
 
         const Parser = require ("./parser.js");
@@ -43,7 +43,7 @@ class DribbbleClient {
 
         let userInfoResponse = dribbbleResponse[0].data.bio.removeLineBreak().decodeHTML()
         let dribbbleSettingsDesc = dribbbleResponse[1].data[dribbbleResponse[1].data.length - 1].description.removeLineBreak().decodeHTML()
-        console.log("dribbbleSettingsDesc: " + dribbbleSettingsDesc);
+        // console.log("dribbbleSettingsDesc: " + dribbbleSettingsDesc);
 
         //parsing bio
         let parsed_bio = parser.parsingInfos(userInfoResponse);
@@ -57,14 +57,17 @@ class DribbbleClient {
         parsed_setting_desc.background[0] = parser.removeAllTags(parsed_setting_desc.background[0], '');
         console.log(parsed_setting_desc);
 
+        // console.log("DRIBBBLERESPONSE[1].DATA : ");
+        // console.log(dribbbleResponse[1].data);
+
         //pushing projects desc in an array
         let projectsDesc = parser.removeAllFromShotsDesc(dribbbleResponse[1].data);
 
-        console.log(projectsDesc);
+        // console.log(projectsDesc);
 
-        let projectGalleryArray = helper.alternate(projectsDesc[1].images, projectsDesc[1].textes);
+        let projectGalleryArray = helper.alternate(projectsDesc[0].images, projectsDesc[0].textes);
 
-        console.log(parsed_bio);
+        // console.log(parsed_bio);
 
 
           callback({userInfos: dribbbleResponse[0].data,

@@ -4,16 +4,11 @@ require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const url = require('url');
-const DribbbleClient = require ("./dribbbleClient.js");
-const Parser = require ("./parser.js");
-// const engine = require("./engine");
-require("./prototypeFunctions");
-const helper = require('./helper');
-
 const port = process.env.PORT;
 
-const parser = new Parser();
+const DribbbleClient = require ("./dribbbleClient.js");
 const dribbbleClient = new DribbbleClient();
+
 const app = express();
 
 
@@ -28,7 +23,8 @@ app.listen(port, () => {
 //################### HOME PAGE APP.GET ###################//
 
 app.get('/:name', (request, response)=>{
-  response.redirect('home');
+  let username = request.params.name;
+  response.redirect(username + '/home');
 })
 
 app.get('/:name/home', (request, response)=>{
