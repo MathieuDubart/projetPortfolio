@@ -55,7 +55,7 @@ class DribbbleClient {
         let tagRemovedDesc = parser.removePTag(dribbbleSettingsDesc);
         let parsed_setting_desc = parser.parsingInfos(tagRemovedDesc);
         parsed_setting_desc.background[0] = parser.removeAllTags(parsed_setting_desc.background[0], '');
-        console.log(parsed_setting_desc);
+        // console.log(parsed_setting_desc);
 
         // console.log("DRIBBBLERESPONSE[1].DATA : ");
         // console.log(dribbbleResponse[1].data);

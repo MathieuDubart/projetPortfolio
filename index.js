@@ -24,7 +24,7 @@ app.listen(port, () => {
 
 app.get('/:name', (request, response)=>{
   let username = request.params.name;
-  response.redirect(username + '/home');
+  response.redirect('/' + username + '/home');
 })
 
 app.get('/:name/home', (request, response)=>{
