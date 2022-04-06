@@ -52,7 +52,7 @@ class Parser {
   }
 
   removeBrackets(str){
-      return str.replace(/"((".*?"))"/g, '');
+      return str.replace(/\[\[.*?\]\]/g, '');
   }
 
   removeRel(str) {
@@ -62,7 +62,7 @@ class Parser {
   }
 
   removeAllTags(str, separator){
-    return this.removeRel(this.removeHref(this.removeATag(str, separator)));
+    return this.removeRel(this.removeHref(this.removeATag(this.removeBrackets(str), separator)));
   }
 
   removeAllTagsFromArray (array, separator){
@@ -82,7 +82,7 @@ class Parser {
 
     let projectsDesc = [];
     array.forEach(project => {
-      let parsingPosts = this.parsingInfos(this.removePTag(project));
+      let parsingPosts = this.parsingInfos(this.removePTag(this.removeBrackets(project)));
       parsingPosts.images = this.removeAllTagsFromArray(parsingPosts.images, '');
       projectsDesc.push(parsingPosts);
       console.log("PROJET : ")
