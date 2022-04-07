@@ -73,6 +73,7 @@ class DribbbleClient {
 
 
         callback({userInfos: dribbbleResponse[0].data,
+                  shotsInfos: dribbbleResponse[1].data,
                   parsed_bio: parsed_bio,
                   parsed_setting_desc: parsed_setting_desc,
                   projectsDesc: projectsDesc,
