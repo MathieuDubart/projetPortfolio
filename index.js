@@ -146,6 +146,24 @@ app.get('/:name/about-me', (request, response)=>{
      response.render('pages/projetPage.ejs', dribbbleResponse);
    }
 
+   dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
+
+})
+
+//################### PROJET :ID APP.GET ###################//
+
+ app.get('/:name/project/:id', (request, response)=>{
+   let username = request.params.name;
+   let id = request.params.id;
+   if (username == undefined) {
+     username = "MATHIEU";
+   }
+   let requestUser = dribbbleClient.getRequestForInformationAbout(username);
+   let requestShots = dribbbleClient.getRequestForShotsAbout(username);
+
+   const callback = (dribbbleResponse) => {
+     response.render('pages/projetPage.ejs', dribbbleResponse);
+   }
 
    dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
 

@@ -2,23 +2,60 @@
 <html lang="en">
 <head>
     <%- include('../partials/homeHead'); %>
+    <%- include('../partials/backgroundAndFonts') %>
 </head>
 <body class="container col sm-12">
 
-    <header>
-        <%- include('../partials/header'); %>
-    </header>
-
-    <div> <h1>je suis la page Artworks</h1> </div>
+  <header>
+      <%- include('../partials/header'); %>
+  </header>
 
 
+  <div id="contentContainer">
+    <div id="titles"> <h1>MY ARTWORKS</h1> </div>
+    <%- include('../partials/titlesCSS'); %>
+
+    <div id="filters"></div>
+
+    <div id="gallery">
+      <%- include('../partials/artworksGallery'); %>
+    </div>
+  </div>
+
+      <!-- <div id="socialMedias">
+          <%- include('../partials/socialMedia'); %>
+      </div> -->
+
+<style>
+
+  #contentContainer{
+    width: 100%;
+    height: fit-content;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+  }
+
+  #filters{
+    width: 60%;
+    height: 100px;
+    border: 1px solid green;
+    display: flex;
+    justify-content: center;
+  }
+
+
+</style>
 
 
 
 
 
+    <!-- <footer class="footer col sm-12">
+        <%- include('../partials/footer'); %>
+    </footer> -->
 
-
-    <footer class="footer col sm-12">
-        <%# include('../partials/footer'); %>
-    </footer>
+</body>
+</html>
