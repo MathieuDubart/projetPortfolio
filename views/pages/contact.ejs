@@ -1,83 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../partials/contactHead'); %>
 </head>
+
 <body class="container col sm-12">
 
     <header>
         <%- include('../partials/header'); %>
     </header>
 
-    <main>
-        <div class="contactMe">
-            <h1>CONTACT ME</h1>
+    <div id="contactContainer">
+        <div id="contactMe">
+            <div class="contactTitles">
+                <h1>CONTACT ME</h1>
+            </div>
             <div id="socialMedia">
                 <%- include('../partials/contactSocialMedia')%>
             </div>
-            <h2>WANT MORE ?</h2>
+        </div>
+        <div id="moreDiv">
+            <div class="contactTitle">
+                <h2>WANT MORE ?</h2>
+            </div>
             <div id="wantMore"></div>
                 <%- include('../partials/downloadCvPortfolio')%>
             </div>
         </div>
+    </div>
+
         <div id="QRcode">
             <img src="https://res.cloudinary.com/dizziweb-365p/images/w_300,h_300,c_fill/f_auto,q_auto/v1638452224/qrcode-dizziweb/qrcode-dizziweb.png?_i=AA">
         </div>
-    </main>
 
-    <footer class="footer col sm-12">
+
+    <footer class="footer">
         <%- include('../partials/footer'); %>
     </footer>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-        }
-
-        body, html{
-            height:100%;
-        }
-
-        .container{
-            margin:0px;
-            width:100vw;
-            height:100vh;
-        }
-
-        #QRcode{
-            margin-top:-500px;
-            margin-right:10%;
-            float:right;
-        }
-
-        #QRcode img{
-            width:25em;
-        }
-
-        @media (max-width: 1250px) {
-
-            #QRcode{
-                display:contents;
-            }
-            #QRcode img{
-                margin-left:15%;
-                margin-right:15%;
-            }
-
-            .footer{
-                position:relative
-            }
-        }
-
-        @media screen and (max-width: 500px){
-
-            footer{
-                display:grid;
-                text-align:center;
-                background-color:red;
-            }
-        }
-    </style>
 </body>
 </html>

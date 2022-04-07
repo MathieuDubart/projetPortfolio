@@ -73,12 +73,12 @@ class DribbbleClient {
 
 
         callback({userInfos: dribbbleResponse[0].data,
-                              parsed_bio: parsed_bio,
-                              parsed_setting_desc: parsed_setting_desc,
-                              projectsDesc: projectsDesc,
-                              projectGalleryArray: projectGalleryArray,
-                              helper: helper
-                             });
+                  parsed_bio: parsed_bio,
+                  parsed_setting_desc: parsed_setting_desc,
+                  projectsDesc: projectsDesc,
+                  projectGalleryArray: projectGalleryArray,
+                  helper: helper
+                 });
       }));
     }
 }
