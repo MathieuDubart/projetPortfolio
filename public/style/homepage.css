@@ -42,3 +42,22 @@
 	text-align:center;
 	font-family:"roboto", sans-serif;
 }
+
+
+@media screen and (max-width:980px) {
+	#personnalLogo {
+		margin-top: calc(60% - 25em/2);
+		margin-left:calc(50% - 25em/2);
+	}
+
+	#personnalText{
+		text-align: center;
+		width: 100%;
+		margin-left: 0;
+		margin-bottom: 64px;
+	}
+
+	#personnalText p {
+		font-size: 6em;
+	}	
+}
