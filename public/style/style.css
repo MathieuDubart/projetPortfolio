@@ -23,7 +23,6 @@ body{
 
   }
   #titles h1{
-    font-family: <%- parsed_setting_desc.font_name[1] %>;
     font-weight: bold;
   }
 
