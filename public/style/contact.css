@@ -1,0 +1,112 @@
+#contactContainer {
+    border: red 1px solid;
+    width: 100%;
+}
+
+#contactMe{
+    margin-top:2em;
+    margin-left: 15%;
+    margin-bottom:1em;
+    width: calc(100% - 15%);
+    border: 1px solid pink;
+    font-family: '<%- parsed_setting_desc.font_name[1] %>', cursive;
+}
+
+#contactMe h1{
+    font-size:80px;
+    margin-bottom:80px;
+    width: 100%;
+}
+
+#contactMe h2{
+    font-family: '<%- parsed_setting_desc.font_name[1] %>', cursive;
+    font-size:60px;
+    margin-top:1em;
+}
+
+#moreDiv {
+    margin-top:2em;
+    margin-left: 15%;
+    margin-bottom:1em;
+    width: calc(100% - 15%);
+    border: 1px solid pink;
+    font-family: '<%- parsed_setting_desc.font_name[1] %>', cursive;
+}
+
+#contactTitle {
+    border: 1px solid orange;
+}
+
+.socialMediaIcons img{
+    width:50px;
+}
+
+.socialMediaIcons p{
+    margin-left:50px;
+    margin-top:10px;
+}
+
+#QRcode{
+    margin-top:-500px;
+    margin-right:10%;
+    float:right;
+}
+
+#QRcode img{
+    width:25em;
+}
+
+.wantMoreIcons p{
+    margin-top:20px;
+    margin-left:50px;
+}
+.wantMoreIcons img{
+    max-width:80px;
+}
+#mailInfo{
+    display:flex;
+    margin: 20px;
+}
+#linkedInInfo{
+    display:flex;
+    margin: 20px;
+}
+#instagramInfo{
+    display:flex;
+    margin: 20px;
+}
+#CV{
+    display:flex;
+}
+#portfolio{
+    display:flex;
+}
+
+@media (max-width: 1250px) {
+
+    #QRcode{
+        display:contents;
+    }
+    #QRcode img{
+        margin-left:15%;
+        margin-right:15%;
+    }
+
+    .footer{
+        position:relative
+    }
+}
+
+@media screen and (max-width:980px){
+
+    #contactMe {
+        margin-left: 0%;
+        width: 100%;
+    }
+
+    footer{
+        display:grid;
+        text-align:center;
+        background-color:red;
+    }
+}

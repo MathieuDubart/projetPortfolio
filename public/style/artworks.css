@@ -1,0 +1,31 @@
+/******************** Artworks *******************/
+
+#gallery{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-grow: 1 1 20%; */
+    /* max-width: 1080px; */
+    border: 1px solid black;
+}
+
+#gallery img{
+    width: 20%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+}
+
+.project_title{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+#scriptTester {
+    height: 200px;
+    width: 200px;
+}
