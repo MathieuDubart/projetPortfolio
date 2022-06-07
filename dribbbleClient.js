@@ -65,7 +65,7 @@ class DribbbleClient {
         //pushing projects desc in an array
         let projectsDesc = parser.removeAllFromShotsDesc(dribbbleResponse[1].data);
 
-        // console.log(projectsDesc);
+        console.log('projectsDesc', projectsDesc);
 
         let projectGalleryArray = helper.alternate(projectsDesc[0].images, projectsDesc[0].textes);
 
