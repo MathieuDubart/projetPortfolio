@@ -6,7 +6,7 @@
 
 body{
     font-family:  Helvetica, sans-serif;
-		background-image: url("https://drive.google.com/uc?export=view&id=10tCDqJmhiakPj8jCXg3322jQh141JqCw");
+		background-image: url("https://www.dropbox.com/s/k2n9ae71d6fpiy7/background.png?raw=1");
 		background-repeat: repeat-y;
 		background-position: center;
     /* overflow-x: hidden; */
@@ -21,10 +21,11 @@ body{
     height: fit-content;
     border: 1px solid red;
 
-  }
-  #titles h1{
+}
+
+#titles h1{
     font-weight: bold;
-  }
+}
 
 .logo img {
     width: 60px;
