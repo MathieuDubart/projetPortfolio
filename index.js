@@ -14,8 +14,8 @@ const app = express();
 
 //################### SETTING SERVER ####################//
 app.use(cors());
+app.use(express.static(__dirname + '/public'));
 
-app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.listen(port, () => {
   console.log("Server is running on : http://localhost:" + port + "/'insert-username'" );

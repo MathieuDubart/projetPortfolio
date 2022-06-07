@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/homeHead'); %>
+    <%- include('../partials/heads/homeHead'); %>
 </head>
-<body class="container col sm-12">
+<body class="container">
 
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('../partials/layout/header'); %>
     </header>
 
     <main>
@@ -24,61 +24,8 @@
         </div>
     </main>
 
+    <!-- <footer class="footer col sm-12">
+        <%# include('../partials/layout/footer'); %>
+    </footer> -->
 </body>
-<style>
-    *{
-        margin:0;
-        padding:0;
-    }
-
-    body, html{
-        height:100%;
-    }
-
-    #personnalLogo{
-        width:25em;
-        height:25em;
-        margin-top:5%;
-        margin-left:50%;
-        margin-right:20em;
-    }
-
-    #imgHome{
-        height: 100%;
-        width: 100%;
-    }
-
-    #personnalText{
-        width:65%;
-        margin-left:18%;
-        margin-top:1em;
-    }
-    #personnalText p{
-        font-family: "Roboto", sans-serif;
-        font-size:4em;
-    }
-    #personnalText span{
-        color:#3AA76F;
-    }
-    #diveButton{
-        background-color:black;
-        width:20em;
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
-        text-align: center;
-    }
-    #diveButton p{
-        color:white;
-        font-size:2em;
-        padding-top:20px;
-        padding-right:20px;
-        padding-left:20px;
-        padding-bottom:20px;
-        text-align:center;
-        font-family:"roboto", sans-serif;
-    }
-
-</style>
 </html>
