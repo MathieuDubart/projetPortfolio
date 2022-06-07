@@ -6,9 +6,10 @@
 
 body{
     font-family:  Helvetica, sans-serif;
-		background-image: url("https://www.dropbox.com/s/k2n9ae71d6fpiy7/background.png?raw=1");
-		background-repeat: repeat-y;
-		background-position: center;
+    background-image: var(--custom-background-image);
+    background-color: var(--custom-background-color);
+    background-repeat: var(--custom-background-repeat);
+    background-position: var(--custom-background-position);
     /* overflow-x: hidden; */
 }
 
@@ -19,7 +20,7 @@ body{
 #titles{
     width: 60%;
     height: fit-content;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 
 }
 
@@ -47,31 +48,6 @@ body{
     .burgerMenu img {
         width: 120px;
     }
-}
-
-#gallery{
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-grow: 1 1 20%; */
-    /* max-width: 1080px; */
-    border: 1px solid black;
-}
-
-#gallery img{
-    width: 20%;
-    height: auto;
-    display: block;
-    max-width: 100%;
-}
-
-.project_title{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
 }
 
 #scriptTester {

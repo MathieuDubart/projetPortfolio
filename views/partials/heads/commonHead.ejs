@@ -5,6 +5,16 @@
     :root {
         --custom-title-font: <%- parsed_setting_desc.font_name[0] %>;
         --custom-corps-font: <%- parsed_setting_desc.font_name[1] %>;
+
+        --custom-background-image: url('<%- parsed_setting_desc.background_image[0] %>');
+        --custom-background-repeat: <%- parsed_setting_desc.background_repeat %>;
+        --custom-background-position: <%- parsed_setting_desc.background_position %>;
+
+        --custom-background-color: <%- parsed_setting_desc.background_color %>;
+
+        --custom-primary-color: <%- parsed_setting_desc.colors[0] %>;
+        --custom-secondary-color: <%- parsed_setting_desc.colors[1] %>;
+        --custom-accent-color: <%- parsed_setting_desc.colors[2] %>;
     }
 </style>
 

@@ -9,8 +9,6 @@ const alternate = (array1, array2) =>{
   let bool = true;
   // on parcours les deux tableaux
   for (let i = 0; i < array1.length; i++){
-    console.log('array1', array1[i]);
-    console.log('array2', array2[i]);
     if(bool){
       // on ajoute les valeurs alternées dans le tableau newArray
       newArray.push(array2[i]);

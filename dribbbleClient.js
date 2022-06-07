@@ -59,13 +59,13 @@ class DribbbleClient {
         //parsing desc post
         let tagRemovedDesc = parser.removePTag(dribbbleSettingsDesc);
         let parsed_setting_desc = parser.parsingInfos(tagRemovedDesc);
-        parsed_setting_desc.background[0] = parser.removeAllTags(parsed_setting_desc.background[0], '');
-        // console.log(parsed_setting_desc);
+        parsed_setting_desc.background_image[0] = parser.removeAllTags(parsed_setting_desc.background_image[0], '');
+        console.log('parsed_setting_desc : ', parsed_setting_desc);
 
         //pushing projects desc in an array
         let projectsDesc = parser.removeAllFromShotsDesc(dribbbleResponse[1].data);
 
-        console.log('projectsDesc', projectsDesc);
+        // console.log('projectsDesc', projectsDesc);
 
         let projectGalleryArray = helper.alternate(projectsDesc[0].images, projectsDesc[0].textes);
 
