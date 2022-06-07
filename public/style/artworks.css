@@ -1,7 +1,6 @@
 /******************** Artworks *******************/
 
 #gallery{
-    width: 100%;
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
@@ -14,7 +13,6 @@
     width: 20%;
     height: auto;
     display: block;
-    max-width: 100%;
 }
 
 .project_title{
@@ -23,4 +21,30 @@
     justify-content: center;
     align-items: center;
     opacity: 1;
+}
+
+#gallery .galleryItem img{
+    max-width: 336px;
+    max-height: 336px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.titleItem{
+    width: 66%;
+    height: 100%;
+    align-self: center;
+    /* border: 1px solid pink; */
+}
+.titleItem h2 span{
+    padding: 0px 8px 4px 8px;
+    /* background-color: white; */
+}
+
+.tag{
+    width: fit-content;
+    height: 16px;
+    border: 1px solid black;
+    margin: 4px;
+    text-transform: uppercase;
 }

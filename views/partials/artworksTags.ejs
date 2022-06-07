@@ -1,0 +1,9 @@
+<div class="d-flex flex-row">
+    <% if(shotsInfos[i].tags.length >= 1){
+      shotsInfos[i].tags.forEach(tag => { %>
+        <div class="tag">
+          <%- tag %>
+        </div>
+      <% })
+    } %>
+  </div>

@@ -55,6 +55,7 @@ class Parser {
       return str.replace(/\[\[.*?\]\]/g, '');
   }
 
+  
   removeRel(str) {
     let url = str.replace(/rel=".*?">|<\/a>/g, '');
     //remove space after 'https://' (potential bug)

@@ -5,16 +5,20 @@
 </head>
 <body class="container">
 
+    <div class="d-flex justify-content-center align-items-center socialMedias">
+        <div class="d-flex flex-column socialsCotainer">
+            <%- include('../partials/socialMedia'); %>
+        </div>
+    </div>
+    
     <header>
         <%- include('../partials/layout/header'); %>
     </header>
 
+
     <main>
         <div id="personnalLogo">
             <img src="<%- parsed_bio.image_home[0] %>"  id="imgHome">
-        </div>
-        <div id="socialMedias">
-            <%- include('../partials/socialMedia'); %>
         </div>
         <div id="personnalText">
             <p> <%- parsed_bio.text_bio[0] %> <%- parsed_bio.text_bio[1] %></p>
