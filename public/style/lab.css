@@ -11,6 +11,10 @@
   object-fit: cover;
 }
 
+.mobile-numbers {
+  font-size: 7em;
+}
+
 @media screen and (max-width: 980px) {
 
 }

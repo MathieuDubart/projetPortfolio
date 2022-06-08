@@ -24,30 +24,35 @@
     <div class="row d-flex lab">
 
         <% let colBool = true;
-            parsed_lab_desc.images.forEach(el => {
-            if (colBool==true) { %>
-                <div class="col-sm-4 col-lg-3"></div>
-                <div class="col-sm-8 col-lg-3 d-flex justify-content-center align-items-center lab-img">
-                    <img src="<%- el %>">
-                </div>
-                    
+            let labLength = parsed_lab_desc.images.length;
+            for(j=0; j < labLength; j++) {
+                if (colBool==true) { %>
+                    <div class="col-sm-4 col-lg-3 d-flex justify-content-center align-items-center"> <p id="mobileNumbers<%-j%>" class="mobile-numbers d-none"> <% if(j<9) { %> 0<%-j+1%> <%} else {%> <%-j+1%> <%}%> </p></div>
+                    <div class="col-sm-8 col-lg-3 d-flex justify-content-center align-items-center lab-img">
+                        <img src="<%- parsed_lab_desc.images[j] %>">
+                    </div>
+                        
 
-            <% colBool = false;
-                } else {%>
-                <div class="col-sm-8 col-lg-3 d-flex justify-content-center align-items-center lab-img">
-                    <img src="<%- el %>">
-                </div>
-                <div class="col-sm-4 col-lg-3"></div>
-            <% colBool = true;
-            }
-        })%>
+                <% colBool = false;
+                    } else {%>
+                    <div class="col-sm-8 col-lg-3 d-flex justify-content-center align-items-center lab-img">
+                        <img src="<%- parsed_lab_desc.images[j] %>">
+                    </div>
+                    <div class="col-sm-4 col-lg-3 d-flex justify-content-center align-items-center"> <p id="mobileNumbers<%-j%>" class="mobile-numbers d-none"> <% if(j<9) { %> 0<%-j+1%> <%} else {%> <%-j+1%> <%}%> </p></div>
+                <% colBool = true;
+                }
+            } %>
     </div>
 
 
-
+    
     <!-- <footer class="footer col sm-12">
-        <%# include('../partials/footer'); %>
+    <%# include('../partials/footer'); %>
     </footer> -->
 
+    <script>
+        let numberPosts = <%= labLength %>;
+    </script>
+        <%- include ('../partials/bottom/bottomScripts'); %>
 </body>
 </html>
