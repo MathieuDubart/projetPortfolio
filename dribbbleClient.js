@@ -15,15 +15,12 @@ class DribbbleClient {
 
     #getApiTokenFor(username) {
       let upperUsername = username.toUpperCase();
-      // console.log(upperUsername);
       const accessToken = process.env[upperUsername];
       return accessToken;
     }
 
     getRequestForInformationAbout(username) {
-      // console.log(username);
       let accessToken = this.#getApiTokenFor(username);
-      // console.log(accessToken);
       return this.axios.get('/user', {
           params: { access_token: accessToken }
       });

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/heads/homeHead'); %>
+    <%- include('../partials/backgroundAndFonts') %>
+    <%- include('../partials/heads/labHead'); %>
+</head>
+<body class="container">
+    <header>
+        <%- include('../partials/layout/header'); %>
+    </header>
+
+    <div id="socialMedias">
+        <%- include('../partials/socialMedia'); %>
+    </div>
+
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            <h1><%- parsed_setting_desc.menu[1] %></h1>
+        </div>
+    </div>
+
+</body>
+</html>
