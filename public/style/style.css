@@ -36,7 +36,7 @@ body{
     font-weight: bold;
 }
 
-.logo img {
+.profilePicture img {
     width: 60px;
     border-radius: 60px;
     color: white;
@@ -52,7 +52,8 @@ body{
         height: 130px;
     }
 
-    .logo img {
+    .profilePicture img {
+
         width: 120px;
         color: white;
     }

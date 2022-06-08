@@ -1,37 +1,35 @@
 <!-- foreach on Gallery -->
+
 <% let bool=true;
-for (let i=0; i < shotsInfos.length-1; i++){
-  if (bool == true){ %>
-    <div class="col-6 d-flex flex-column justify-content-center align-items-center galleryItem titleItem">
-      <h2> <span><%- shotsInfos[i].title %></span></h2>
-      
-      <%- include('../partials/artworksTags', {i : i}); %>
-      
+  for (let i=0; i < shotsInfos.length-1; i++){ %>
+    <div class="gallery-items d-flex flex-row <% shotsInfos[i].tags.forEach(tag => { %><%- tag %> <% }) %>" data-id="<%- shotsInfos[i].id %>">
+      <% if (bool == true){ %>
+        <div class="order-1 col-6 d-flex flex-column justify-content-center align-items-center galleryItem titleItem">
+      <% }else{ %>
+        <div class="order-2 col-6 d-flex flex-column justify-content-center align-items-center galleryItem titleItem">
+      <% } %>
+        <h2> <span><%- shotsInfos[i].title %></span></h2>
+          
+          <%- include('../partials/artworksTags', {i : i}); %>
 
-    </div>
-
-    <div class="col-6 d-flex justify-content-center align-items-center galleryItem imgItem">
-      <img src="<%- shotsInfos[i].images.normal %>">
-    </div>
-    <% bool = false;
-  } else{ %>
-    <div class="col-6 d-flex justify-content-center align-items-center galleryItem imgItem">
-      <img src="<%- shotsInfos[i].images.normal %>">
-    </div>
-
-    <div class="col-6 d-flex flex-column justify-content-center align-items-center galleryItem titleItem">
-      <h2> <span><%- shotsInfos[i].title %> </span></h2>
-
-      <%- include('../partials/artworksTags', {i : i}); %>
-
-    </div>
-    <% bool = true;
-  }
-} %>
+        </div>
+      <% if (bool == true){ %>
+        <div class="order-2 col-6 d-flex justify-content-center align-items-center galleryItem imgItem">
+      <% }else{ %>
+        <div class="order-1 col-6 d-flex justify-content-center align-items-center galleryItem imgItem">
+      <% } %>
+          <img src="<%- shotsInfos[i].images.normal %>">
+        </div>
+      </div>
+      <% bool = !bool;} %>
+  <div id="no-item-message" class="no-item-message d-none justify-content-center align-itmes-center ">
+    <h5>Aucun projet n'est disponible pour le moment</h5>
+  </div>
+  
 
 
 <style>
-  .tag{
+.tag{
     width: fit-content;
     height: fit-content;
     background-color: var(--custom-accent-color);
@@ -40,4 +38,52 @@ for (let i=0; i < shotsInfos.length-1; i++){
     border-radius: 12px;
     text-transform: uppercase;
 }
+.no-item-message{
+  margin-top: 64px;
+}
 </style>
+
+
+<script>
+  const galleryItems = document.getElementsByClassName('gallery-items');
+  const noItemMessage = document.getElementById("no-item-message");
+
+  let url = window.location.href;
+  let filterFromUrl = url.split('#')[1];
+
+  function hideMessage(){
+    noItemMessage.classList.add('d-none');
+    noItemMessage.classList.remove('d-flex');
+  }
+  function showMessage(){
+    noItemMessage.classList.add('d-flex');
+    noItemMessage.classList.remove('d-none');
+  }
+
+
+  function filterItems(){
+  let hasMessage = true;
+  let array = [];
+  for(let i=0; i < galleryItems.length; i++){
+    if(galleryItems[i].classList.contains(filterFromUrl)){
+      array.push(galleryItems[i].dataset.id);
+      hasMessage = false
+    }else{
+      galleryItems[i].classList.add('d-none');
+    }
+    array.forEach( id => {
+      if (galleryItems[i].dataset.id == id){
+        console.log(galleryItems[i].classList);
+        galleryItems[i].classList.remove('d-none');
+      }
+    })
+  }
+  console.log(array);
+  if(hasMessage){
+    showMessage();
+  }else{
+    hideMessage();
+  }
+}
+
+</script>
