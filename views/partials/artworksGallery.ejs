@@ -1,7 +1,7 @@
 <!-- foreach on Gallery -->
 
 <% let bool=true;
-  for (let i=0; i < shotsInfos.length-1; i++){ %>
+  for (let i=0; i < shotsInfos.length-2; i++){ %>
     <div class="gallery-items d-flex flex-row <% shotsInfos[i].tags.forEach(tag => { %><%- tag %> <% }) %>" data-id="<%- shotsInfos[i].id %>">
       <% if (bool == true){ %>
         <div class="order-1 col-6 d-flex flex-column justify-content-center align-items-center galleryItem titleItem">

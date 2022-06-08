@@ -76,7 +76,7 @@ class Parser {
 
   removeAllFromShotsDesc(dribbbleResponse){
     let array = [];
-    for (let i=0; i < dribbbleResponse.length - 1; i++) {
+    for (let i=0; i < dribbbleResponse.length - 2; i++) {
       array.push(dribbbleResponse[i].description.removeLineBreak().decodeHTML());
     }
     console.log(array);
