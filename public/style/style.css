@@ -48,6 +48,10 @@ body{
 
 @media screen and (max-width:980px){
 
+    .header {
+        height: 130px;
+    }
+
     .logo img {
         width: 120px;
         color: white;
