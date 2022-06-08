@@ -1,13 +1,3 @@
-<!-- <ul class="nav nav-tabs">
-
-    <li class="active"><a data-toggle="tab" href="">TOUT</a></li>
-    <% parsed_setting_desc.filters.forEach(tab => { %>
-        <div style="margin-left: 4px;">
-            <li><a data-toggle="tab" href="#<%- tab %>"><%- tab.toUpperCase() %></a></li>
-        </div>
-    <% }) %>
-  </ul> -->
-
   <div class="filter-container">
     <div class="filters button-group js-radio-button-group device-type">
       
@@ -63,18 +53,4 @@
   }
 </style>
 
-<script>
-  buttons = document.getElementsByClassName("button");
-  for (let i=0; i < buttons.length; i++){
-    buttons[i].addEventListener("click", () => {
-      for (let k=0; k < buttons.length; k++){
-        buttons[k].classList.remove("is-checked");
-      }
-      buttons[i].classList.add("is-checked");
-
-      // filterFromUrl = window.location.href.split('#')[1];
-      filterFromUrl = buttons[i].dataset.value
-      filterItems()
-    })
-  }  
-</script>
+<%- include('./artworksFiltersScript.ejs'); %>

@@ -1,0 +1,15 @@
+<script>
+  buttons = document.getElementsByClassName("button");
+  for (let i=0; i < buttons.length; i++){
+    buttons[i].addEventListener("click", () => {
+      for (let k=0; k < buttons.length; k++){
+        buttons[k].classList.remove("is-checked");
+      }
+      buttons[i].classList.add("is-checked");
+
+      // filterFromUrl = window.location.href.split('#')[1];
+      filterFromUrl = buttons[i].dataset.value
+      filterItems()
+    })
+  }
+</script>
