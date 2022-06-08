@@ -1,0 +1,27 @@
+.lab {
+  border: 1px solid paleturquoise;
+  /* padding: 0 20%; */
+}
+
+.row {
+  border: 1px solid blue;
+}
+
+.lab-img {
+  margin-top: 40px;
+  object-fit: cover;
+  margin: 0 0 30px 0;
+  aspect-ratio: 1/1;
+}
+
+.lab-img img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 980px) {
+  .lab {
+    padding: 0 0;
+  }
+}

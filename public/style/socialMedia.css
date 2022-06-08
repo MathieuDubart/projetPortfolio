@@ -7,7 +7,7 @@
 }
 
 .socialsContainer {
-    height: fit-content;
+    height: 20%;
 }
 
 .socialMedias a{
@@ -17,8 +17,8 @@
 }
 
 #instagramIcon, #linkedInIcon, #dribbbleIcon{
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
 }
 
 @media screen and (max-width:980px) {
