@@ -13,9 +13,9 @@ body{
     /* overflow-x: hidden; */
 }
 
-.container {
+/* .container {
     border: 1px cyan solid;
-}
+} */
 
 body{
     padding-top:50px;
@@ -32,7 +32,7 @@ body{
     font-weight: bold;
 }
 
-.logo img {
+.profilePicture img {
     width: 60px;
     border-radius: 60px;
     color: white;
@@ -44,7 +44,7 @@ body{
 
 @media screen and (max-width:980px){
 
-    .logo img {
+    .profilePicture img {
         width: 120px;
         color: white;
     }
