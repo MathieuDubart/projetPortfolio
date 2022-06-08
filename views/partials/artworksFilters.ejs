@@ -1,4 +1,4 @@
-<ul class="nav nav-tabs">
+<!-- <ul class="nav nav-tabs">
 
     <li class="active"><a data-toggle="tab" href="">TOUT</a></li>
     <% parsed_setting_desc.filters.forEach(tab => { %>
@@ -6,23 +6,76 @@
             <li><a data-toggle="tab" href="#<%- tab %>"><%- tab.toUpperCase() %></a></li>
         </div>
     <% }) %>
-  </ul>
-<!-- 
-  <div class="tab-content">
-    <div id="3d" class="tab-pane fade in active">
-      <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </ul> -->
+
+  <div class="filter-container">
+    <div class="filters button-group js-radio-button-group device-type">
+      
+        <a href="">
+          <button class="button is-checked">All</button>
+        </a>
+      </button>
+      <% parsed_setting_desc.filters.forEach(tab => { %>
+        <div style="margin-left: 4px;">
+            <button class="button" data-value="<%- tab %>"><%- tab.toUpperCase() %></button>
+        </div>
+      <% }) %>
+
     </div>
-    <div id="menu1" class="tab-pane fade">
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3>Menu 2</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
-    <div id="menu3" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-    </div>
-  </div> -->
+  </div>
+
+<style>
+  .filter-container{
+    margin-bottom: 64px;
+  }
+  .filters {
+    margin-top: 40px;
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filters button {
+    padding: 10px 25px;
+    margin: 0px 5px;
+    background-color: #121212;
+    border: none;
+    border-radius: 10px;
+    transition: 150ms;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 700;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+  }
+  .filters button a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .filters button.is-checked {
+    background-color: whitesmoke;
+    color: #121212;
+  }
+  .filters button.is-checked a {
+    color: inherit;
+  }
+</style>
+
+<script>
+  buttons = document.getElementsByClassName("button");
+  for (let i=0; i < buttons.length; i++){
+    buttons[i].addEventListener("click", () => {
+      for (let k=0; k < buttons.length; k++){
+        buttons[k].classList.remove("is-checked");
+      }
+      buttons[i].classList.add("is-checked");
+
+      // filterFromUrl = window.location.href.split('#')[1];
+      filterFromUrl = buttons[i].dataset.value
+      console.log(filterFromUrl);
+      filterItems()
+    })
+  }  
+</script>

@@ -1,37 +1,45 @@
 <!-- foreach on Gallery -->
-<% let bool=true;
-for (let i=0; i < shotsInfos.length-1; i++){
-  if (bool == true){ %>
-    <div class="col-6 d-flex flex-column justify-content-center align-items-center galleryItem titleItem">
-      <h2> <span><%- shotsInfos[i].title %></span></h2>
-      
-      <%- include('../partials/artworksTags', {i : i}); %>
-      
+  <% let bool=true;
+  for (let i=0; i < shotsInfos.length-1; i++){
+    if (bool == true){ %>
+      <div class="gallery-items d-flex flex-row <% shotsInfos[i].tags.forEach(tag => { %><%- tag %> <% }) %>">
+        <div class="col-6 d-flex flex-column justify-content-center align-items-center galleryItem titleItem">
+          <h2> <span><%- shotsInfos[i].title %></span></h2>
+          
+          <%- include('../partials/artworksTags', {i : i}); %>
+          
+          
+        </div>
+        
+        <div class="col-6 d-flex justify-content-center align-items-center galleryItem imgItem">
+          <img src="<%- shotsInfos[i].images.normal %>">
+        </div>
+      </div>
+      <% bool = false;
+    } else{ %>
+      <div class="gallery-items d-flex flex-row <% shotsInfos[i].tags.forEach(tag => { %><%- tag %> <% }) %>">
+        <div class="col-6 d-flex justify-content-center align-items-center galleryItem imgItem">
+          <img src="<%- shotsInfos[i].images.normal %>">
+        </div>
 
-    </div>
+        <div class="col-6 d-flex flex-column justify-content-center align-items-center galleryItem titleItem">
+          <h2> <span><%- shotsInfos[i].title %> </span></h2>
 
-    <div class="col-6 d-flex justify-content-center align-items-center galleryItem imgItem">
-      <img src="<%- shotsInfos[i].images.normal %>">
-    </div>
-    <% bool = false;
-  } else{ %>
-    <div class="col-6 d-flex justify-content-center align-items-center galleryItem imgItem">
-      <img src="<%- shotsInfos[i].images.normal %>">
-    </div>
+          <%- include('../partials/artworksTags', {i : i}); %>
 
-    <div class="col-6 d-flex flex-column justify-content-center align-items-center galleryItem titleItem">
-      <h2> <span><%- shotsInfos[i].title %> </span></h2>
-
-      <%- include('../partials/artworksTags', {i : i}); %>
-
-    </div>
-    <% bool = true;
-  }
-} %>
+        </div>
+      </div>
+      <% bool = true;
+    }
+  } %>
+  <div id="no-item-message" class="no-item-message d-none justify-content-center align-itmes-center ">
+    <h5>Aucun projet n'est disponible pour le moment</h5>
+  </div>
+  
 
 
 <style>
-  .tag{
+.tag{
     width: fit-content;
     height: fit-content;
     background-color: var(--custom-accent-color);
@@ -40,4 +48,50 @@ for (let i=0; i < shotsInfos.length-1; i++){
     border-radius: 12px;
     text-transform: uppercase;
 }
+.no-item-message{
+  margin-top: 64px;
+}
 </style>
+
+
+<script>
+  const galleryItems = document.getElementsByClassName('gallery-items');
+  const noItemMessage = document.getElementById("no-item-message");
+
+  let url = window.location.href;
+  let filterFromUrl = url.split('#')[1];
+  console.log(filterFromUrl);
+
+  function hideMessage(){
+    noItemMessage.classList.add('d-none');
+    noItemMessage.classList.remove('d-flex');
+  }
+  function showMessage(){
+    noItemMessage.classList.add('d-flex');
+    noItemMessage.classList.remove('d-none');
+  }
+
+
+  function filterItems(){
+  console.log("in function");
+  let hasMessage = true;
+  for(let i=0; i < galleryItems.length; i++){
+    if(galleryItems[i].classList.contains(filterFromUrl)){
+      for(let k=0; k < galleryItems.length; k++){
+        galleryItems[k].classList.add('d-none');
+      }
+      galleryItems[i].classList.remove('d-none');
+      hasMessage = false
+    }else{
+      console.log("else")
+      galleryItems[i].classList.add('d-none');
+    }
+  }
+  if(hasMessage){
+    showMessage();
+  }else{
+    hideMessage();
+  }
+}
+
+</script>
