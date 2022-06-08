@@ -21,6 +21,10 @@ body{
     padding-top:50px;
 }
 
+.header {
+    height: 65px;
+}
+
 #titles{
     width: 60%;
     height: fit-content;
@@ -44,7 +48,12 @@ body{
 
 @media screen and (max-width:980px){
 
+    .header {
+        height: 130px;
+    }
+
     .profilePicture img {
+
         width: 120px;
         color: white;
     }

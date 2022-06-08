@@ -1,26 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/homeHead'); %>
+    <%- include('../partials/heads/homeHead'); %>
+    <%- include('../partials/backgroundAndFonts') %>
+    <%- include('../partials/heads/labHead'); %>
 </head>
-<body class="container col sm-12">
+<body class="container">
 
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('../partials/layout/header'); %>
     </header>
     <div id="socialMedias">
         <%- include('../partials/socialMedia'); %>
     </div>
-    <div> <h1>je suis la page labs</h1> </div>
 
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
+            <h1><%- parsed_setting_desc.menu[1] %></h1>
+        </div>
+    </div>
+    
+    <div class="row d-flex lab">
 
+        <% let colBool = true;
+            parsed_lab_desc.images.forEach(el => {
+            if (colBool==true) { %>
+                <div class="col-sm-4 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-3 d-flex justify-content-center align-items-center lab-img">
+                    <img src="<%- el %>">
+                </div>
+                    
 
-
-
-
+            <% colBool = false;
+                } else {%>
+                <div class="col-sm-8 col-lg-3 d-flex justify-content-center align-items-center lab-img">
+                    <img src="<%- el %>">
+                </div>
+                <div class="col-sm-4 col-lg-3"></div>
+            <% colBool = true;
+            }
+        })%>
+    </div>
 
 
 
     <!-- <footer class="footer col sm-12">
         <%# include('../partials/footer'); %>
     </footer> -->
+
+</body>
+</html>

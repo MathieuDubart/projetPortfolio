@@ -46,6 +46,7 @@ class DribbbleClient {
 
         let userInfoResponse = dribbbleResponse[0].data.bio.removeLineBreak().decodeHTML()
         let dribbbleSettingsDesc = dribbbleResponse[1].data[dribbbleResponse[1].data.length - 1].description.removeLineBreak().decodeHTML()
+        let dribbbleLabDesc = dribbbleResponse[1].data[dribbbleResponse[1].data.length - 2].description.removeLineBreak().decodeHTML()
         // console.log("dribbbleSettingsDesc: " + dribbbleSettingsDesc);
 
         //parsing bio
@@ -61,7 +62,16 @@ class DribbbleClient {
         let bracketsRemovedDesv = parser.removeBrackets(tagRemovedDesc);
         let parsed_setting_desc = parser.parsingInfos(bracketsRemovedDesv);
         parsed_setting_desc.background_image[0] = parser.removeAllTags(parsed_setting_desc.background_image[0], '');
-        console.log('parsed_setting_desc : ', parsed_setting_desc);
+        console.log('SETTINGS DECRIPTION : ', parsed_setting_desc);
+
+        //parsing lab post
+        let tagRemovedLab = parser.removePTag(dribbbleLabDesc);
+        let bracketsRemovedLab = parser.removeBrackets(tagRemovedLab);
+        let parsed_lab_desc = parser.parsingInfos(bracketsRemovedLab);
+        parsed_lab_desc.images = parser.removeAllTagsFromArray(parsed_lab_desc.images, '');
+        console.log('LE LAB OEOEOE: ', parsed_lab_desc);
+
+        
 
         //pushing projects desc in an array
         let projectsDesc = parser.removeAllFromShotsDesc(dribbbleResponse[1].data);
@@ -79,6 +89,7 @@ class DribbbleClient {
                   parsed_setting_desc: parsed_setting_desc,
                   projectsDesc: projectsDesc,
                   projectGalleryArray: projectGalleryArray,
+                  parsed_lab_desc: parsed_lab_desc,
                   helper: helper
                 });
       }));
