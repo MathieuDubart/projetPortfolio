@@ -10,11 +10,13 @@ body{
     background-color: var(--custom-background-color);
     background-repeat: var(--custom-background-repeat);
     background-position: var(--custom-background-position);
+    padding-top:50px;
+    min-height: 100vh!important;
     /* overflow-x: hidden; */
 }
 
-body{
-    padding-top:50px;
+p{
+    font-family: var(--custom-corps-font);
 }
 
 .header {
@@ -44,13 +46,12 @@ body{
 
 
 .footer {
-    width: 100%;
+    width: 100vw;
     height: 50px;
-    position:absolute;
+    position:relative;
+    margin-left: calc(-50vw + 50%);
     background-color: #000;
     color: #fff;
-    left: 0;
-    bottom: -22px;
 }
 
 .infos-container {
@@ -68,6 +69,7 @@ body{
 
 .legalMentions p, .credits p{
     margin-bottom: 0;
+    color: #fff;
 }
 
 
