@@ -13,8 +13,10 @@
 
 .mobile-numbers {
   font-size: 7em;
+  display: none;
 }
-
 @media screen and (max-width: 980px) {
-
+  .mobile-numbers {
+      display: block;
+  }
 }

@@ -1,0 +1,6 @@
+.aboutInfos-container{
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    border: 1px solid green;
+}
