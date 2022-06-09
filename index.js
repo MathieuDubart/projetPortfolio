@@ -130,7 +130,7 @@ app.get('/:name/about-me', (request, response)=>{
       dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
     }else{
       const callback = (dribbbleResponse) => {
-        response.render('pages/labs.ejs', dribbbleResponse);
+        response.render('pages/lab.ejs', dribbbleResponse);
       }
       dribbbleClient.fetchApiResponse([requestUser, requestShots], callback);
     }

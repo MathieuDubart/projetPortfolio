@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/homeHead'); %>
+    <%- include('../partials/heads/aboutMeHead'); %>
 </head>
 <body class="container col sm-12">
-
+    
+    <%- include('../partials/socialMedia'); %>
+    
     <header>
-        <%- include('../partials/header'); %>
+        <%- include('../partials/layout/header'); %>
     </header>
 
-    <div id="socialMedias">
-        <%- include('../partials/socialMedia'); %>
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-xxl-12 d-flex justify-content-start" id="titles"> 
+            <h1><%- parsed_setting_desc.menu[3] %></h1>
+        </div>
     </div>
 
-    <div> <h1>je suis la page about me</h1> </div>
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-xxl-10 d-flex justify-content-center">
+            <div class="row d-flex justify-content-center align-items-center">
+                <%- include('../partials/aboutMe/aboutMeInfos'); %>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
 
-
-
-
-
-
-
-
-
-    <!-- <footer class="footer col sm-12">
-        <%# include('../partials/footer'); %>
-    </footer> -->
+<!-- <footer class="footer col sm-12">
+    <%# include('../partials/footer'); %>
+</footer> -->

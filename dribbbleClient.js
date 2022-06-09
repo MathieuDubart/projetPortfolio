@@ -44,6 +44,7 @@ class DribbbleClient {
         let userInfoResponse = dribbbleResponse[0].data.bio.removeLineBreak().decodeHTML()
         let dribbbleSettingsDesc = dribbbleResponse[1].data[dribbbleResponse[1].data.length - 1].description.removeLineBreak().decodeHTML()
         let dribbbleLabDesc = dribbbleResponse[1].data[dribbbleResponse[1].data.length - 2].description.removeLineBreak().decodeHTML()
+        let dribbbleAboutDesc = dribbbleResponse[1].data[dribbbleResponse[1].data.length - 3].description.removeLineBreak().decodeHTML()
         // console.log("dribbbleSettingsDesc: " + dribbbleSettingsDesc);
 
         //parsing bio
@@ -68,6 +69,13 @@ class DribbbleClient {
         parsed_lab_desc.images = parser.removeAllTagsFromArray(parsed_lab_desc.images, '');
         console.log('LE LAB OEOEOE: ', parsed_lab_desc);
 
+        //parsing about post
+        let tagRemovedAbout = parser.removePTag(dribbbleAboutDesc);
+        let bracketsRemovedAbout = parser.removeBrackets(tagRemovedAbout);
+        let parsed_about_desc = parser.parsingInfos(bracketsRemovedAbout);
+        parsed_about_desc.images = parser.removeAllTagsFromArray(parsed_about_desc.images, '');
+        console.log('ABOUT: ', parsed_about_desc);
+
         
 
         //pushing projects desc in an array
@@ -87,6 +95,7 @@ class DribbbleClient {
                   projectsDesc: projectsDesc,
                   projectGalleryArray: projectGalleryArray,
                   parsed_lab_desc: parsed_lab_desc,
+                  parsed_about_desc: parsed_about_desc,
                   helper: helper
                 });
       }));
