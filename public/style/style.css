@@ -45,11 +45,16 @@ p{
     color: white;
 }
 
+.burgerMenu {
+    cursor: pointer;
+}
+
 .burgerMenu img {
     width: 60px;
 }
 
 .navmenu {
+    display: none;
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -63,6 +68,7 @@ p{
 }
 
 .active-menu {
+    display: block;
     transition: 0.5s ease-in-out;
     background-color: var(--custom-background-color);
 }
