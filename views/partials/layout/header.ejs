@@ -20,5 +20,13 @@
                 <a><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-close-512.png"></a>
             </div>
         </div>
+        <div class="row d-flex justify-content-center align-items-center">
+            <% for(i=0;i<parsed_setting_desc.menu.length; i++) { %>
+                <div class="col-md-2"></div>
+                <div class="col-md-10 links-container">
+                    <a href="<%- parsed_setting_desc.menu_link[i] %>" class="menu-links"> <%- parsed_setting_desc.menu[i] %></a>
+                </div>
+            <% } %>
+        </div>
     </div>
 </div> 
