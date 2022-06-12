@@ -20,6 +20,11 @@ body{
     /* overflow-x: hidden; */
 }
 
+.no-scroll{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 p{
     font-family: var(--custom-corps-font);
 }
@@ -61,6 +66,7 @@ p{
     top: 0;
     left: 0;
     transition: 0.5s ease-in-out;
+    z-index: 100;
 } 
 
 .navmenu .container {
