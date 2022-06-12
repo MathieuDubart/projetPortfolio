@@ -41,13 +41,13 @@
 }
 
 #QRcode{
-    margin-top:-500px;
-    margin-right:10%;
-    float:right;
+    position: absolute;
+    right: 250px;
+    top: 400px;
 }
 
 #QRcode img{
-    width:25em;
+    width:20em;
 }
 
 .wantMoreIcons p{

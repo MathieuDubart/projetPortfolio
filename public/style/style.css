@@ -14,7 +14,9 @@ body{
     background-repeat: var(--custom-background-repeat);
     background-position: var(--custom-background-position);
     padding-top:50px;
-    min-height: 100vh!important;
+    display:grid;
+    grid-template-rows: auto 1fr auto; 
+    min-height:100vh;
     /* overflow-x: hidden; */
 }
 
@@ -55,6 +57,7 @@ p{
     margin-left: calc(-50vw + 50%);
     background-color: #000;
     color: #fff;
+    overflow: hidden;
 }
 
 .infos-container {
@@ -78,6 +81,9 @@ p{
 
 @media screen and (max-width:980px){
 
+    body{
+        display: block;
+    }
     .header {
         height: 130px;
     }

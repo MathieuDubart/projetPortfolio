@@ -4,14 +4,12 @@
     <%- include('../partials/heads/homeHead'); %>
     <%- include('../partials/heads/labHead'); %>
 </head>
-<body>
+<body class="container">
     <header>
         <%- include('../partials/layout/header'); %>
     </header>
 
-    <div id="socialMedias">
-        <%- include('../partials/socialMedia'); %>
-    </div>
+    <%- include('../partials/socialMedia'); %>
 
     <div class="row d-flex justify-content-center align-items-center">
         <div class="col-xxl-12 d-flex justify-content-start" id="titles"> 
@@ -33,7 +31,8 @@
             <img src="https://www.dropbox.com/s/r5gppj57r695clp/SWITCH.svg?raw=1" alt="gameboy" class="gameboy-img">
             <div class="game" id="game"><script id="gameScript" src="https://www.khanacademy.org/computer-programming/spin-off-of-tp-final-algo-nils/6464827390214144/embed.js?editor=no&buttons=no&author=no&embed=yes" ></script></div>
         </div>
-    </div>      
+    </div>
+    <div class="spacer"></div>
     <footer class="container-fluid d-flex justify-content-center align-tems-center footer">
         <%- include('../partials/layout/footer'); %>
     </footer>
@@ -84,6 +83,9 @@
 
 
 <style>
+    .spacer{
+        flex: 1;
+    }
     .game{
         width: 400px;
         height: 400px;
