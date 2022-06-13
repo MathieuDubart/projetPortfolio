@@ -15,8 +15,13 @@ class DribbbleClient {
 
     #getApiTokenFor(username) {
       let upperUsername = username.toUpperCase();
-      const accessToken = process.env[upperUsername];
-      return accessToken;
+      if(process.env[upperUsername]) {
+        const accessToken = process.env[upperUsername];
+        return accessToken;
+      } else {
+        const accessToken = process.env["MATHIEU"];
+        return accessToken;
+      }
     }
 
     getRequestForInformationAbout(username) {
