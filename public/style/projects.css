@@ -1,0 +1,14 @@
+.tags-container p {
+  padding: 0 0 0 16px;
+  font-size: 0.9em;
+  text-align: end;
+}
+
+.project-intro {
+  border: 1px solid #151515;
+}
+
+.cover-projet img {
+  width: 100%;
+  aspect-ratio: 3/2;
+}

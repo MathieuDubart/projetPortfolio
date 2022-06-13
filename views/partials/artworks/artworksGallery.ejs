@@ -8,17 +8,20 @@
       <% }else{ %>
         <div class="order-2 col-6 d-flex flex-column justify-content-center align-items-center galleryItem titleItem">
       <% } %>
-        <h2> <span><%- shotsInfos[i].title %></span></h2>
-          
+          <a href="project/<%- shotsInfos[i].id %>">
+            <h2> <span><%- shotsInfos[i].title %></span></h2>
+          </a>
+            
           <%- include('../artworks/artworksTags', {i : i}); %>
-
         </div>
       <% if (bool == true){ %>
         <div class="order-2 col-6 d-flex justify-content-center align-items-center galleryItem imgItem">
       <% }else{ %>
         <div class="order-1 col-6 d-flex justify-content-center align-items-center galleryItem imgItem">
       <% } %>
-          <img src="<%- shotsInfos[i].images.normal %>">
+          <a href="project/<%- shotsInfos[i].id %>">
+            <img src="<%- shotsInfos[i].images.normal %>">
+          </a>
         </div>
       </div>
       <% bool = !bool;} %>
