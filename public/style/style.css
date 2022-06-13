@@ -20,6 +20,11 @@ body{
     /* overflow-x: hidden; */
 }
 
+.no-scroll{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 p{
     font-family: var(--custom-corps-font);
 }
@@ -45,10 +50,32 @@ p{
     color: white;
 }
 
+.burgerMenu {
+    cursor: pointer;
+}
+
 .burgerMenu img {
     width: 60px;
 }
 
+.navmenu {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+} 
+
+.navmenu .container {
+    padding-top: 50px;
+}
+
+.active-menu {
+    display: block;
+    background-color: var(--custom-background-color);
+}
 
 .footer {
     width: 100vw;
@@ -78,6 +105,15 @@ p{
     color: #fff;
 }
 
+.links-container {
+    margin-top: 18px;
+}
+.menu-links {
+    text-decoration: none;
+    color: #000;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
 
 @media screen and (max-width:980px){
 

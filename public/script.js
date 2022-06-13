@@ -1,15 +1,8 @@
-console.log('Hello World');
+// ********************** burger menu **********************//
 
-['resize', 'load'].forEach( event => {
-    window.addEventListener(event, () => {
-        if(window.screen.width <= 980) {
-            for(i=0; i <= numberPosts; i++) {
-                document.getElementById("mobileNumbers"+i).classList.remove("d-none");
-            }
-        } else if(window.screen.width > 980) {
-            for(i=0; i <= numberPosts; i++) {
-                document.getElementById("mobileNumbers"+i).classList.add("d-none");
-            }
-        }
-    })
-});
+[document.getElementById('burgerMenu'), document.getElementById('closingMenu')].forEach((elm) => {
+    elm.addEventListener('click', function() {
+        document.getElementById('navmenu').classList.toggle('active-menu');
+        document.body.classList.toggle('no-scroll');
+    });
+})

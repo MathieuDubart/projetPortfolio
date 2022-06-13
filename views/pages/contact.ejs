@@ -14,7 +14,8 @@
     <div id="contactContainer">
         <div id="contactMe">
             <div class="contactTitles">
-                <h1>CONTACT ME</h1>
+                <h1> <%- parsed_setting_desc.menu[3] %> </h1>
+            </div>
             </div>
             <div id="socialMedia">
                 <%- include('../partials/contactSocialMedia')%>
@@ -35,8 +36,10 @@
     </div>
 
 
-        <footer class="container-fluid d-flex justify-content-center align-tems-center footer">
-            <%- include('../partials/layout/footer'); %>
-        </footer>
+    <footer class="container-fluid d-flex justify-content-center align-tems-center footer">
+        <%- include('../partials/layout/footer'); %>
+    </footer>
+
+    <script src="/script.js"></script>
 </body>
 </html>
