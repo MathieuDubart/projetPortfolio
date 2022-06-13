@@ -23,9 +23,14 @@ app.listen(port, () => {
 
 //################### HOME PAGE APP.GET ###################//
 
+
 app.get('/favicon.ico', (req,res)=>{
- console.log('favicon loaded');
+  console.log('favicon loaded');
 })
+
+app.get('/', function (req, res) {
+  res.redirect('/mathieu/home');
+});
 
 app.get('/:name', (request, response)=>{
   let username = request.params.name;
@@ -36,7 +41,6 @@ app.get('/:name/', (request, response)=>{
   let username = request.params.name;
   response.redirect('home');
 })
-
 
 app.get('/:name/home', (request, response)=>{
   let username = request.params.name;
@@ -178,5 +182,8 @@ app.get('/:name/about-me', (request, response)=>{
 
 })
 
+app.get('*', function(req, res){
+  res.send('what???', 404);
+});
 // current directory :
 // __dirname
