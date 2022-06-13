@@ -20,6 +20,31 @@ body{
     /* overflow-x: hidden; */
 }
 
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--custom-title-font);
+    color: var(--custom-title-color);
+}
+h1{
+    font-size: var(--custom-h1-size);
+    /* font-size: 3rem; */
+    margin-bottom: 4rem;
+}
+h2{
+    font-size: var(--custom-h2-size);
+}
+h3{
+    font-size: var(--custom-h3-size);
+}
+h4{
+    font-size: var(--custom-h4-size);
+}
+h5{
+    font-size: var(--custom-h5-size);
+}
+h6{
+    font-size: var(--custom-h6-size);
+}
+
 .no-scroll{
     overflow-x: hidden;
     overflow-y: hidden;
@@ -27,6 +52,7 @@ body{
 
 p{
     font-family: var(--custom-corps-font);
+    color: var( --custom-corps-color);
 }
 
 .header {
