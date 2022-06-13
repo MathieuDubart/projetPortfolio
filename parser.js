@@ -55,6 +55,9 @@ class Parser {
       return str.replace(/\[\[.*?\]\]/g, '');
   }
 
+  removeStrongTag(str){
+    return str.replace(/<strong>|<\/strong>/g, '');
+  }
   
   removeRel(str) {
     let url = str.replace(/rel=".*?">|<\/a>/g, '');
@@ -63,8 +66,9 @@ class Parser {
   }
 
   removeAllTags(str, separator){
-    return this.removeRel(this.removeHref(this.removeATag(this.removeBrackets(str), separator)));
+    return this.removeRel(this.removeStrongTag(this.removeHref(this.removeATag(this.removeBrackets(str), separator))));
   }
+
 
   removeAllTagsFromArray (array, separator){
     let array_cleaned = [];

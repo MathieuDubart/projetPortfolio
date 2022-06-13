@@ -56,7 +56,7 @@ class DribbbleClient {
 
 
         //parsing desc post
-        let tagRemovedDesc = parser.removePTag(dribbbleSettingsDesc);
+        let tagRemovedDesc = parser.removePTag(parser.removeStrongTag(dribbbleSettingsDesc));
         let bracketsRemovedDesv = parser.removeBrackets(tagRemovedDesc);
         let parsed_setting_desc = parser.parsingInfos(bracketsRemovedDesv);
         parsed_setting_desc.background_image[0] = parser.removeAllTags(parsed_setting_desc.background_image[0], '');
