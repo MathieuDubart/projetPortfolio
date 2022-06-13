@@ -182,8 +182,9 @@ app.get('/:name/about-me', (request, response)=>{
 
 })
 
-app.get('*', function(req, res){
-  res.send('what???', 404);
-});
+app.get('/', (req, res) => {
+  throw new Error('BROKEN') // Express will catch this on its own.
+})
+
 // current directory :
 // __dirname
