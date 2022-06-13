@@ -20,16 +20,16 @@
 
       <div class="row d-flex justify-content-center align-items-center project-intro">
 
-        <div class="col-md-3 d-flex justify-content-end align-items-center">
-          <% for (i=0; i < shotsInfos.length; i++) { 
-              if (shotsInfos[i].id == shotsInfos.shotId) { %>
-                <h1> <% if(i<10) { %>0<% } %><%- i+1 %> </h1>
-                <%
-              }
-            } %>
-        </div>
+        <div class="col-md-2 d-flex justify-content-end align-items-start"></div>
 
-        <div class="col-md-5 d-flex justify-content-start align-items-center">
+        <div class="col-md-6 d-flex justify-content-start align-items-center">
+          <% for (i=0; i < shotsInfos.length; i++) { 
+            if (shotsInfos[i].id == shotsInfos.shotId) { %>
+              <h1> <% if(i<10) { %>0<%}%><%-i+1%>. &nbsp;</h1>
+              <%
+            }
+          } %>
+
           <% shotsInfos.forEach(project => {
             if (project.id == shotsInfos.shotId) { %>
               <h1><%- project.title %></h1>
@@ -61,22 +61,65 @@
     
     <div class="row">
       <div class="col-2"></div>
-      <div class="col-8 cover-projet"><img src="<%= currentProject.images.hidpi %>" alt="<%= currentProject.title %>" class="img-fluid"> </div>
+      <div class="col-8 cover-projet"><img src="<%= currentProject.images.normal %>" alt="<%= currentProject.title %>" class="img-fluid"> </div>
       <div class="col-2"></div>
     </div>
     
 <!-- ########################## DESCRIPTION PROJECT (SOUS FORME DE GALLERY) ########################## -->
 
     <div class="row">
-      <div class="col-12">
+      <div class="col-2"></div>
+      <div class="col-8">
         <h2>Brief</h2>
       </div>
+      <div class="col-2"></div>
     </div>
     <div class="row">
-      <div class="col-12">
+      <div class="col-2"></div>
+      <div class="col-8">
         <p><%- project_brief %></p>
-      </div>    
+      </div>
+      <div class="col-2"></div>
     </div>
+
+    <% var imgIsFirst = false; %>
+    <div class="row">
+      <% project_gallery_array.forEach(item => {
+        if (helper.isImg(item) == false){
+          if (imgIsFirst) { %>
+            <div class="col-4 d-flex justify-content-center align-items-center">
+              <p class="textProject"> <%- item %> </p>
+            </div>
+            <div class="col-2"></div>
+            <% imgIsFirst = false;
+          } else { %>
+            <div class="col-2"></div>
+            <div class="col-4 d-flex justify-content-center align-items-center">
+              <p class="textProject"> <%- item %> </p>
+              </div>
+              <% imgIsFirst = true;
+          } %>
+
+        <% } else { %>
+          
+          <% if(imgIsFirst) { %>
+            <div class="col-4 d-flex align-items-end justify-content-end">
+              <img src="<%- item %>" class="imgContentProjet">
+            </div>        
+            <div class="col-2"></div>
+            <% imgIsFirst = false;
+          } else { %>
+            <div class="col-2"></div>         
+            <div class="col-4 d-flex align-items-start justify-content-start">
+              <img src="<%- item %>" class="imgContentProjet">
+            </div>
+            <% imgIsFirst = true;
+          }
+        }
+      }) %>
+        
+    </div>
+
         <!-- <div id="galleryContainer">
           <%# project_gallery_array.forEach(item => {
             if (helper.isImg(item) == false){ %>

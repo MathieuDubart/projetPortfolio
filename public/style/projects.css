@@ -4,11 +4,18 @@
   text-align: end;
 }
 
-.project-intro {
-  border: 1px solid #151515;
-}
-
 .cover-projet img {
   width: 100%;
   aspect-ratio: 3/2;
+}
+
+.imgProjet {
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+
+.imgContentProjet{
+  width: 75%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
