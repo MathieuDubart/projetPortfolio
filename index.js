@@ -24,9 +24,7 @@ app.listen(port, () => {
 //################### HOME PAGE APP.GET ###################//
 
 
-app.get('/favicon.ico', (req,res)=>{
-  console.log('favicon loaded');
-})
+app.get('/favicon.ico', (req,res)=>{})
 
 app.get('/', function (req, res) {
   res.redirect('/mathieu/home');

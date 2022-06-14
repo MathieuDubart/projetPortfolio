@@ -7,9 +7,9 @@
       }
       buttons[i].classList.add("is-checked");
 
-      // filterFromUrl = window.location.href.split('#')[1];
       filterFromUrl = buttons[i].dataset.value
-      filterItems()
+      console.log( "filterFromUrl", filterFromUrl);
+      filterItems(filterFromUrl);
     })
   }
 </script>

@@ -23,16 +23,16 @@
         <div class="col-md-2 d-flex justify-content-end align-items-start"></div>
 
         <div class="col-md-6 d-flex justify-content-start align-items-center">
-          <% for (i=0; i < shotsInfos.length; i++) { 
+          <!-- <%# for (i=0; i < shotsInfos.length; i++) { 
             if (shotsInfos[i].id == shotsInfos.shotId) { %>
-              <h1> <% if(i<10) { %>0<%}%><%-i+1%>. &nbsp;</h1>
-              <%
+              <h1> <%# if(i<10) { %>0<%#}%><%#-i+1%>. &nbsp;</h1>
+              <%#
             }
-          } %>
+          } %> -->
 
           <% shotsInfos.forEach(project => {
             if (project.id == shotsInfos.shotId) { %>
-              <h1><%- project.title %></h1>
+              <h1><%-project.title %><%console.log(project.title)%></h1>
               <% currentProject = project;
             }
           }) %>
@@ -61,7 +61,7 @@
     
     <div class="row">
       <div class="col-2"></div>
-      <div class="col-8 cover-projet"><img src="<%= currentProject.images.normal %>" alt="<%= currentProject.title %>" class="img-fluid"> </div>
+      <div class="col-8 cover-projet"><img src="<%= currentProject.images.hidpi ? currentProject.images.hidpi : currentProject.images.normal %>" alt="<%= currentProject.title %>" class="img-fluid"> </div>
       <div class="col-2"></div>
     </div>
     
@@ -120,29 +120,6 @@
         
     </div>
 
-        <!-- <div id="galleryContainer">
-          <%# project_gallery_array.forEach(item => {
-            if (helper.isImg(item) == false){ %>
-              <p class="textProject"> <%# item %> </p>
-          <%# }else{ %>
-              <img src="<%# item %>" class="imgProjet">
-          <%# }
-          }) %>
-        </div>
-
-        <style>
-          #galleryContainer{
-            width: 100vw;
-            height: fit-content;
-            border: 1px solid red;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-          }
-        </style> -->
-
-<!-- ############################################ FOOTER ############################################ -->
     <footer class="container-fluid d-flex justify-content-center align-tems-center footer">
       <%- include('../partials/layout/footer'); %>
     </footer>

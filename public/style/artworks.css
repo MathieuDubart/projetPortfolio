@@ -1,12 +1,13 @@
 /******************** Artworks *******************/
-
+body{
+    grid-template-rows: 0fr 0fr 0fr 1fr; 
+}
 #gallery{
     height: fit-content;
     display: flex;
     flex-wrap: wrap;
     /* flex-grow: 1 1 20%; */
     /* max-width: 1080px; */
-    border: 1px solid black;
 }
 
 #gallery img{
@@ -40,12 +41,4 @@
 .titleItem h2 span{
     padding: 0px 8px 4px 8px;
     /* background-color: white; */
-}
-
-.tag{
-    width: fit-content;
-    height: 16px;
-    border: 1px solid black;
-    margin: 4px;
-    text-transform: uppercase;
 }
