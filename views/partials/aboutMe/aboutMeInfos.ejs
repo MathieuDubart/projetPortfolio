@@ -1,24 +1,24 @@
 <% isTextLeft = true;
     for(let i=0; i < parsed_about_desc.images.length; i++){ %>
             <% if(isTextLeft == true){ %>
-                <div class="col-6 d-flex flex-column justify-content-center align-items-start">
+                <div class="col-sm-4 col-xl-6 d-flex flex-column justify-content-center align-items-start">
                     <%- parsed_about_desc.textes[i] %>
                 </div>
 
                 <div class="col-2"></div>
                 
-                <div class="img-container col-4 d-flex flex-column justify-content-center align-items-center">
+                <div class="img-container col-4 col-xl-4 d-flex flex-column justify-content-center align-items-center">
                     <img src="<%- parsed_about_desc.images[i] %>">
                 </div>
                 <% isTextLeft = false;
             } else { %>
-                <div class="img-container col-4 d-flex flex-column justify-content-center align-items-center">
+                <div class="img-container col-4 col-xl-4 d-flex flex-column justify-content-center align-items-center">
                     <img src="<%- parsed_about_desc.images[i] %>">
                 </div>
 
                 <div class="col-2"></div>
                 
-                <div class="col-6 d-flex flex-column justify-content-center align-items-start">
+                <div class="col-4 col-xl-6 d-flex flex-column justify-content-center align-items-start">
                     <%- parsed_about_desc.textes[i] %>
                 </div>
                 <% isTextLeft = true; %>
