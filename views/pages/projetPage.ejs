@@ -10,7 +10,7 @@
 
     </head>
 
-    <body class="container">
+    <body class="container-lg">
       <header>
           <%- include('../partials//layout/header'); %>
       </header>
@@ -20,9 +20,9 @@
 
       <div class="row d-flex justify-content-center align-items-center project-intro">
 
-        <div class="col-md-2 d-flex justify-content-end align-items-start"></div>
+        <div class="col-md-1 col-lg-2 d-flex justify-content-end align-items-start"></div>
 
-        <div class="col-md-6 d-flex justify-content-start align-items-center">
+        <div class="col-md-7 col-lg-6 d-flex justify-content-start align-items-center">
           <!-- <%# for (i=0; i < shotsInfos.length; i++) { 
             if (shotsInfos[i].id == shotsInfos.shotId) { %>
               <h1> <%# if(i<10) { %>0<%#}%><%#-i+1%>. &nbsp;</h1>
@@ -40,7 +40,7 @@
 
         </div>
 
-        <div class="col-md-2 d-flex flex-column justify-content-center tags-project">
+        <div class="col-md-3 col-lg-2 d-flex flex-column justify-content-center tags-project">
           <div class="row">
             <div class="col-md-12 d-flex justify-content-end align-items-center project-date">
               <h6> <%- project_date %> </h6>
@@ -56,13 +56,13 @@
           </div>
         </div>
 
-        <div class="col-md-2 d-flex justify-content-end align-items-center"></div>
+        <div class="col-md-1 col-lg-2 d-flex justify-content-end align-items-center"></div>
       </div>
     
     <div class="row cover-row">
-      <div class="col-2"></div>
-      <div class="col-8 cover-projet"><img src="<%= currentProject.images.hidpi ? currentProject.images.hidpi : currentProject.images.normal %>" alt="<%= currentProject.title %>" class="img-fluid"> </div>
-      <div class="col-2"></div>
+      <div class="col-lg-2"></div>
+      <div class="col-md-12 col-lg-8 cover-projet"><img src="<%= currentProject.images.hidpi ? currentProject.images.hidpi : currentProject.images.normal %>" alt="<%= currentProject.title %>" class="img-fluid"> </div>
+      <div class="col-lg-2"></div>
     </div>
     
 <!-- ########################## DESCRIPTION PROJECT (SOUS FORME DE GALLERY) ########################## -->
