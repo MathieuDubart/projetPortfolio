@@ -1,3 +1,12 @@
+body {
+  background-image: var(--custom-background-image);
+  background-color: var(--custom-background-color);
+  background-repeat: var(--custom-background-repeat);
+  background-position: var(--custom-background-position);
+  background-attachment: var(--custom-background-attachment);
+  background-size: var(--custom-background-size);
+}
+
 .tags-container p {
   padding: 0 0 0 16px;
   color: var(--custom-title-color);
