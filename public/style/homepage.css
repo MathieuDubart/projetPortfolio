@@ -89,10 +89,10 @@
 
 @media screen and (max-width:980px) {
 	#personnalLogo {
-		width:25em;
-		height:25em;
-		margin-top: calc(60% - 25em/2);
-		margin-left:calc(50% - 25em/2);
+		width:30em;
+		height:30em;
+		margin-top: calc(65% - 30em/2);
+		margin-left:calc(50% - 30em/2);
 	}
 
 	#personnalText{
