@@ -28,7 +28,9 @@
   }
 
   .lab-title {
-    font-size: var(--custom-title-size);
+    font-size: var(--custom-h1-size);
+    font-weight: var(--custom-h1-weight);
+    color: var(--custom-h1-color);
   }
 
   .lab-img img{

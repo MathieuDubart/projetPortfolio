@@ -1,6 +1,5 @@
   <div class="filter-container">
-    <div class="filters button-group js-radio-button-group device-type">
-      
+    <div class="filters">
         <a href="">
           <button class="button is-checked">ALL</button>
         </a>
@@ -27,15 +26,19 @@
   }
   .filters button {
     padding: 10px 25px;
+<<<<<<< HEAD
+    margin: 0px 5px;
+    background-color: Transparent;
+=======
     margin: 5px 5px;
     background-color: #121212;
+>>>>>>> main
     border: none;
-    border-radius: 10px;
     transition: 150ms;
-    color: #ffffff;
-    font-size: 16px;
+    color: var(--custom-filter-button-inactive-color);
+    font-size: var(--custom-filter-button-size);
+    font-weight: var(--custom-filter-button-weight);
     line-height: 25px;
-    font-weight: 700;
     position: relative;
     outline: none;
     cursor: pointer;
@@ -45,8 +48,8 @@
     color: #fff;
   }
   .filters button.is-checked {
-    background-color: whitesmoke;
-    color: #121212;
+    background-color: Transparent;
+    color: var(--custom-filter-button-active-color);
   }
   .filters button.is-checked a {
     color: inherit;

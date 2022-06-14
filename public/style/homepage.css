@@ -22,17 +22,19 @@
 }
 
 #personnalText span{
-	color:var(--custom-accent-color);
-	font-weight: 700;
+	color:var(--custom-span-color);
+	font-weight: var(--custom-span-weight);
 }
 
 .span{
-	color:var(--custom-accent-color);
-	font-weight: 700;
+	color:var(--custom-span-color);
+	font-weight: var(--custom-span-weight);
 }
 
 #diveButton{
-	background-color:black;
+	background-color:var(--custom-button-container-bg-color);
+	border: var(--custom-button-container-border);
+	border-radius: var(--custom-button-container-border-radius);
 	width:230px;
 	height:64px;
 	margin-bottom: 64px;
@@ -45,12 +47,13 @@
 }
 
 #diveButton p{
-	color:white;
-	font-size:1.4em;
+	font-family:var(--custom-p-font);
+	color:var(--custom-button-typo-color);
+	font-size:var(--custom-button-typo-size);
+	font-weight: var(--custom-button-typo-weight);
 	height: 64px;
 	padding: 20px;
 	text-align:center;
-	font-family:"roboto", sans-serif;
 }
 
 @media screen and (max-width:1440px) and (max-height:900px) {
