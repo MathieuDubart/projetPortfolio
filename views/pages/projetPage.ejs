@@ -32,7 +32,7 @@
 
           <% shotsInfos.forEach(project => {
             if (project.id == shotsInfos.shotId) { %>
-              <h1><%-project.title %><%console.log(project.title)%></h1>
+              <h1><%-project.title %></h1>
               <% currentProject = project;
             }
           }) %>
@@ -59,7 +59,7 @@
         <div class="col-md-2 d-flex justify-content-end align-items-center"></div>
       </div>
     
-    <div class="row">
+    <div class="row cover-row">
       <div class="col-2"></div>
       <div class="col-8 cover-projet"><img src="<%= currentProject.images.hidpi ? currentProject.images.hidpi : currentProject.images.normal %>" alt="<%= currentProject.title %>" class="img-fluid"> </div>
       <div class="col-2"></div>
@@ -67,10 +67,10 @@
     
 <!-- ########################## DESCRIPTION PROJECT (SOUS FORME DE GALLERY) ########################## -->
 
-    <div class="row">
+    <div class="row brief-title">
       <div class="col-2"></div>
       <div class="col-8">
-        <h2>Brief</h2>
+        <h2>Brief:</h2>
       </div>
       <div class="col-2"></div>
     </div>
@@ -88,14 +88,14 @@
         if (helper.isImg(item) == false){
           if (imgIsFirst) { %>
             <div class="col-4 d-flex flex-column justify-content-center align-items-start">
-              <p class="textProject"> <%- item %> </p>
+              <p class="textProject"> <%- item %></p>
             </div>
             <div class="col-2"></div>
             <% imgIsFirst = false;
           } else { %>
             <div class="col-2"></div>
             <div class="col-4 d-flex flex-column justify-content-center align-items-start">
-              <p class="textProject"> <%- item %> </p>
+              <p class="textProject"> <%- item </p>
               </div>
               <% imgIsFirst = true;
           } %>

@@ -59,6 +59,10 @@ p{
     font-size: var(--custom-p-size);
 }
 
+span{
+    color: var( --custom-accent-color);
+}
+
 .header {
     height: 65px;
 }

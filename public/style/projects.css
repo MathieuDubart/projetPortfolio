@@ -7,6 +7,10 @@ body {
   background-size: var(--custom-background-size);
 }
 
+.project-intro {
+  margin-bottom: 16px;
+}
+
 .tags-container p {
   padding: 0 0 0 16px;
   color: var(--custom-title-color);
@@ -18,6 +22,10 @@ body {
 .cover-projet img {
   width: 100%;
   aspect-ratio: 3/2;
+}
+
+.cover-row {
+  margin-bottom:16px;
 }
 
 .imgProjet {
