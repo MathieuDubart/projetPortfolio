@@ -3,7 +3,7 @@
 <head>
     <%- include('../partials/heads/aboutMeHead'); %>
 </head>
-<body class="container col sm-12">
+<body class="container-lg">
     
     <%- include('../partials/socialMedia'); %>
     
@@ -16,9 +16,10 @@
             <h1><%- parsed_setting_desc.menu[3] %></h1>
         </div>
     </div>
-
     <div class="row d-flex justify-content-center align-items-center">
-        <%- include('../partials/aboutMe/aboutMeInfos'); %>
+        <!-- <div class="row col-8 d-flex justify-content-center"> -->
+            <%- include('../partials/aboutMe/aboutMeInfos'); %>
+        <!-- </div> -->
     </div>
 
     <footer class="container-fluid d-flex justify-content-center align-tems-center footer">

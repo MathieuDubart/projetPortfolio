@@ -89,25 +89,28 @@
 
 @media screen and (max-width:980px) {
 	#personnalLogo {
-		width:25em;
-		height:25em;
-		margin-top: calc(60% - 25em/2);
-		margin-left:calc(50% - 25em/2);
+		width:30em;
+		height:30em;
+		margin-top: calc(65% - 30em/2);
+		margin-left:calc(50% - 30em/2);
 	}
 
 	#personnalText{
 		text-align: center;
-		width: 100%;
-		margin-left: 0;
+		width: 70%;
+		margin-top: 2em;
+		margin-left: calc(50% - 35%);
 		margin-bottom: 64px;
 	}
 
 	#diveButton{
 		width:20em;
+		height: 96px;
 	}
 
 	#diveButton p{
 		font-size:2em;
+		height: 100%;
 		padding: 26px 20px;
 	}
 }
