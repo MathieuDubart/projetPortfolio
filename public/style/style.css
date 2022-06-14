@@ -55,12 +55,9 @@ p{
     background-color: var(--custom-background-color);
     font-family: var(--custom-p-font);
     font-size: var(--custom-p-size);
-<<<<<<< HEAD
     font-weight: var(--custom-p-weight);
     color: var( --custom-p-color);
-=======
     margin-bottom: 0;
->>>>>>> main
 }
 
 .bg-transparent{
