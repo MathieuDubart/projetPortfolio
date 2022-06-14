@@ -2,42 +2,131 @@
     <html lang="en">
     <head>
       <meta charset="utf-8">
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/style/projects.css">
         <link rel='preconnect' href='https://fonts.googleapis.com'>
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
         <!-- <script src="./index.js"></script> -->
-        <%- include('../partials/head/homeHead'); %>
+        <%- include('../partials/heads/homeHead'); %>
 
     </head>
 
-    <body>
+    <body class="container">
       <header>
-          <%- include('../partials/header'); %>
+          <%- include('../partials//layout/header'); %>
       </header>
 
-      <div id="socialMedias">
-        <%- include('../partials/socialMedia'); %>
-    </div>
+      <%- include('../partials/socialMedia'); %>
 <!-- ######################################### INTRO PROJECT ######################################### -->
 
-        <!-- <div id="IntroProjectContainer">
-          <div id="titleProject">
+      <div class="row d-flex justify-content-center align-items-center project-intro">
 
-          </div>
-          <div id="imageProjetMain">
-            <img src="<%# shotsInfos. %>"
-          </div>
-        </div> -->
+        <div class="col-md-2 d-flex justify-content-end align-items-start"></div>
 
+        <div class="col-md-6 d-flex justify-content-start align-items-center">
+          <% for (i=0; i < shotsInfos.length; i++) { 
+            if (shotsInfos[i].id == shotsInfos.shotId) { %>
+              <h1> <% if(i<10) { %>0<%}%><%-i+1%>. &nbsp;</h1>
+              <%
+            }
+          } %>
+
+          <% shotsInfos.forEach(project => {
+            if (project.id == shotsInfos.shotId) { %>
+              <h1><%- project.title %></h1>
+              <% currentProject = project;
+            }
+          }) %>
+          
+
+        </div>
+
+        <div class="col-md-2 d-flex flex-column justify-content-center tags-project">
+          <div class="row">
+            <div class="col-md-12 d-flex justify-content-end align-items-center project-date">
+              <h6> <%- project_date %> </h6>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 d-flex inline-flex justify-content-end align-items-center tags-container">
+              <% currentProject.tags.forEach(tag => { %>
+                <p><%- tag %></p>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 d-flex justify-content-end align-items-center"></div>
+      </div>
+    
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8 cover-projet"><img src="<%= currentProject.images.normal %>" alt="<%= currentProject.title %>" class="img-fluid"> </div>
+      <div class="col-2"></div>
+    </div>
+    
 <!-- ########################## DESCRIPTION PROJECT (SOUS FORME DE GALLERY) ########################## -->
 
-        <div id="galleryContainer">
-          <% projectGalleryArray.forEach(item => {
-            if (helper.isImg(item) == false){ %>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <h2>Brief</h2>
+      </div>
+      <div class="col-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <p><%- project_brief %></p>
+      </div>
+      <div class="col-2"></div>
+    </div>
+
+    <% var imgIsFirst = false; %>
+    <div class="row">
+      <% project_gallery_array.forEach(item => {
+        if (helper.isImg(item) == false){
+          if (imgIsFirst) { %>
+            <div class="col-4 d-flex justify-content-center align-items-center">
               <p class="textProject"> <%- item %> </p>
-          <% }else{ %>
-              <img src="<%- item %>" class="imgProjet">
-          <% }
+            </div>
+            <div class="col-2"></div>
+            <% imgIsFirst = false;
+          } else { %>
+            <div class="col-2"></div>
+            <div class="col-4 d-flex justify-content-center align-items-center">
+              <p class="textProject"> <%- item %> </p>
+              </div>
+              <% imgIsFirst = true;
+          } %>
+
+        <% } else { %>
+          
+          <% if(imgIsFirst) { %>
+            <div class="col-4 d-flex align-items-end justify-content-end">
+              <img src="<%- item %>" class="imgContentProjet">
+            </div>        
+            <div class="col-2"></div>
+            <% imgIsFirst = false;
+          } else { %>
+            <div class="col-2"></div>         
+            <div class="col-4 d-flex align-items-start justify-content-start">
+              <img src="<%- item %>" class="imgContentProjet">
+            </div>
+            <% imgIsFirst = true;
+          }
+        }
+      }) %>
+        
+    </div>
+
+        <!-- <div id="galleryContainer">
+          <%# project_gallery_array.forEach(item => {
+            if (helper.isImg(item) == false){ %>
+              <p class="textProject"> <%# item %> </p>
+          <%# }else{ %>
+              <img src="<%# item %>" class="imgProjet">
+          <%# }
           }) %>
         </div>
 
@@ -51,7 +140,7 @@
             justify-content: center;
             align-items: center;
           }
-        </style>
+        </style> -->
 
 <!-- ############################################ FOOTER ############################################ -->
     <footer class="container-fluid d-flex justify-content-center align-tems-center footer">

@@ -1,0 +1,21 @@
+.tags-container p {
+  padding: 0 0 0 16px;
+  font-size: 0.9em;
+  text-align: end;
+}
+
+.cover-projet img {
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+
+.imgProjet {
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+
+.imgContentProjet{
+  width: 75%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}

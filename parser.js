@@ -83,15 +83,15 @@ class Parser {
     for (let i=0; i < dribbbleResponse.length - 2; i++) {
       array.push(dribbbleResponse[i].description.removeLineBreak().decodeHTML());
     }
-    console.log(array);
+    //console.log(array);
 
     let projectsDesc = [];
     array.forEach(project => {
       let parsingPosts = this.parsingInfos(this.removePTag(this.removeBrackets(project)));
       parsingPosts.images = this.removeAllTagsFromArray(parsingPosts.images, '');
       projectsDesc.push(parsingPosts);
-      console.log("PROJET : ")
-      console.log(parsingPosts);
+      //console.log("PROJET : ")
+      //console.log(parsingPosts);
     })
     // console.log(projectsDesc);
 

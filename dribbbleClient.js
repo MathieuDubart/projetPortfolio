@@ -15,8 +15,13 @@ class DribbbleClient {
 
     #getApiTokenFor(username) {
       let upperUsername = username.toUpperCase();
-      const accessToken = process.env[upperUsername];
-      return accessToken;
+      if(process.env[upperUsername]) {
+        const accessToken = process.env[upperUsername];
+        return accessToken;
+      } else {
+        const accessToken = process.env["MATHIEU"];
+        return accessToken;
+      }
     }
 
     getRequestForInformationAbout(username) {
@@ -33,8 +38,11 @@ class DribbbleClient {
       });
     }
 
-    fetchApiResponse(requests, callback) { // request is an Array
+    fetchApiResponse(requests, callback, id) { // request is an Array
       this.axios.all(requests).then(this.axios.spread((...dribbbleResponse) => {
+
+        // console.log('DRIBBBLERESPONSE', id);
+
 
         const Parser = require ("./parser.js");
         const parser = new Parser();
@@ -60,30 +68,42 @@ class DribbbleClient {
         let bracketsRemovedDesv = parser.removeBrackets(tagRemovedDesc);
         let parsed_setting_desc = parser.parsingInfos(bracketsRemovedDesv);
         parsed_setting_desc.background_image[0] = parser.removeAllTags(parsed_setting_desc.background_image[0], '');
-        console.log('SETTINGS DECRIPTION : ', parsed_setting_desc);
+        // console.log('SETTINGS DECRIPTION : ', parsed_setting_desc);
 
         //parsing lab post
         let tagRemovedLab = parser.removePTag(dribbbleLabDesc);
         let bracketsRemovedLab = parser.removeBrackets(tagRemovedLab);
         let parsed_lab_desc = parser.parsingInfos(bracketsRemovedLab);
         parsed_lab_desc.images = parser.removeAllTagsFromArray(parsed_lab_desc.images, '');
-        console.log('LE LAB OEOEOE: ', parsed_lab_desc);
+        // console.log('LE LAB OEOEOE: ', parsed_lab_desc);
 
         //parsing about post
         let tagRemovedAbout = parser.removePTag(dribbbleAboutDesc);
         let bracketsRemovedAbout = parser.removeBrackets(tagRemovedAbout);
         let parsed_about_desc = parser.parsingInfos(bracketsRemovedAbout);
         parsed_about_desc.images = parser.removeAllTagsFromArray(parsed_about_desc.images, '');
-        console.log('ABOUT: ', parsed_about_desc);
+        // console.log('ABOUT: ', parsed_about_desc);
 
         
-
         //pushing projects desc in an array
         let projectsDesc = parser.removeAllFromShotsDesc(dribbbleResponse[1].data);
-
         // console.log('projectsDesc', projectsDesc);
 
-        let projectGalleryArray = helper.alternate(projectsDesc[0].images, projectsDesc[0].textes);
+
+        let project_brief;
+        let project_gallery_array;
+        let project_date;
+        // const getcurrentProjectsInfos = function() {
+        // dribbbleResponse[1].data.forEach(shot =>{
+        for(let i = 0; i < dribbbleResponse[1].data.length; i++) {
+          if(dribbbleResponse[1].data[i].id == id) {
+            project_brief = projectsDesc[i].brief;
+            project_gallery_array = helper.alternate(projectsDesc[i].images, projectsDesc[i].textes);
+            project_date = projectsDesc[i].annee_realisation;
+          }
+        };
+        
+
 
         // console.log(parsed_bio);
 
@@ -93,11 +113,13 @@ class DribbbleClient {
                   parsed_bio: parsed_bio,
                   parsed_setting_desc: parsed_setting_desc,
                   projectsDesc: projectsDesc,
-                  projectGalleryArray: projectGalleryArray,
+                  project_brief: project_brief,
+                  project_gallery_array: project_gallery_array,
+                  project_date: project_date,
                   parsed_lab_desc: parsed_lab_desc,
                   parsed_about_desc: parsed_about_desc,
-                  helper: helper
-                });
+                  helper: helper,
+                }, id);
       }));
     }
 }
