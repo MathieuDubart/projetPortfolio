@@ -3,7 +3,7 @@
 <head>
     <%- include('../partials/heads/homeHead'); %>
 </head>
-<body class="container body">
+<body class="container homepage-body">
     
     <%- include('../partials/socialMedia'); %>
     
@@ -16,12 +16,12 @@
         <div id="personnalLogo">
             <img src="<%- parsed_bio.image_home[0] %>"  id="imgHome">
         </div>
-        <div id="personnalText">
+        <div class="d-flex align-items-end" id="personnalText">
             <p> <%- parsed_bio.text_bio[0] %> <%- parsed_bio.text_bio[1] %></p>
         </div>
         <div id="diveButton">
             <a href="artworks">
-                <p>Let's dive right in</p>
+                <p class="d-flex justify-content-center align-items-center">Let's dive right in</p>
             </a>
         </div>
     </main>

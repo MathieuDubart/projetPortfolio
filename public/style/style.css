@@ -15,8 +15,9 @@ body{
     background-position: var(--custom-background-position);
     padding-top:50px;
     display:grid;
-    grid-template-rows: auto 1fr auto; 
+    /* grid-template-rows: 0fr 0fr 0fr 1fr;  */
     min-height:100vh;
+    overflow-x: hidden;
     /* overflow-x: hidden; */
 }
 
@@ -55,7 +56,7 @@ p{
 }
 
 .burgerMenu img {
-    width: 60px;
+    width: 40px;
 }
 
 .navmenu {

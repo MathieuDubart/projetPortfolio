@@ -11,14 +11,14 @@
 }
 
 .socialMedias a{
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     margin: 8px;
 }
 
 #instagramIcon, #linkedInIcon, #dribbbleIcon{
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
 }
 
 @media screen and (max-width:980px) {

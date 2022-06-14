@@ -1,42 +1,43 @@
 <script>
-const galleryItems = document.getElementsByClassName('gallery-items');
-const noItemMessage = document.getElementById("no-item-message");
+    const galleryItems = document.getElementsByClassName('gallery-items');
+    const noItemMessage = document.getElementById("no-item-message");
 
-let url = window.location.href;
-let filterFromUrl = url.split('#')[1];
+    // let url = window.location.href;
+    // let filterFromUrl = url.split('#')[1];
 
-function hideMessage(){
-noItemMessage.classList.add('d-none');
-noItemMessage.classList.remove('d-flex');
-}
-function showMessage(){
-noItemMessage.classList.add('d-flex');
-noItemMessage.classList.remove('d-none');
-}
-
-
-function filterItems(){
-let hasMessage = true;
-let array = [];
-for(let i=0; i < galleryItems.length; i++){
-if(galleryItems[i].classList.contains(filterFromUrl)){
-    array.push(galleryItems[i].dataset.id);
-    hasMessage = false
-}else{
-    galleryItems[i].classList.add('d-none');
-}
-array.forEach( id => {
-    if (galleryItems[i].dataset.id == id){
-    //console.log(galleryItems[i].classList);
-    //galleryItems[i].classList.remove('d-none');
+    function hideMessage(){
+        noItemMessage.classList.add('d-none');
+        noItemMessage.classList.remove('d-flex');
     }
-})
-}
-console.log(array);
-if(hasMessage){
-showMessage();
-}else{
-hideMessage();
-}
-}
+    function showMessage(){
+        noItemMessage.classList.add('d-flex');
+        noItemMessage.classList.remove('d-none');
+    }
+    function filterItems(filterFromUrl){
+        let hasMessage = true;
+        let arrayID = [];
+        for(let i=0; i < galleryItems.length; i++){
+            if(galleryItems[i].classList.contains(filterFromUrl)){
+                arrayID.push(galleryItems[i].dataset.id);
+                hasMessage = false
+            }else{
+                galleryItems[i].classList.add('d-none');
+            }
+            // console.log('array', array);
+        }
+        console.log('arrayID', arrayID);
+        arrayID.forEach( id => {
+            for(let i=0; i < galleryItems.length; i++){
+                if (galleryItems[i].dataset.id == id){
+                    galleryItems[i].classList.remove('d-none');
+                }
+            } 
+        })
+        if(hasMessage){
+            showMessage();
+        }else{
+            hideMessage();
+        }
+    }
+
 </script>

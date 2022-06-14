@@ -1,3 +1,7 @@
+body{
+    grid-template-rows: 0fr 1fr 1fr; 
+}
+
 #contactContainer {
     width: 100%;
 }
