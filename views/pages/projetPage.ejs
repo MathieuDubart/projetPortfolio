@@ -37,7 +37,7 @@
         } %>
         </div>
 
-        <div class="col-md-6 col-lg-6 d-flex justify-content-start align-items-center">
+        <div class="col-md-6 col-lg-6 d-flex justify-content-center align-items-center title-project">
 
           <% shotsInfos.forEach(project => {
             if (project.id == shotsInfos.shotId) {%>
@@ -164,6 +164,10 @@
 
     .up-arrow-container {
       margin-bottom: 64px;
+    }
+
+    .title-project {
+      text-align: center!important;
     }
 
     .textProject{
