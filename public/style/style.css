@@ -30,6 +30,10 @@ element::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
 }
 
+body::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
 h1,h2,h3,h4,h5,h6{
     font-family: var(--custom-title-font);
     color: var(--custom-title-color);
