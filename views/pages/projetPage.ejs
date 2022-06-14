@@ -87,17 +87,17 @@
       <% project_gallery_array.forEach(item => {
         if (helper.isImg(item) == false){
           if (imgIsFirst) { %>
-            <div class="col-4 d-flex flex-column justify-content-center align-items-start">
-              <p class="textProject"> <%- item %></p>
+            <div class="col-4 d-flex flex-column justify-content-center align-items-start textProject">
+              <%- item %>
             </div>
             <div class="col-2"></div>
             <% imgIsFirst = false;
           } else { %>
             <div class="col-2"></div>
-            <div class="col-4 d-flex flex-column justify-content-center align-items-start">
-              <p class="textProject"> <%- item </p>
-              </div>
-              <% imgIsFirst = true;
+            <div class="col-4 d-flex flex-column justify-content-center align-items-start textProject">
+              <%- item %>
+            </div>
+            <% imgIsFirst = true;
           } %>
 
         <% } else { %>
