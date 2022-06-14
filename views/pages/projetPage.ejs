@@ -28,8 +28,8 @@
                   
               <% } else { %>
                 <a href="<%= shotsInfos[j-1].id %>">
-                  <div class="arrowLinkProjects">
-                    <img src="/images/arrow-left.svg">
+                  <div class="arrowLinkProjects arrowLeft">
+                    <img src="/images/Vector_41.svg">
                   </div>
                 </a>
               <%}
@@ -57,7 +57,7 @@
                 <% } else { %>
                   <a href="<%= shotsInfos[j+1].id %>">
                     <div class="arrowLinkProjects">
-                      <img src="/images/arrow-right.svg">
+                      <img src="/images/Vector_41.svg">
                     </div>
                   </a>
                 <%}
@@ -130,8 +130,8 @@
 
     <div class="row up-arrow-container">
       <div class="col-12 d-flex justify-content-center align-items-center">
-        <a href="#top"> <div class="arrowLinkProjects">
-          <img src="/images/arrow-up.svg">
+        <a href="#top"> <div class="arrowLinkProjects arrowUp">
+          <img src="/images/Vector_41.svg">
         </div> </a>
       </div>
     </div>
@@ -151,7 +151,15 @@
     }
 
     .arrowLinkProjects img {
-      height: 100%;
+      height: 50px;
+    }
+    
+    .arrowLeft {
+      transform: rotate(180deg);
+    }
+
+    .arrowUp {
+      transform: rotate(270deg);
     }
 
     .up-arrow-container {
