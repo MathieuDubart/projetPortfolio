@@ -70,6 +70,7 @@ p{
     font-family: var(--custom-corps-font);
     color: var( --custom-corps-color);
     font-size: var(--custom-p-size);
+    margin-bottom: 0;
 }
 
 /* span{
