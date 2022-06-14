@@ -1,7 +1,9 @@
 .tags-container p {
   padding: 0 0 0 16px;
+  color: var(--custom-title-color);
   font-size: 0.9em;
   text-align: end;
+  text-transform: uppercase;
 }
 
 .cover-projet img {

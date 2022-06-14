@@ -21,11 +21,6 @@
 	margin-top:1em;
 }
 
-#personnalText p{
-	font-family: var(--custom-title-font), 'sans-serif';
-	font-size:48px;
-}
-
 #personnalText span{
 	color:var(--custom-accent-color);
 	font-weight: 700;

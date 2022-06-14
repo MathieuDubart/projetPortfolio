@@ -13,12 +13,39 @@ body{
     background-color: var(--custom-background-color);
     background-repeat: var(--custom-background-repeat);
     background-position: var(--custom-background-position);
+    background-attachment: var(--custom-background-attachment);
+    background-size: var(--custom-background-size);
     padding-top:50px;
     display:grid;
     /* grid-template-rows: 0fr 0fr 0fr 1fr;  */
     min-height:100vh;
     overflow-x: hidden;
     /* overflow-x: hidden; */
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--custom-title-font);
+    color: var(--custom-title-color);
+}
+h1{
+    font-size: var(--custom-h1-size);
+    /* font-size: 3rem; */
+    /* margin-bottom: 4rem; */
+}
+h2{
+    font-size: var(--custom-h2-size);
+}
+h3{
+    font-size: var(--custom-h3-size);
+}
+h4{
+    font-size: var(--custom-h4-size);
+}
+h5{
+    font-size: var(--custom-h5-size);
+}
+h6{
+    font-size: var(--custom-h6-size);
 }
 
 .no-scroll{
@@ -28,6 +55,8 @@ body{
 
 p{
     font-family: var(--custom-corps-font);
+    color: var( --custom-corps-color);
+    font-size: var(--custom-p-size);
 }
 
 .header {

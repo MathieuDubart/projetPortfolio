@@ -30,13 +30,14 @@
                     <div class="col-sm-8 col-lg-3 d-flex justify-content-center align-items-center lab-img">
                         <img src="<%- parsed_lab_desc.images[j] %>">
                     </div>
-                    <% colBool = false;
-                } else {%>
+
+                <% colBool = false;
+                    } else {%>
                     <div class="col-sm-8 col-lg-3 d-flex justify-content-center align-items-center lab-img">
                         <img src="<%- parsed_lab_desc.images[j] %>">
                     </div>
                     <div class="col-sm-4 col-lg-3 d-flex justify-content-center align-items-center"> <p class="mobile-numbers"> <% if(j<9) { %> 0<%-j+1%> <%} else {%> <%-j+1%> <%}%> </p></div>
-                    <% colBool = true;
+                <% colBool = true;
                 }
             } %>
     </div>
