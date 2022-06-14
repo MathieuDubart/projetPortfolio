@@ -1,3 +1,10 @@
+.lab-title {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+
+
 .lab-img {
   /* margin-top: 40px; */
   object-fit: cover;
@@ -20,8 +27,13 @@
       display: block;
   }
 
-  .lab-img img{
-    height: 360px;
-    width: 360px;
+  .lab-title {
+    font-size: var(--custom-title-size);
   }
+
+  .lab-img img{
+    height: 320px;
+    width: 320px;
+  }
+
 }
