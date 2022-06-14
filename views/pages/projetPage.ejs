@@ -10,7 +10,7 @@
 
     </head>
 
-    <body class="container">
+    <body class="container-lg">
       <header>
           <%- include('../partials//layout/header'); %>
       </header>
@@ -18,20 +18,28 @@
       <%- include('../partials/socialMedia'); %>
 <!-- ######################################### INTRO PROJECT ######################################### -->
 
-      <div class="row d-flex justify-content-center align-items-center project-intro">
+      <div class="row d-flex justify-content-center align-items-center project-intro" id="top">
 
-        <div class="col-md-2 d-flex justify-content-end align-items-start"></div>
-
-        <div class="col-md-6 d-flex justify-content-start align-items-center">
-          <!-- <%# for (i=0; i < shotsInfos.length; i++) { 
-            if (shotsInfos[i].id == shotsInfos.shotId) { %>
-              <h1> <%# if(i<10) { %>0<%#}%><%#-i+1%>. &nbsp;</h1>
-              <%#
+        <div class="col-2 col-md-2 col-lg-2"></div>
+        <div class="col-1 col-md-1 col-lg-1 d-flex justify-content-end align-items-start">
+        <% for(let j=0;j<shotsInfos.length;j++) {
+              if (shotsInfos[j].id == shotsInfos.shotId) {
+                if(j===0) {%>
+                  
+              <% } else { %>
+                <a href="<%= shotsInfos[j-1].id %>">
+                  <div class="arrowLinkProjects arrowLeft">
+                    <img src="/images/Vector_41.svg">
+                  </div>
+                </a>
+              <%}
             }
-          } %> -->
+        } %>
+        </div>
 
+        <div class="col-md-6 col-lg-6 d-flex justify-content-center align-items-center title-project">
           <% shotsInfos.forEach(project => {
-            if (project.id == shotsInfos.shotId) { %>
+            if (project.id == shotsInfos.shotId) {%>
               <h1><%-project.title %></h1>
               <% currentProject = project;
             }
@@ -40,29 +48,28 @@
 
         </div>
 
-        <div class="col-md-2 d-flex flex-column justify-content-center tags-project">
-          <div class="row">
-            <div class="col-md-12 d-flex justify-content-end align-items-center project-date">
-              <h6> <%- project_date %> </h6>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12 d-flex inline-flex justify-content-end align-items-center tags-container">
-              <% currentProject.tags.forEach(tag => { %>
-                <p><%- tag %></p>
-              <% }) %>
-            </div>
-          </div>
+        <div class="col-1 col-md-1 col-lg-1 d-flex justify-content-start align-items-start">
+          <% for(let j=0;j<shotsInfos.length-4;j++) {
+              if (shotsInfos[j].id == shotsInfos.shotId) {
+                if(j===shotsInfos.length) {%>
+                  
+                <% } else { %>
+                  <a href="<%= shotsInfos[j+1].id %>">
+                    <div class="arrowLinkProjects">
+                      <img src="/images/Vector_41.svg">
+                    </div>
+                  </a>
+                <%}
+              }
+          } %>
         </div>
-
-        <div class="col-md-2 d-flex justify-content-end align-items-center"></div>
+        <div class="col-2 col-md-2 col-lg-2"></div>
       </div>
     
     <div class="row cover-row">
-      <div class="col-2"></div>
-      <div class="col-8 cover-projet"><img src="<%= currentProject.images.hidpi ? currentProject.images.hidpi : currentProject.images.normal %>" alt="<%= currentProject.title %>" class="img-fluid"> </div>
-      <div class="col-2"></div>
+      <div class="col-lg-2"></div>
+      <div class="col-md-12 col-lg-8 cover-projet"><img src="<%= currentProject.images.hidpi ? currentProject.images.hidpi : currentProject.images.normal %>" alt="<%= currentProject.title %>" class="img-fluid"> </div>
+      <div class="col-lg-2"></div>
     </div>
     
 <!-- ########################## DESCRIPTION PROJECT (SOUS FORME DE GALLERY) ########################## -->
@@ -120,6 +127,14 @@
         
     </div>
 
+    <div class="row up-arrow-container">
+      <div class="col-12 d-flex justify-content-center align-items-center">
+        <a href="#top"> <div class="arrowLinkProjects arrowUp">
+          <img src="/images/Vector_41.svg">
+        </div> </a>
+      </div>
+    </div>
+
     <footer class="container-fluid d-flex justify-content-center align-tems-center footer">
       <%- include('../partials/layout/footer'); %>
     </footer>
@@ -129,6 +144,31 @@
   </html>
 
   <style>
+
+    .arrowLinkProjects {
+      height: 50px;
+    }
+
+    .arrowLinkProjects img {
+      height: 50px;
+    }
+    
+    .arrowLeft {
+      transform: rotate(180deg);
+    }
+
+    .arrowUp {
+      transform: rotate(270deg);
+    }
+
+    .up-arrow-container {
+      margin-bottom: 64px;
+    }
+
+    .title-project {
+      text-align: center!important;
+    }
+
     .textProject{
       font-family: var(--custom-p-font);
       font-size: var(--custom-p-size);

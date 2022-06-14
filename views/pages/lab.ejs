@@ -4,7 +4,7 @@
     <%- include('../partials/heads/homeHead'); %>
     <%- include('../partials/heads/labHead'); %>
 </head>
-<body class="container">
+<body class="container-lg">
 
     <header>
         <%- include('../partials/layout/header'); %>
@@ -13,10 +13,12 @@
         <%- include('../partials/socialMedia'); %>
     </div>
 
-    <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-xxl-12 d-flex justify-content-start lab-title" id="titles"> 
-            <h1><%- parsed_setting_desc.menu[1] %></h1>
-        </div>
+    <div class="row d-flex justify-content-center align-items-center" id="top">
+        <div class="col-2"></div>
+            <div class="col-8 d-flex justify-content-start">
+                <h1><%- parsed_setting_desc.menu[1] %></h1>
+            </div>
+        <div class="col-2"></div>
     </div>
     
     <div class="row d-flex lab">
@@ -42,6 +44,13 @@
             } %>
     </div>
 
+    <div class="row up-arrow-container">
+      <div class="col-12 d-flex justify-content-center align-items-center">
+        <a href="#top"> <div class="arrowLinkProjects">
+          <img src="/images/arrow-up.svg">
+        </div> </a>
+      </div>
+    </div>
 
     
     <footer class="container-fluid d-flex justify-content-center align-tems-center footer">
