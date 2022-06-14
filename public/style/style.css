@@ -13,6 +13,8 @@ body{
     background-color: var(--custom-background-color);
     background-repeat: var(--custom-background-repeat);
     background-position: var(--custom-background-position);
+    background-attachment: var(--custom-background-attachment);
+    background-size: var(--custom-background-size);
     padding-top:50px;
     display:grid;
     /* grid-template-rows: 0fr 0fr 0fr 1fr;  */
@@ -28,7 +30,7 @@ h1,h2,h3,h4,h5,h6{
 h1{
     font-size: var(--custom-h1-size);
     /* font-size: 3rem; */
-    margin-bottom: 4rem;
+    /* margin-bottom: 4rem; */
 }
 h2{
     font-size: var(--custom-h2-size);
@@ -54,6 +56,7 @@ h6{
 p{
     font-family: var(--custom-corps-font);
     color: var( --custom-corps-color);
+    font-size: var(--custom-p-size);
 }
 
 .header {
