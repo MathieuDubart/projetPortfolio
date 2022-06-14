@@ -23,36 +23,20 @@ body{
     /* overflow-x: hidden; */
 }
 
-h1,h2,h3,h4,h5,h6{
+h1,h2{
     font-family: var(--custom-title-font);
-    color: var(--custom-title-color);
 }
 h1{
     font-size: var(--custom-h1-size);
     font-weight: var(--custom-h1-weight);
-    /* font-size: 3rem; */
-    /* margin-bottom: 4rem; */
+    color: var(--custom-h1-weight);
 }
 h2{
     font-size: var(--custom-h2-size);
-    font-weight: var(--custom-h1-weight);
+    font-weight: var(--custom-h2-weight);
+    color: var(--custom-h2-weight);
 }
-h3{
-    font-size: var(--custom-h3-size);
-    font-weight: var(--custom-h1-weight);
-}
-h4{
-    font-size: var(--custom-h4-size);
-    font-weight: var(--custom-h1-weight);
-}
-h5{
-    font-size: var(--custom-h5-size);
-    font-weight: var(--custom-h1-weight);
-}
-h6{
-    font-size: var(--custom-h6-size);
-        font-weight: var(--custom-h1-weight);
-}
+
 
 .no-scroll{
     overflow-x: hidden;
@@ -60,14 +44,11 @@ h6{
 }
 
 p{
-    font-family: var(--custom-corps-font);
-    color: var( --custom-corps-color);
+    font-family: var(--custom-p-font);
     font-size: var(--custom-p-size);
+    font-weight: var(--custom-p-weight);
+    color: var( --custom-p-color);
 }
-
-/* span{
-    color: var( --custom-accent-color);
-} */
 
 .header {
     height: 65px;
