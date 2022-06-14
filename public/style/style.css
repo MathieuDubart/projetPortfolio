@@ -25,6 +25,7 @@ body{
 
 h1,h2{
     font-family: var(--custom-title-font);
+    background-color: var(--custom-background-color);
 }
 h1{
     font-size: var(--custom-h1-size);
@@ -44,10 +45,15 @@ h2{
 }
 
 p{
+    background-color: var(--custom-background-color);
     font-family: var(--custom-p-font);
     font-size: var(--custom-p-size);
     font-weight: var(--custom-p-weight);
     color: var( --custom-p-color);
+}
+
+.bg-transparent{
+    background-color: transparent;
 }
 
 .header {
