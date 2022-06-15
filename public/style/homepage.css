@@ -106,8 +106,8 @@
 		height: 96px;
 	}
 
-	#diveButton p{
-		/* font-size:2em; */
+	#diveButton a p{
+		font-size:1.5em;
 		height: 100%;
 		padding: 26px 20px;
 	}
