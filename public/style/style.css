@@ -40,11 +40,13 @@ h1{
     font-size: var(--custom-h1-size);
     font-weight: var(--custom-h1-weight);
     color: var(--custom-h1-color);
+    letter-spacing: var(--custom-h1-letter-spacing);
 }
 h2{
     font-size: var(--custom-h2-size);
     font-weight: var(--custom-h2-weight);
     color: var(--custom-h2-color);
+    letter-spacing: var(--custom-h2-letter-spacing);
 }
 
 
