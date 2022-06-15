@@ -5,6 +5,7 @@ body {
   background-position: var(--custom-background-position);
   background-attachment: var(--custom-background-attachment);
   background-size: var(--custom-background-size);
+  grid-template-rows: none!important;
 }
 
 .project-intro {
