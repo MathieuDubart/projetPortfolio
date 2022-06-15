@@ -65,6 +65,11 @@ p{
     background-color: transparent;
 }
 
+.span{
+	color:var(--custom-span-color);
+	font-weight: var(--custom-span-weight);
+}
+
 .header {
     height: 65px;
 }
