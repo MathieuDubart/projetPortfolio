@@ -101,8 +101,9 @@ p{
     display: block;
     background-color: var(--custom-background-color);
     background-image: var(--custom-background-image);
-    background-position: center;
-    background-size: cover;
+    background-position: var(--custom-background-position);
+    background-size: var(--custom-background-size);
+    background-repeat: var(--custom-background-repeat);
 
 }
 
