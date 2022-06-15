@@ -16,7 +16,7 @@
 }
 
 #personnalText{
-	width:80%;
+	width:70%;
 	margin-left:14%;
 	margin-top:1em;
 }
@@ -95,7 +95,6 @@
 
 	#personnalText{
 		text-align: center;
-		width: 70%;
 		margin-top: 2em;
 		margin-left: calc(50% - 35%);
 		margin-bottom: 64px;
