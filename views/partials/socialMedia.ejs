@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center align-items-center socialMedias">
   <div class="d-flex flex-column justify-content-between align-items-center socialsContainer">
-    <a href="<%- userInfos.links.instagram %>" target="_blank"><img id="instagramIcon" src="https://icones.pro/wp-content/uploads/2021/02/instagram-icone-noir.png"></a>
-    <a href="<%- userInfos.links.linkedin %>" target="_blank"><img id="linkedInIcon" src="https://cdn-icons-png.flaticon.com/512/61/61109.png"></a>
-    <a href="https://dribbble.com" target="_blank"><img id="dribbbleIcon" src="https://cdn.iconscout.com/icon/free/png-256/dribbble-33-90225.png"></a>
+    <a href="<%- userInfos.links.instagram %>" target="_blank"><img id="instagramIcon" src="<%- parsed_bio.icon_instagram %>"></a>
+    <a href="<%- userInfos.links.linkedin %>" target="_blank"><img id="linkedInIcon" src="<%- parsed_bio.icon_linkedin %>"></a>
+    <a href="<%- parsed_bio.dribbble %>" target="_blank"><img id="dribbbleIcon" src="<%- parsed_bio.icon_dribbble %>"></a>
   </div>
 </div>
