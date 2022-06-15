@@ -100,6 +100,10 @@ p{
 .active-menu {
     display: block;
     background-color: var(--custom-background-color);
+    background-image: var(--custom-background-image);
+    background-position: center;
+    background-size: cover;
+
 }
 
 .footer {
@@ -132,6 +136,9 @@ p{
 
 .links-container {
     margin-top: 18px;
+}
+.links-container a h1 {
+    background-color: transparent;
 }
 .menu-links {
     text-decoration: none;
