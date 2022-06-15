@@ -7,13 +7,17 @@ body{
 }
 
 #QRcode{
+    width:400px;
+    height: 400px;
     position: absolute;
-    right: 400px;
-    top: 400px;
+    right: 20%;
+    top: 25%;
 }
 
 #QRcode img{
-    width:15em;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
 }
 .socials-container{
     margin: 32px 0;
