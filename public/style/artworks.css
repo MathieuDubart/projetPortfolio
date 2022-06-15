@@ -1,5 +1,9 @@
 /******************** Artworks *******************/
 
+/* body{
+    grid-template-rows: 0fr 0fr 0fr 1fr;
+} */
+
 #gallery{
     height: fit-content;
     display: flex;
