@@ -13,7 +13,7 @@ body {
   margin-bottom: 24px;
 }
 
-.tags-container h6 {
+.tags-container h5 {
   padding: 0 16px 0 0;
   color: var(--custom-p-color);
   text-align: end;
