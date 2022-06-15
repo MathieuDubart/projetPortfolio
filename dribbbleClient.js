@@ -57,9 +57,16 @@ class DribbbleClient {
 
         //parsing bio
         let parsed_bio = parser.parsingInfos(userInfoResponse);
-        parsed_bio.lien_cv[0] = parser.removeAllTags(parsed_bio.lien_cv[0], 'https://');
-        parsed_bio.lien_book[0] = parser.removeAllTags(parsed_bio.lien_book[0], 'https://');
+        parsed_bio.lien_cv = parser.removeAllTagsFromArray(parsed_bio.lien_cv, 'https://');
+        parsed_bio.lien_book = parser.removeAllTagsFromArray(parsed_bio.lien_book, 'https://');
+        parsed_bio.dribbble = parser.removeAllTagsFromArray(parsed_bio.dribbble, 'https://');
         parsed_bio.image_home = parser.removeAllTagsFromArray(parsed_bio.image_home, 'https://');
+        parsed_bio.icon_mail = parser.removeAllTagsFromArray(parsed_bio.icon_mail, 'https://');
+        parsed_bio.icon_instagram = parser.removeAllTagsFromArray(parsed_bio.icon_instagram, 'https://');
+        parsed_bio.icon_linkedin = parser.removeAllTagsFromArray(parsed_bio.icon_linkedin, 'https://');
+        parsed_bio.icon_dribbble = parser.removeAllTagsFromArray(parsed_bio.icon_dribbble, 'https://');
+        parsed_bio.icon_burger = parser.removeAllTagsFromArray(parsed_bio.icon_burger, 'https://');
+        parsed_bio.icon_close = parser.removeAllTagsFromArray(parsed_bio.icon_close, 'https://');
         // console.log(parsed_bio);
 
 
