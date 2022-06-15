@@ -67,6 +67,7 @@ class DribbbleClient {
         parsed_bio.icon_dribbble = parser.removeAllTagsFromArray(parsed_bio.icon_dribbble, 'https://');
         parsed_bio.icon_burger = parser.removeAllTagsFromArray(parsed_bio.icon_burger, 'https://');
         parsed_bio.icon_close = parser.removeAllTagsFromArray(parsed_bio.icon_close, 'https://');
+        parsed_bio.icon_dl = parser.removeAllTagsFromArray(parsed_bio.icon_dl, 'https://');
         // console.log(parsed_bio);
 
 
