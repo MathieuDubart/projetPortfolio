@@ -77,6 +77,7 @@ class DribbbleClient {
         parsed_setting_desc.icon_burger[0] = parser.removeAllTags(parsed_setting_desc.icon_burger[0], '');
         parsed_setting_desc.icon_close[0] = parser.removeAllTags(parsed_setting_desc.icon_close[0], '');
         parsed_setting_desc.qr_code[0] = parser.removeAllTags(parsed_setting_desc.qr_code[0], '');
+        parsed_setting_desc.icon_mouse[0] = parser.removeAllTags(parsed_setting_desc.icon_mouse[0], '');
         // console.log('SETTINGS DECRIPTION : ', parsed_setting_desc);
 
         //parsing lab post
