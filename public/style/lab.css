@@ -20,6 +20,17 @@
   font-size: 7em;
   display: none;
 }
+.arrowLinkProjects {
+  height: 25px;
+}
+
+.arrowLinkProjects img {
+  height: 25px;
+}
+.arrowUp{
+  transform: rotate(270deg);
+  margin: 32px 0;
+}
 @media screen and (max-width: 980px) {
   .mobile-numbers {
       display: block;
@@ -35,5 +46,14 @@
     height: 320px;
     width: 320px;
   }
+
+  .arrowLinkProjects {
+    height: 50px;
+  }
+
+  .arrowLinkProjects img {
+    height: 50px;
+  }
+
 
 }
