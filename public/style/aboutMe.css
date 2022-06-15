@@ -1,5 +1,6 @@
 body{
-    grid-template-rows: 0fr 0fr 1fr!important; 
+    grid-template-rows: 0fr 0fr 1fr!important;
+    color: var(--custom-p-color);
 }
 .aboutInfos-container{
     width: 100%;
