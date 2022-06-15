@@ -74,8 +74,8 @@
     
 <!-- ########################## DESCRIPTION PROJECT (SOUS FORME DE GALLERY) ########################## -->
     <div class="row tags-mouse-container">
-      <div class="col-2"></div>
-      <div class="col-7 d-flex flex-column justify-content-start tags-project">
+      <div class="col-lg-2"></div>
+      <div class="col-md-10 col-lg-7 d-flex flex-column justify-content-start tags-project">
         <div class="row">
           <div class="col-md-12 d-flex justify-content-start align-items-center project-date">
             <h5> <%- project_date %> </h5>
@@ -91,8 +91,8 @@
         </div>
       </div>
 
-      <div class="col-1 mouse-container">
-        <div class="col-12 d-flex flex-column justify-content-center tags-project">
+      <div class="col-md-2 col-lg-1 mouse-container">
+        <div class="col-md-12 d-flex flex-column justify-content-center tags-project">
           <div class="row">
             <div class="col-md-12 d-flex justify-content-center align-items-center mouse">
               <img src="<%- parsed_setting_desc.icon_mouse[0] %>">
@@ -100,13 +100,13 @@
           </div>
 
           <div class="row">
-            <div class="col-md-12 d-flex inline-flex justify-content-center align-items-center scroll-msg">
+            <div class="col-md-12 d-flex inline-flex justify-content-end align-items-center scroll-msg">
               <h6> SCROLL </h6>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-2"></div>
+      <div class="col-lg-2"></div>
     </div>
 
     <div class="row brief-title">
@@ -203,6 +203,10 @@
     .tags-mouse-container {
       margin-top: 8px;
     }
+    
+    .mouse {
+      margin-left: 16px;
+    }
 
     .mouse img {
       width: 32px;
@@ -241,6 +245,10 @@
     }
 
     @media screen and (max-width: 980px) {
+      .mouse-container {
+        display: none;
+      }
+
       .arrowLinkProjects {
         height: 50px;
       }
@@ -248,5 +256,6 @@
       .arrowLinkProjects img {
         height: 50px;
       }
+
     }
   </style>
