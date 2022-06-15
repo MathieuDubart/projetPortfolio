@@ -61,13 +61,6 @@ class DribbbleClient {
         parsed_bio.lien_book = parser.removeAllTagsFromArray(parsed_bio.lien_book, 'https://');
         parsed_bio.dribbble = parser.removeAllTagsFromArray(parsed_bio.dribbble, 'https://');
         parsed_bio.image_home = parser.removeAllTagsFromArray(parsed_bio.image_home, 'https://');
-        parsed_bio.icon_mail = parser.removeAllTagsFromArray(parsed_bio.icon_mail, 'https://');
-        parsed_bio.icon_instagram = parser.removeAllTagsFromArray(parsed_bio.icon_instagram, 'https://');
-        parsed_bio.icon_linkedin = parser.removeAllTagsFromArray(parsed_bio.icon_linkedin, 'https://');
-        parsed_bio.icon_dribbble = parser.removeAllTagsFromArray(parsed_bio.icon_dribbble, 'https://');
-        parsed_bio.icon_burger = parser.removeAllTagsFromArray(parsed_bio.icon_burger, 'https://');
-        parsed_bio.icon_close = parser.removeAllTagsFromArray(parsed_bio.icon_close, 'https://');
-        parsed_bio.icon_dl = parser.removeAllTagsFromArray(parsed_bio.icon_dl, 'https://');
         // console.log(parsed_bio);
 
 
@@ -76,6 +69,14 @@ class DribbbleClient {
         let bracketsRemovedDesv = parser.removeBrackets(tagRemovedDesc);
         let parsed_setting_desc = parser.parsingInfos(bracketsRemovedDesv);
         parsed_setting_desc.background_image[0] = parser.removeAllTags(parsed_setting_desc.background_image[0], '');
+        parsed_setting_desc.icon_dribbble[0] = parser.removeAllTags(parsed_setting_desc.icon_dribbble[0], '');
+        parsed_setting_desc.icon_mail[0] = parser.removeAllTags(parsed_setting_desc.icon_mail[0], '');
+        parsed_setting_desc.icon_instagram[0] = parser.removeAllTags(parsed_setting_desc.icon_instagram[0], '');
+        parsed_setting_desc.icon_linkedin[0] = parser.removeAllTags(parsed_setting_desc.icon_linkedin[0], '');
+        parsed_setting_desc.icon_dl[0] = parser.removeAllTags(parsed_setting_desc.icon_dl[0], '');
+        parsed_setting_desc.icon_burger[0] = parser.removeAllTags(parsed_setting_desc.icon_burger[0], '');
+        parsed_setting_desc.icon_close[0] = parser.removeAllTags(parsed_setting_desc.icon_close[0], '');
+        parsed_setting_desc.qr_code[0] = parser.removeAllTags(parsed_setting_desc.qr_code[0], '');
         // console.log('SETTINGS DECRIPTION : ', parsed_setting_desc);
 
         //parsing lab post

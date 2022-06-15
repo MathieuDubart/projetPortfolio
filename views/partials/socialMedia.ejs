@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center align-items-center socialMedias">
   <div class="d-flex flex-column justify-content-between align-items-center socialsContainer">
-    <a href="<%- userInfos.links.instagram %>" target="_blank"><img id="instagramIcon" src="<%- parsed_bio.icon_instagram %>"></a>
-    <a href="<%- userInfos.links.linkedin %>" target="_blank"><img id="linkedInIcon" src="<%- parsed_bio.icon_linkedin %>"></a>
-    <a href="<%- parsed_bio.dribbble %>" target="_blank"><img id="dribbbleIcon" src="<%- parsed_bio.icon_dribbble %>"></a>
+    <a href="<%- userInfos.links.instagram %>" target="_blank"><img id="instagramIcon" src="<%- parsed_setting_desc.icon_instagram[0] %>"></a>
+    <a href="<%- userInfos.links.linkedin %>" target="_blank"><img id="linkedInIcon" src="<%- parsed_setting_desc.icon_linkedin[0] %>"></a>
+    <a href="<%- parsed_bio.dribbble %>" target="_blank"><img id="dribbbleIcon" src="<%-parsed_setting_desc.icon_dribbble[0] %>"></a>
   </div>
 </div>
