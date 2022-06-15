@@ -139,9 +139,9 @@ p{
     font-weight: 600;
 }
 
-_::-webkit-full-page-media, _:future, :root .safari_only {
+/* _::-webkit-full-page-media, _:future, :root .safari_only {
     margin-left: 0px !important; margin-right: 0px !important; padding-left: 0px !important; padding-right: 0px !important;
-  }
+  } */
 
 @media screen and (max-width:980px){
 
