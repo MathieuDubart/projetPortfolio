@@ -47,7 +47,7 @@
 	font-size: var(--custom-button-typo-size);
 
 	font-weight: var(--custom-button-typo-weight);
-	height: 64px;
+	height: 100%;
 	padding: 20px;
 	text-align:center;
 }
