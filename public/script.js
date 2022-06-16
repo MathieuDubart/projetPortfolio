@@ -10,6 +10,6 @@
 // ********************** loading page **********************//
 
 window.onload = function() {
-    document.body.classList.remove('stop-scrolling');
+    document.body.classList.remove('no-scroll');
     document.querySelector(".loadingPage").style.display = "none";
 }
