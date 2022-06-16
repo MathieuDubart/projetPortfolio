@@ -5,9 +5,9 @@
     <div class="row gallery-items d-flex flex-row <% shotsInfos[i].tags.forEach(tag => { %><%- tag %> <% }) %>" data-id="<%- shotsInfos[i].id %>">
       <% if (bool == true){ %>
         <div class="order-1 col-2  responsive-hidden-col"></div>
-        <div class="order-2 col-md-12 col-lg-4 d-flex flex-column justify-content-center align-items-center textGallery">
+        <div class="order-2 col-md-12 col-lg-3 d-flex flex-column justify-content-center align-items-center textGallery">
       <% }else{ %>
-        <div class="order-lg-3 col-md-12 col-lg-4 d-flex flex-column justify-content-center align-items-center textGallery">
+        <div class="order-lg-3 col-md-12 col-lg-3 d-flex flex-column justify-content-center align-items-center textGallery">
       <% } %>
           <a href="project/<%- shotsInfos[i].id %>" class="d-flex justify-content-center align-items-center">
             <h2><%- shotsInfos[i].title %></h2>
@@ -19,12 +19,14 @@
           <div class="order-4 col-2 responsive-hidden-col"></div>
         <% } %>
       <% if (bool == true){ %>
-        <div class="order-3 col-md-12 col-lg-4 d-flex justify-content-center align-items-center galleryItem imgItem">
-      <% }else{ %>
+        <div class="order-3 col-md-12 col-lg-5 d-flex justify-content-center align-items-center imgItem">
+          <a href="project/<%- shotsInfos[i].id %>" class="d-flex justify-content-end">
+          <% }else{ %>
         <div class="order-1 col-2 responsive-hidden-col"></div>
-        <div class="order-2 col-md-12 col-lg-4 d-flex justify-content-center align-items-center galleryItem imgItem">
+        <div class="order-2 col-md-12 col-lg-5 d-flex justify-content-center align-items-center imgItem">
+          <a href="project/<%- shotsInfos[i].id %>" class="d-flex justify-content-start">
       <% } %>
-          <a href="project/<%- shotsInfos[i].id %>">
+          
             <img src="<%- shotsInfos[i].images.normal %>">
           </a>
         </div>
@@ -66,6 +68,16 @@ a{
 .textGallery h2 {
   text-align: center;
 }
+.imgItem a {
+  width: 100%;
+  padding: 0px 0px;
+}
+
+.imgItem a img {
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+}
 
 @media screen and (max-width: 980px) {
     .responsive-hidden-col {
@@ -74,6 +86,18 @@ a{
 
     .tag {
       font-size: var(--custom-tag-responsive-size);
+    }
+    .imgItem {
+      width: 100% ;
+    }
+    .imgItem a {
+      width: 100%;
+      padding: 32px 64px;
+    }
+    .imgItem a img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
 }
 </style>

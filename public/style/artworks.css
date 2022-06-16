@@ -12,15 +12,6 @@
     align-items: center;
     opacity: 1;
 }
-
-.galleryItem a img{
-    max-width: 336px;
-    max-height: 336px;
-    width: 100%;
-    object-fit: cover;
-}
-
-
 .titleItem{
     width: 66%;
     height: 100%;
@@ -33,11 +24,6 @@
 }
 
 @media screen and (max-width: 980px){
-    .galleryItem a img{
-        max-width: 100%;
-        max-height: 100%;
-        width: 100%;
-    }
     .titleItem{
         width: 100%;
     }
