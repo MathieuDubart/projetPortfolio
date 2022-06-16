@@ -49,17 +49,19 @@
     let clear = document.getElementById('clear');
     let game = document.querySelector('.game')
     
+    let gamesLength = <%- parsed_lab_desc.images.length %>;
+    let rawTab = <%- JSON.stringify(parsed_lab_desc.images) %>;
+    let tab = [];
     
-    let tab = ["https://www.khanacademy.org/computer-programming/spin-off-of-tp-final-algo-nils/6464827390214144/embed.js?editor=no&buttons=no&author=no&embed=yes",
-                "https://www.khanacademy.org/computer-programming/tic-tac-toe-nils/4661321081602048/embed.js?editor=no&buttons=no&author=no&embed=yes",
-                "https://www.khanacademy.org/computer-programming/spin-off-of-pong-nils/6319792470409216/embed.js?editor=no&buttons=no&author=no&embed=yes"
-                ]
+    for (let i = 0; i <= gamesLength ; i++){
+        tab[i] = rawTab[i];
+    }
     
     clear.addEventListener('click', () => {
         console.clear();
     });
     
-    [memory, morpion, pong].forEach(elm => {
+    tab.forEach(elm => {
         elm.addEventListener("click", () => {
             if(elm.id=="memory") {
                 var newScript = document.createElement("script");
