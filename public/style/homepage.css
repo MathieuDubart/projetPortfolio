@@ -84,13 +84,13 @@
 	#personnalLogo {
 		width:30em;
 		height:30em;
-		margin-top: calc(65% - 10em);
+		margin-top: calc(65% - 20em);
 		margin-left:calc(50% - 30em/2);
 	}
 
 	#personnalText{
 		text-align: center;
-		height: 320px;
+		height: 400px;
 		margin-top: 2em;
 		margin-left: calc(50% - 35%);
 		/* margin-bottom: 64px; */
