@@ -41,7 +41,7 @@ body{
   }
 
   .lab-title {
-    font-size: var(--custom-h1-size);
+    font-size: var(--custom-h1-responsive-size);
     font-weight: var(--custom-h1-weight);
     color: var(--custom-h1-color);
   }

@@ -44,7 +44,8 @@
 #diveButton a p{
 	font-family:var(--custom-p-font);
 	color:var(--custom-button-typo-color);
-	font-size:var(--custom-button-typo-size);
+	font-size: var(--custom-button-typo-size);
+
 	font-weight: var(--custom-button-typo-weight);
 	height: 64px;
 	padding: 20px;
@@ -55,10 +56,6 @@
 	#personnalLogo {
 		width:16.5em;
 		height:16.5em;
-	}
-
-	#personnalText p{
-		font-size: 40px;
 	}
 
 	#divebutton {
@@ -101,7 +98,6 @@
 	}
 
 	#diveButton a p{
-		font-size:1.5em;
 		height: 100%;
 		padding: 26px 20px;
 	}

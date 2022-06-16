@@ -79,14 +79,14 @@
       <div class="col-md-10 col-lg-7 d-flex flex-column justify-content-start tags-project">
         <div class="row">
           <div class="col-md-12 d-flex justify-content-start align-items-center project-date">
-            <h4> <%- project_date %> </h4>
+            <p> <%- project_date %> </p>
           </div>
         </div>
 
         <div class="row">
           <div class="col-md-12 d-flex inline-flex justify-content-start align-items-center tags-container">
             <% currentProject.tags.forEach(tag => { %>
-              <h5><%- tag %></h5>
+              <p><%- tag %></p>
             <% }) %>
           </div>
         </div>
@@ -121,25 +121,25 @@
     </div>
     <div class="row brief-content">
       <div class="col-md-1 col-lg-2"></div>
-      <div class="col-md-10 col-lg-8">
+      <div class="col-md-10 col-lg-8 margin-bottom-32">
         <p><%- project_brief %></p>
       </div>
       <div class="col-md-1 col-lg-2"></div>
     </div>
 
     <% var imgIsFirst = false; %>
-    <div class="row">
+    <div class="row margin-bottom-32">
       <% project_gallery_array.forEach(item => {
         if (helper.isImg(item) == false){
           if (imgIsFirst) { %>
-            <div class="col-md-5 col-lg-4 d-flex flex-column justify-content-center align-items-start">
+            <div class="col-md-12 col-lg-4 d-flex flex-column align-items-md-center justify-content-md-center justify-content-lg-center align-items-lg-start margin-bottom-32">
               <div class="textProject"><%- item %></div>
             </div>
-            <div class="col-md-1 col-lg-2"></div>
+            <div class="col-lg-2"></div>
             <% imgIsFirst = false;
           } else { %>
-            <div class="col-md-1 col-lg-2"></div>
-            <div class="col-md-5 col-lg-4 d-flex flex-column justify-content-center align-items-start">
+            <div class="col-lg-2"></div>
+            <div class="col-md-12 col-lg-4 d-flex flex-column align-items-md-center justify-content-md-center justify-content-lg-center align-items-lg-start margin-bottom-32">
               <div class="textProject"><%- item %></div>
             </div>
             <% imgIsFirst = true;
@@ -148,14 +148,14 @@
         <% } else { %>
           
           <% if(imgIsFirst) { %>
-            <div class="col-md-5 col-lg-4 d-flex align-items-end justify-content-end">
+            <div class="col-md-12 col-lg-4 d-flex align-items-md-center justify-content-md-center align-items-lg-end justify-content-lg-end margin-bottom-32">
               <img src="<%- item %>" class="imgContentProjet">
             </div>        
-            <div class="col-md-1 col-lg-2"></div>
+            <div class="col-lg-2"></div>
             <% imgIsFirst = false;
           } else { %>
-            <div class="col-md-1 col-lg-2"></div>         
-            <div class="col-md-5 col-lg-4 d-flex align-items-start justify-content-start">
+            <div class="col-lg-2"></div>         
+            <div class="col-md-12 col-lg-4 d-flex align-items-md-center justify-content-md-center align-items-lg-start justify-content-lg-start margin-bottom-32">
               <img src="<%- item %>" class="imgContentProjet">
             </div>
             <% imgIsFirst = true;
@@ -231,6 +231,11 @@
     }
 
     @media screen and (max-width: 980px) {
+
+      .textProject {
+        padding: 0 82px;
+      }
+
       .mouse-container {
         display: none;
       }
@@ -241,6 +246,9 @@
 
       .arrowLinkProjects img {
         height: 50px;
+      }
+      .brief-title h2{
+        font-size: calc(var(--custom-h1-size) * 1.3);
       }
 
     }

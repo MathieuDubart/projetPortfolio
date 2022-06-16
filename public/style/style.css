@@ -140,6 +140,10 @@ p{
     overflow-x: hidden;
 }
 
+.margin-bottom-32 {
+    margin-bottom: 32px;
+}
+
 .footer {
     width: 100vw;
     height: 50px;
@@ -234,11 +238,39 @@ p{
     
     .footer {
         height: 150px;
-        font-size: 1.4em;
+        font-size: calc(12px * 1.5);
     }
 
     .socialMediasFooter a img {
         width: 50px;
         height: 50px;
+    }
+
+    h1{
+        font-size: var(--custom-h1-responsive-size);
+    }
+
+    h2{
+        font-size: var(--custom-h2-responsive-size);
+    }
+
+    p {
+        font-size: var(--custom-p-responsive-size);
+    }
+
+    .textProject{
+        font-size: var(--custom-p-responsive-size);
+    }
+
+    .textProject h1{
+        font-size: calc(var(--custom-h1-responsive-size) * 1.3);
+    }
+
+    .textProject h2{
+        font-size: calc(var(--custom-h2-responsive-size) * 1.3);
+    }
+
+    #diveButton a p{
+        font-size: var(--custom-button-typo-responsive-size);
     }
 }
