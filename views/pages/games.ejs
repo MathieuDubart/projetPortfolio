@@ -29,7 +29,7 @@
     <div class="games-content">
         <div class="gameboy-container">
             <img src="https://www.dropbox.com/s/r5gppj57r695clp/SWITCH.svg?raw=1" alt="gameboy" class="gameboy-img">
-            <div class="game" id="game"><script id="gameScript" src="https://www.khanacademy.org/computer-programming/spin-off-of-tp-final-algo-nils/6464827390214144/embed.js?editor=no&buttons=no&author=no&embed=yes" ></script></div>
+            <div class="game" id="game"><script id="gameScript" src="<%-  parsed_lab_desc.images[0] %>" ></script></div>
         </div>
     </div>
     <div class="spacer"></div>
@@ -53,15 +53,11 @@
     let rawTab = <%- JSON.stringify(parsed_lab_desc.images) %>;
     let tab = [];
 
-    console.log(gamesLength);
-    console.log(rawTab);
-
     for (let i = 0; i < gamesLength ; i++){
         tab[i] = rawTab[i];
-        console.log(tab);
     }
     
-    tab.forEach(elm => {
+    [memory, morpion, pong].forEach(elm => {
         elm.addEventListener("click", () => {
             if(elm.id=="memory") {
                 var newScript = document.createElement("script");
