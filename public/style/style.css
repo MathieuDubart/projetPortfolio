@@ -221,7 +221,7 @@ p{
 @media screen and (max-width:980px){
 
     body{
-        display: block;
+        display: grid;
     }
     .header {
         height: 130px;
