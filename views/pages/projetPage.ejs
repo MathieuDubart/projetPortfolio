@@ -10,7 +10,7 @@
 
     </head>
 
-    <body class="container-lg safari_only">
+    <body class="container-lg safari_only no-scroll">
       <header>
           <%- include('../partials//layout/header'); %>
       </header>
@@ -72,21 +72,59 @@
       <div class="col-lg-2"></div>
     </div>
     
+<!-- ########################## TAGS / DATE AND MOUSE ########################## -->
+
+    <div class="row tags-mouse-container">
+      <div class="col-md-1 col-lg-2"></div>
+      <div class="col-md-10 col-lg-7 d-flex flex-column justify-content-start tags-project">
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-start align-items-center project-date">
+            <h4> <%- project_date %> </h4>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 d-flex inline-flex justify-content-start align-items-center tags-container">
+            <% currentProject.tags.forEach(tag => { %>
+              <h5><%- tag %></h5>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-1 col-lg-1 mouse-container">
+        <div class="col-md-12 d-flex flex-column justify-content-center tags-project">
+          <div class="row">
+            <div class="col-md-12 d-flex justify-content-center align-items-center mouse">
+              <img src="<%- parsed_setting_desc.icon_mouse[0] %>">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 d-flex inline-flex justify-content-end align-items-center scroll-msg">
+              <h2> SCROLL </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1 col-lg-2"></div>
+    </div>
+
 <!-- ########################## DESCRIPTION PROJECT (SOUS FORME DE GALLERY) ########################## -->
 
     <div class="row brief-title">
-      <div class="col-2"></div>
-      <div class="col-8">
+      <div class="col-md-1 col-lg-2"></div>
+      <div class="col-md-10 col-lg-8">
         <h2>Brief:</h2>
       </div>
-      <div class="col-2"></div>
+      <div class="col-lg-2"></div>
     </div>
-    <div class="row">
-      <div class="col-2"></div>
-      <div class="col-8">
+    <div class="row brief-content">
+      <div class="col-md-1 col-lg-2"></div>
+      <div class="col-md-10 col-lg-8">
         <p><%- project_brief %></p>
       </div>
-      <div class="col-2"></div>
+      <div class="col-md-1 col-lg-2"></div>
     </div>
 
     <% var imgIsFirst = false; %>
@@ -94,14 +132,14 @@
       <% project_gallery_array.forEach(item => {
         if (helper.isImg(item) == false){
           if (imgIsFirst) { %>
-            <div class="col-4 d-flex flex-column justify-content-center align-items-start">
+            <div class="col-md-5 col-lg-4 d-flex flex-column justify-content-center align-items-start">
               <div class="textProject"><%- item %></div>
             </div>
-            <div class="col-2"></div>
+            <div class="col-md-1 col-lg-2"></div>
             <% imgIsFirst = false;
           } else { %>
-            <div class="col-2"></div>
-            <div class="col-4 d-flex flex-column justify-content-center align-items-start">
+            <div class="col-md-1 col-lg-2"></div>
+            <div class="col-md-5 col-lg-4 d-flex flex-column justify-content-center align-items-start">
               <div class="textProject"><%- item %></div>
             </div>
             <% imgIsFirst = true;
@@ -110,14 +148,14 @@
         <% } else { %>
           
           <% if(imgIsFirst) { %>
-            <div class="col-4 d-flex align-items-end justify-content-end">
+            <div class="col-md-5 col-lg-4 d-flex align-items-end justify-content-end">
               <img src="<%- item %>" class="imgContentProjet">
             </div>        
-            <div class="col-2"></div>
+            <div class="col-md-1 col-lg-2"></div>
             <% imgIsFirst = false;
           } else { %>
-            <div class="col-2"></div>         
-            <div class="col-4 d-flex align-items-start justify-content-start">
+            <div class="col-md-1 col-lg-2"></div>         
+            <div class="col-md-5 col-lg-4 d-flex align-items-start justify-content-start">
               <img src="<%- item %>" class="imgContentProjet">
             </div>
             <% imgIsFirst = true;
@@ -148,7 +186,7 @@
     .arrowLinkProjects {
       height: 25px;
     }
-
+    
     .arrowLinkProjects img {
       height: 25px;
     }
@@ -156,11 +194,11 @@
     .arrowLeft {
       transform: rotate(180deg);
     }
-
+    
     .arrowUp {
       transform: rotate(270deg);
     }
-
+    
     .up-arrow-container {
       margin-bottom: 64px;
     }
@@ -169,30 +207,34 @@
       text-align: center!important;
     }
 
-    .textProject{
-      font-family: var(--custom-p-font);
-      font-size: var(--custom-p-size);
-      font-weight: var(--custom-p-weight);
-      color: var(--custom-p-color);
-      background-color: var(--custom-background-color);
+    .tags-mouse-container {
+      margin-top: 8px;
+    }
+    
+    .mouse {
+      height: 37px;
+    }
 
+    .mouse img {
+      width: 32px;
+      height: 32px;
     }
-    .textProject h1{
-      font-family: var(--custom-title-font);
-      font-size: var(--custom-h1-size);
-      font-weight: var(--custom-h1-weight);
-      color: var(--custom-h1-color);
-      letter-spacing: var(--custom-h1-letter-spacing);
+
+    .scroll-msg h2 {
+      font-size: 20px;
+      margin-top: 6px;
+      margin-bottom:0px;
     }
-    .textProject h2{
-      font-family: var(--custom-title-font);
-      font-size: var(--custom-h2-size);
-      font-weight: var(--custom-h2-weight);
-      color: var(--custom-h2-color);
-      letter-spacing: var(--custom-h2-letter-spacing);
+
+    .brief-title h2{
+      margin-top: 16px;
     }
 
     @media screen and (max-width: 980px) {
+      .mouse-container {
+        display: none;
+      }
+
       .arrowLinkProjects {
         height: 50px;
       }
@@ -200,5 +242,6 @@
       .arrowLinkProjects img {
         height: 50px;
       }
+
     }
   </style>

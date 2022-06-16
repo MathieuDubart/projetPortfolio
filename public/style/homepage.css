@@ -26,11 +26,6 @@
 	font-weight: var(--custom-span-weight);
 }
 
-.span{
-	color:var(--custom-span-color);
-	font-weight: var(--custom-span-weight);
-}
-
 #diveButton{
 	background-color:var(--custom-button-container-bg-color);
 	border: var(--custom-button-container-border);

@@ -6,3 +6,10 @@
         document.body.classList.toggle('no-scroll');
     });
 })
+
+// ********************** loading page **********************//
+
+window.onload = function() {
+    document.body.classList.remove('no-scroll');
+    document.querySelector(".loadingPage").style.display = "none";
+}

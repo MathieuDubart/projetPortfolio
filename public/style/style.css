@@ -68,6 +68,11 @@ p{
     background-color: var(--custom-background-color);
 }
 
+.span{
+	color:var(--custom-span-color);
+	font-weight: var(--custom-span-weight);
+}
+
 .header {
     height: 65px;
 }
@@ -110,6 +115,23 @@ p{
 
 }
 
+.loadingPage {
+    z-index: 100;
+    position: absolute;
+    left:0;
+    top:0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--custom-background-color);
+}
+
+.stop-scrolling {
+    height: 100vh;
+    overflow-x: hidden;
+}
+
 .footer {
     width: 100vw;
     height: 50px;
@@ -119,6 +141,31 @@ p{
     color: var(--custom-p-color);
     overflow: hidden;
 }
+
+.textProject{
+    font-family: var(--custom-p-font);
+    font-size: var(--custom-p-size);
+    font-weight: var(--custom-p-weight);
+    color: var(--custom-p-color);
+    background-color: var(--custom-background-color);
+    border-radius: 8px;
+  }
+  .textProject h1{
+    font-family: var(--custom-title-font);
+    font-size: var(--custom-h1-size);
+    font-weight: var(--custom-h1-weight);
+    color: var(--custom-h1-color);
+    letter-spacing: var(--custom-h1-letter-spacing);
+    padding-bottom: 8px;
+  }
+  .textProject h2{
+    font-family: var(--custom-title-font);
+    font-size: var(--custom-h2-size);
+    font-weight: var(--custom-h2-weight);
+    color: var(--custom-h2-color);
+    letter-spacing: var(--custom-h2-letter-spacing);
+    padding-bottom: 8px;
+  }
 
 .infos-container {
     width: 100%;
@@ -149,6 +196,10 @@ p{
     color: #000;
     font-size: 2.5rem;
     font-weight: 600;
+}
+
+.links-container a:hover h1 {
+    color: var( --custom-accent-color);
 }
 
 /* _::-webkit-full-page-media, _:future, :root .safari_only {
