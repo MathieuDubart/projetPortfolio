@@ -29,6 +29,10 @@ body{
     margin: 16px 0;
 }
 
+.portfolio-icon {
+    margin-top: 16px!important;
+}
+
 @media (max-width: 1250px) {
 
     #QRcode{
@@ -51,9 +55,27 @@ body{
         width: 100%;
     }
 
+    #QRcode img {
+        margin-left: 0;
+        margin-right: 0
+    }
+
+    .contact-first-row {
+        margin-top: 128px;
+    }
+
     footer{
         display:grid;
         text-align:center;
         background-color:red;
+    }
+
+    .socialMediaIcons img{
+        width:80px;
+    }
+
+    .wantMoreIcons img {
+        width:80px;
+        max-width:80px;
     }
 }

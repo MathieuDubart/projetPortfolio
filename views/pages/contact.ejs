@@ -19,7 +19,7 @@
         <div class="col-2"></div>
     </div>
 
-    <div class="row d-flex justify-content-center align-items-center">
+    <div class="row d-flex justify-content-center align-items-center contact-first-row">
         <div class="col-2"></div>
         <div class="col-8 d-flex flex-column justify-content-start socials-container" style="margin: 32px 0;">
             <%- include('../partials/contactSocialMedia')%>
@@ -27,7 +27,7 @@
         <div class="col-2"></div>
     </div>
 
-    <div class="row d-flex justify-content-center align-items-center">
+    <div class="row d-flex justify-content-center align-items-center contact-second-row">
         <div class="col-2"></div>
         <div class="col-8 d-flex flex-column justify-content-start socials-container">
             <%- include('../partials/downloadCvPortfolio')%>
@@ -38,7 +38,6 @@
     <div id="QRcode">
         <img src="<%- parsed_setting_desc.qr_code[0]%>">
     </div>
-    <div class="row"></div>
 
     <footer class="container-fluid d-flex justify-content-center align-tems-center footer">
         <%- include('../partials/layout/footer'); %>
@@ -47,3 +46,15 @@
     <script src="/script.js"></script>
 </body>
 </html>
+
+<style>
+    @media screen and (max-width:980px){
+        .contact-first-row, .contact-second-row {
+            margin-top: 96px;
+        }
+
+        .icon-text {
+            padding-left: 24px;
+        }
+    }
+</style>
