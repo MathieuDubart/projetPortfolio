@@ -52,14 +52,14 @@
     let gamesLength = <%- parsed_lab_desc.images.length %>;
     let rawTab = <%- JSON.stringify(parsed_lab_desc.images) %>;
     let tab = [];
-    
-    for (let i = 0; i <= gamesLength ; i++){
+
+    console.log(gamesLength);
+    console.log(rawTab);
+
+    for (let i = 0; i < gamesLength ; i++){
         tab[i] = rawTab[i];
+        console.log(tab);
     }
-    
-    clear.addEventListener('click', () => {
-        console.clear();
-    });
     
     tab.forEach(elm => {
         elm.addEventListener("click", () => {
