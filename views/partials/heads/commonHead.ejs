@@ -34,10 +34,9 @@
         --custom-h2-color: <%- parsed_setting_desc.h2[0] %>;
 
         --custom-h1-size: <%- parsed_setting_desc.h1[1] %>;
-        --custom-h1-responsive-size: calc(var(--custom-h1-size) * 1.5);
+        --custom-h1-responsive-size: calc(var(--custom-h1-size) * <%- parsed_setting_desc.h1[4] %>);
         --custom-h2-size: <%- parsed_setting_desc.h2[1] %>;
-        --custom-h2-responsive-size: calc(var(--custom-h2-size) * 1.5);
-
+        --custom-h2-responsive-size: calc(var(--custom-h2-size) * <%- parsed_setting_desc.h2[4] %>);
         
         --custom-h1-weight: <%- parsed_setting_desc.h1[2] %>;
         --custom-h2-weight: <%- parsed_setting_desc.h2[2] %>;
@@ -47,23 +46,23 @@
 
         --custom-p-color: <%- parsed_setting_desc.paragraph[0] %>;
         --custom-p-size: <%- parsed_setting_desc.paragraph[1] %>;
-        --custom-p-responsive-size: calc(var(--custom-p-size) * 2);
+        --custom-p-responsive-size: calc(var(--custom-p-size) * <%- parsed_setting_desc.paragraph[3] %>);
         --custom-p-weight: <%- parsed_setting_desc.paragraph[2] %>;
 
         --custom-tag-color: <%- parsed_setting_desc.tags[0] %>;
         --custom-tag-size: <%- parsed_setting_desc.tags[1] %>;
-        --custom-tag-responsive-size: calc(var(--custom-tag-size) * 1.5);
+        --custom-tag-responsive-size: calc(var(--custom-tag-size) * <%- parsed_setting_desc.tags[3] %>);
         --custom-tag-weight: <%- parsed_setting_desc.tags[2] %>;
 
         --custom-filter-button-inactive-color: <%- parsed_setting_desc.filter_button[0] %>;
         --custom-filter-button-active-color: <%- parsed_setting_desc.filter_button[1] %>;
         --custom-filter-button-size: <%- parsed_setting_desc.filter_button[2] %>;
-        --custom-filter-button-responsive-size: calc(var(--custom-filter-button-size) * 1.5);
+        --custom-filter-button-responsive-size: calc(var(--custom-filter-button-size) * <%- parsed_setting_desc.filter_button[4] %>);
         --custom-filter-button-weight: <%- parsed_setting_desc.filter_button[3] %>;
 
         --custom-button-typo-color: <%- parsed_setting_desc.button_typo[0] %>;
         --custom-button-typo-size: <%- parsed_setting_desc.button_typo[1] %>;
-        --custom-button-typo-responsive-size: calc(var(--custom-button-typo-size) *1.5);
+        --custom-button-typo-responsive-size: calc(var(--custom-button-typo-size) * <%- parsed_setting_desc.button_typo[3] %>);
         --custom-button-typo-weight: <%- parsed_setting_desc.button_typo[2] %>;
 
         --custom-button-container-bg-color: <%- parsed_setting_desc.button_container[0] %>;
