@@ -79,7 +79,7 @@ class DribbbleClient {
         parsed_setting_desc.qr_code[0] = parser.removeAllTags(parsed_setting_desc.qr_code[0], '');
         parsed_setting_desc.icon_mouse[0] = parser.removeAllTags(parsed_setting_desc.icon_mouse[0], '');
         parsed_setting_desc.icon_arrow[0] = parser.removeAllTags(parsed_setting_desc.icon_arrow[0], '');
-        parsed_setting_desc.gif_loader[0] = parser.removeAllTags(parsed_setting_desc.gif_loader[0], '');
+        parsed_setting_desc.loader_gif[0] = parser.removeAllTags(parsed_setting_desc.loader_gif[0], '');
         // console.log('SETTINGS DECRIPTION : ', parsed_setting_desc);
 
         //parsing lab post
