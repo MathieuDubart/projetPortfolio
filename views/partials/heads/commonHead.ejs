@@ -4,6 +4,8 @@
 <%- parsed_setting_desc.font_link[0] %>
 <style>
     :root {
+
+        --custom-loader-background-color: <%- parsed_setting_desc.loader_bgcolor[0] %>
         --custom-title-font: <%- parsed_setting_desc.font_name[0] %>;
         --custom-p-font: <%- parsed_setting_desc.font_name[1] %>;
 
@@ -54,5 +56,6 @@
         --custom-span-weight: <%- parsed_setting_desc.span[1] %>;
 
         --custom-footer-background-color: <%- parsed_setting_desc.footer_bgcolor %>;
+        --custom-footer-color: <%- parsed_setting_desc.footer_color %>;
     }
 </style>
