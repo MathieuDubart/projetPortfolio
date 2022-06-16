@@ -64,6 +64,9 @@ p{
 .bg-transparent{
     background-color: transparent;
 }
+.background-text-color{
+    background-color: var(--custom-background-color);
+}
 
 .header {
     height: 65px;
@@ -112,8 +115,8 @@ p{
     height: 50px;
     position:relative;
     margin-left: calc(-50vw + 50%);
-    background-color: #000;
-    color: #fff;
+    background-color: transparent;
+    color: var(--custom-p-color);
     overflow: hidden;
 }
 
@@ -132,7 +135,7 @@ p{
 
 .legalMentions p, .credits p{
     margin-bottom: 0;
-    color: #fff;
+    color: var(--custom-p-color);
 }
 
 .links-container {
@@ -162,7 +165,6 @@ p{
     }
 
     .profilePicture img {
-
         width: 120px;
         color: white;
     }
@@ -179,6 +181,5 @@ p{
     .socialMediasFooter a img {
         width: 50px;
         height: 50px;
-    
     }
 }
