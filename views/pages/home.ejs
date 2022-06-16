@@ -18,7 +18,7 @@
         </div>
 
         <div class="d-flex justify-content-md-center justify-content-lg-start align-items-end" id="personnalText">
-            <h1> <%- parsed_bio.text_bio[0] %> <%- parsed_bio.text_bio[1] %></h1>
+            <h1><%- parsed_bio.text_bio[0] %> <span class="description" id="typed-desc"></span> </h1>
         </div>
 
         <div id="diveButton">
@@ -28,6 +28,34 @@
         </div>
     </main>
 
+    <script>
+
+        // ********************** Typing text **********************//
+        let tabLength = <%- parsed_bio.text_bio.length %>;
+        let rawTab = <%- JSON.stringify(parsed_bio.text_bio) %>;
+        let descTab = [];
+        
+        console.log(rawTab);
+        
+        for (let i = 1; i <= tabLength-1 ; i++){
+            descTab[i-1] = rawTab[i];
+            console.log(descTab);
+        }
+
+        // Selecting the element with the data-desc attribute and the element with the id typed-desc.
+        const typedDesc = document.getElementById("typed-desc");
+
+        // Creating a new instance of the Typed class.
+        let typed = new Typed(typedDesc, {
+            strings: descTab,
+            typeSpeed: 70,
+            backSpeed: 50,
+            backDelay: 3000,
+            loop: true,
+            showCursor: true
+        });
+        
+    </script>
     <script src="/script.js"></script>
 </body>
 </html>

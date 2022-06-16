@@ -22,8 +22,11 @@
 }
 
 #personnalText span{
-	color:var(--custom-span-color);
 	font-weight: var(--custom-span-weight);
+}
+
+.typed-cursor {
+	color: var(--custom-span-color);
 }
 
 #diveButton{
