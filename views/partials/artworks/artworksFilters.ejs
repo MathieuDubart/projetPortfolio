@@ -1,11 +1,11 @@
   <div class="filter-container">
     <div class="filters">
-        <a href="">
+        <a href="" class="background-text-color">
           <button class="button is-checked">ALL</button>
         </a>
       </button>
       <% parsed_setting_desc.filters.forEach(tab => { %>
-        <div style="margin-left: 4px;">
+        <div class="background-text-color" style="margin-left: 4px;">
             <button class="button" data-value="<%- tab %>"><%- tab.toUpperCase() %></button>
         </div>
       <% }) %>

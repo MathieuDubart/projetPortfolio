@@ -64,6 +64,9 @@ p{
 .bg-transparent{
     background-color: transparent;
 }
+.background-text-color{
+    background-color: var(--custom-background-color);
+}
 
 .span{
 	color:var(--custom-span-color);
@@ -143,7 +146,7 @@ p{
     position:relative;
     margin-left: calc(-50vw + 50%);
     background-color: var(--custom-footer-background-color);
-    color: #fff;
+    color: var(--custom-p-color);
     overflow: hidden;
 }
 
@@ -187,7 +190,7 @@ p{
 
 .legalMentions p, .credits p{
     margin-bottom: 0;
-    color: #fff;
+    color: var(--custom-p-color);
 }
 
 .links-container {
@@ -221,7 +224,6 @@ p{
     }
 
     .profilePicture img {
-
         width: 120px;
         color: white;
     }
@@ -238,6 +240,5 @@ p{
     .socialMediasFooter a img {
         width: 50px;
         height: 50px;
-    
     }
 }

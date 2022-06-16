@@ -1,3 +1,7 @@
+body{
+  grid-template-rows: none!important;
+}
+
 .lab-title {
   margin-top: 24px;
   margin-bottom: 24px;
