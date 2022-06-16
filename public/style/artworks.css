@@ -2,21 +2,8 @@
 
 /* body{
     grid-template-rows: 0fr 0fr 0fr 1fr;
-} */
+ */
 
-#gallery{
-    height: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-grow: 1 1 20%; */
-    /* max-width: 1080px; */
-}
-
-#gallery img{
-    width: 20%;
-    height: auto;
-    display: block;
-}
 
 .project_title{
     position: absolute;
@@ -26,7 +13,7 @@
     opacity: 1;
 }
 
-#gallery .galleryItem img{
+.galleryItem a img{
     max-width: 336px;
     max-height: 336px;
     width: 100%;
@@ -43,4 +30,16 @@
 .titleItem h2 span{
     padding: 0px 8px 4px 8px;
     /* background-color: white; */
+}
+
+@media screen and (max-width: 980px){
+    .galleryItem a img{
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+    }
+    .titleItem{
+        width: 100%;
+    }
+    
 }

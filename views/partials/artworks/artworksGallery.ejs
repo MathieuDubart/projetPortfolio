@@ -4,10 +4,10 @@
   for (let i=0; i < shotsInfos.length-3; i++){ %>
     <div class="row gallery-items d-flex flex-row <% shotsInfos[i].tags.forEach(tag => { %><%- tag %> <% }) %>" data-id="<%- shotsInfos[i].id %>">
       <% if (bool == true){ %>
-        <div class="order-1 col-2 responsive-hidden-col"></div>
-        <div class="order-2 col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center textGallery">
+        <div class="order-1 col-2  responsive-hidden-col"></div>
+        <div class="order-2 col-md-12 col-lg-4 d-flex flex-column justify-content-center align-items-center textGallery">
       <% }else{ %>
-        <div class="order-3 col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center textGallery">
+        <div class="order-lg-3 col-md-12 col-lg-4 d-flex flex-column justify-content-center align-items-center textGallery">
       <% } %>
           <a href="project/<%- shotsInfos[i].id %>" class="d-flex justify-content-center align-items-center">
             <h2><%- shotsInfos[i].title %></h2>
@@ -19,10 +19,10 @@
           <div class="order-4 col-2 responsive-hidden-col"></div>
         <% } %>
       <% if (bool == true){ %>
-        <div class="order-3 col-md-6 col-lg-4 d-flex justify-content-center align-items-center galleryItem imgItem">
+        <div class="order-3 col-md-12 col-lg-4 d-flex justify-content-center align-items-center galleryItem imgItem">
       <% }else{ %>
         <div class="order-1 col-2 responsive-hidden-col"></div>
-        <div class="order-2 col-md-6 col-lg-4 d-flex justify-content-center align-items-center galleryItem imgItem">
+        <div class="order-2 col-md-12 col-lg-4 d-flex justify-content-center align-items-center galleryItem imgItem">
       <% } %>
           <a href="project/<%- shotsInfos[i].id %>">
             <img src="<%- shotsInfos[i].images.normal %>">
@@ -70,6 +70,10 @@ a{
 @media screen and (max-width: 980px) {
     .responsive-hidden-col {
         display:none!important;
+    }
+
+    .tag {
+      font-size: var(--custom-tag-responsive-size);
     }
 }
 </style>
