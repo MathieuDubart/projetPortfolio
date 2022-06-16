@@ -124,6 +124,14 @@ p{
     background-color: var(--custom-background-color);
 }
 
+.loadingPage img {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+}
+
 .stop-scrolling {
     height: 100vh;
     overflow-x: hidden;
@@ -134,7 +142,7 @@ p{
     height: 50px;
     position:relative;
     margin-left: calc(-50vw + 50%);
-    background-color: #000;
+    background-color: var(--custom-footer-background-color);
     color: #fff;
     overflow: hidden;
 }
