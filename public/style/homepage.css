@@ -84,15 +84,16 @@
 	#personnalLogo {
 		width:30em;
 		height:30em;
-		margin-top: calc(65% - 30em/2);
+		margin-top: calc(65% - 10em);
 		margin-left:calc(50% - 30em/2);
 	}
 
 	#personnalText{
 		text-align: center;
+		height: 320px;
 		margin-top: 2em;
 		margin-left: calc(50% - 35%);
-		margin-bottom: 64px;
+		/* margin-bottom: 64px; */
 	}
 
 	#diveButton{
