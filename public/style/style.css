@@ -194,7 +194,7 @@ p{
 
 .legalMentions p, .credits p{
     margin-bottom: 0;
-    color: var(--custom-p-color);
+    color: var(--custom-footer-color);
 }
 
 .links-container {
