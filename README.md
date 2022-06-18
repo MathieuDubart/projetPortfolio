@@ -151,22 +151,22 @@ the way we use this is really simple. In the 'commonHead' ejs file, which is loa
 
 ```
 <style>
-		:root {
+	:root {
 
-				--custom-loader-background-color: <%- parsed_setting_desc.loader_bgcolor[0] %>;
-				--custom-title-font: <%- parsed_setting_desc.font_name[0] %>;
-				--custom-p-font: <%- parsed_setting_desc.font_name[1] %>;
+		--custom-loader-background-color: <%- parsed_setting_desc.loader_bgcolor[0] %>;
+		--custom-title-font: <%- parsed_setting_desc.font_name[0] %>;
+		--custom-p-font: <%- parsed_setting_desc.font_name[1] %>;
 
-				--custom-background-image: url('<%- parsed_setting_desc.background_image[0] %>');
-				--custom-background-repeat: <%- parsed_setting_desc.background_repeat %>;
-				--custom-background-position: <%- parsed_setting_desc.background_position %>;
-				--custom-background-attachment: <%- parsed_setting_desc.background_attachment %>;
-				--custom-background-size: <%- parsed_setting_desc.background_size %>;
+		--custom-background-image: url('<%- parsed_setting_desc.background_image[0] %>');
+		--custom-background-repeat: <%- parsed_setting_desc.background_repeat %>;
+		--custom-background-position: <%- parsed_setting_desc.background_position %>;
+		--custom-background-attachment: <%- parsed_setting_desc.background_attachment %>;
+		--custom-background-size: <%- parsed_setting_desc.background_size %>;
 
-				--custom-h1-size: <%- parsed_setting_desc.h1[1] %>;
-        --custom-h1-responsive-size: calc(var(--custom-h1-size) * <%- parsed_setting_desc.h1[4] %>);
+		--custom-h1-size: <%- parsed_setting_desc.h1[1] %>;
+		--custom-h1-responsive-size: calc(var(--custom-h1-size) * <%- parsed_setting_desc.h1[4] %>);
 
-				...
+		...
 
 		}
 </style>
