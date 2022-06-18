@@ -1,10 +1,10 @@
 # Table of contents
 
-* Context
-* Server and Routing
-* Dribbble API calls
-* Parsing and using API response
-* Results
+* # Context
+* # Server and Routing
+* # Dribbble API calls
+* # Parsing and using API response
+* # Results
 
 # Context
 
