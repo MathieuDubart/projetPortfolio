@@ -74,7 +74,7 @@ class Parser {
     let array_cleaned = [];
     array.forEach(el => {
       array_cleaned.push(this.removeAllTags(el, separator));
-    });ON
+    });
     return array_cleaned;
   }
 
