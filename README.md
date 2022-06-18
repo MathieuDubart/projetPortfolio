@@ -94,9 +94,13 @@ So now we have the API reponse. Let's parse it !
 
 As said a little above, we have a class named 'Parser'.
 In the DribbbleClient's instance, we have a method called 'fetchApiResponse' that calls an instance of the Parser's class.
+
 In this Parser's instance (named 'parser'), we got a lot of methods. The only three ones called fromt the outside of the class are 'removeAllTags', 'removeAllTagsFromArray' and 'removeAllFromShotsDesc'.
+
 All those three methods are calling other parser's methods like 'removePTag', 'removeBrackets' and more.
+
 As their name says, the only difference between 'removeAllTags' and 'removeAllTagsFromArray', is that the last one is a method made to remove all tags from an array.
+
 Once every tag of every call is removed, the fetchApiResponse's callack send the informations on the pages:
 ```
 callback({userInfos: dribbbleResponse[0].data,
@@ -124,5 +128,6 @@ Between all the informations that we retreive, we dinstinguish several different
 * 'userInfos' and 'shotsInfos' which are the direct responses to api calls 'GET /user/user' and 'GET /user/shots' respectively.
 Our parser didn't do much on thoses, expect adding a key 'shotId' at the end of shotsInfos, with as value the id of the current project, if we find ourselves on ProjectPage.
 	* in userInfos, we use some of all the information, like the name, the profile picture, the bio and the links.
-	* in userShots, we can find every shots published by the owner of the dribbble account, and we can use it directly in ejs by looping on it and getting the informations needed, like the id, the title, the description, images, and tags. 
+	* in userShots, we can find every shots published by the owner of the dribbble account, and we can use it directly in ejs by looping on it and getting the informations needed, like the id, the title, the description, images, and tags.
+	
 * 
