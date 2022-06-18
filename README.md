@@ -9,7 +9,8 @@
 # Context
 
 This is a school project for "L'École By CCI", based in France.
-We had to create a portfolio for 11 students. Of course, we had to make it as customizable as possible for everyone, using the Dribbble API.
+For the end of our first study year, we had to create a portfolio for 11 students. Of course, we had to make it as customizable as possible for everyone, using the Dribbble API.
+It's not perfect but it works pretty good.
 
 
 # Server and Routing
@@ -183,3 +184,5 @@ h1{
     letter-spacing: var(--custom-h1-letter-spacing);
 }
 ```
+
+as we have a lot of css variables, each portfolio are completely different and customizable
