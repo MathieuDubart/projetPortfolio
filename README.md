@@ -104,17 +104,17 @@ As their name says, the only difference between 'removeAllTags' and 'removeAllTa
 Once every tag of every call is removed, the **fetchApiResponse's callack send the informations on the pages**:
 ```
 callback({userInfos: dribbbleResponse[0].data,
-					shotsInfos: dribbbleResponse[1].data,
-					parsed_bio: parsed_bio,
-					parsed_setting_desc: parsed_setting_desc,
-					projectsDesc: projectsDesc,
-					project_brief: project_brief,
-					project_gallery_array: project_gallery_array,
-					project_date: project_date,
-					parsed_lab_desc: parsed_lab_desc,
-					parsed_about_desc: parsed_about_desc,
-					helper: helper,
-				}, id);
+	shotsInfos: dribbbleResponse[1].data,
+	parsed_bio: parsed_bio,
+	parsed_setting_desc: parsed_setting_desc,
+	projectsDesc: projectsDesc,
+	project_brief: project_brief,
+	project_gallery_array: project_gallery_array,
+	project_date: project_date,
+	parsed_lab_desc: parsed_lab_desc,
+	parsed_about_desc: parsed_about_desc,
+	helper: helper,
+}, id);
 				
 ```
 We also had **a third class**, stored in the **'helper.js'**, that **helps** us to **know** if the **string** passed as a parameter **is an url** and so an image **or** if **it's just** a string that **contains text** to correctly process informations in the artworks section and in 'dribbbleClient.js'.
