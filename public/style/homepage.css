@@ -62,9 +62,8 @@
 		height:16.5em;
 	}
 
-	#divebutton {
-		margin-bottom: 16px;
-		margin-top: 16px;
+	#diveButton {
+		margin-top: -32px;
 	}
 }
 
