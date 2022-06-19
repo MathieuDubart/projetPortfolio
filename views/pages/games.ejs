@@ -12,26 +12,44 @@
     <%- include('../partials/socialMedia'); %>
 
     <div class="row d-flex justify-content-center align-items-center">
-        <div class="col-xxl-12 d-flex justify-content-start"> 
+        <div class="col-2"></div>
+        <div class="col-10 d-flex justify-content-start">
             <h1><%- parsed_setting_desc.menu[1] %></h1>
         </div>
     </div>
 
     <div class="filter-container">
         <div class="filters button-group js-radio-button-group device-type">
-            <button class="button is-checked" id="memory">Memory</button>
-            <button class="button" id="morpion">Tic Tac Toe</button>
-            <button class="button" id="pong">Pong</button>
+            <a href="#memory-content"><button class="button" id="memory">Memory</button></a>
+            <a href="#morpion-content"><button class="button" id="morpion">Tic Tac Toe</button></a>
+            <a href="#pong-content"><button class="button" id="pong">Pong</button></a>
             <button class="button d-none" id="clear">clear console</button>
         </div>
     </div>
 
-    <div class="games-content">
+    <% console.log(parsed_lab_desc); %>
+
+    <div id="memory-content" class="games-content">
         <div class="gameboy-container">
-            <img src="https://www.dropbox.com/s/r5gppj57r695clp/SWITCH.svg?raw=1" alt="gameboy" class="gameboy-img">
+            <img src="<%= parsed_lab_desc.switch[0] %>" alt="gameboy" class="gameboy-img">
             <div class="game" id="game"><script id="gameScript" src="<%-  parsed_lab_desc.images[0] %>" ></script></div>
         </div>
     </div>
+
+    <div id="morpion-content" class="games-content">
+        <div class="gameboy-container">
+            <img src="<%= parsed_lab_desc.switch[0] %>" alt="gameboy" class="gameboy-img">
+            <div class="game" id="game"><script id="gameScript" src="<%-  parsed_lab_desc.images[1] %>" ></script></div>
+        </div>
+    </div>
+
+    <div id="pong-content" class="games-content">
+        <div class="gameboy-container">
+            <img src="<%= parsed_lab_desc.switch[0] %>" alt="gameboy" class="gameboy-img">
+            <div class="game" id="game"><script id="gameScript" src="<%-  parsed_lab_desc.images[2] %>" ></script></div>
+        </div>
+    </div>
+
     <div class="spacer"></div>
     <footer class="container-fluid d-flex justify-content-center align-tems-center footer">
         <%- include('../partials/layout/footer'); %>
@@ -47,36 +65,53 @@
     let morpion = document.getElementById('morpion');
     let pong = document.getElementById('pong');
     let clear = document.getElementById('clear');
-    let game = document.querySelector('.game')
-    
-    let gamesLength = <%- parsed_lab_desc.images.length %>;
-    let rawTab = <%- JSON.stringify(parsed_lab_desc.images) %>;
-    let tab = [];
+    let game = document.querySelector('.game');
+    let buttons = document.querySelectorAll('.button');
 
-    for (let i = 0; i < gamesLength ; i++){
-        tab[i] = rawTab[i];
-    }
-    
-    [memory, morpion, pong].forEach(elm => {
-        elm.addEventListener("click", () => {
-            if(elm.id=="memory") {
-                var newScript = document.createElement("script");
-                newScript.src = tab[0];
-                game.innerHTML = "";
-                game.appendChild(newScript);
-            } else if (elm.id=="morpion") {
-                var newScript = document.createElement("script");
-                newScript.src = tab[1];
-                game.innerHTML = "";
-                game.appendChild(newScript);
-            }else{
-                var newScript = document.createElement("script");
-                newScript.src = tab[2];
-                game.innerHTML = "";
-                game.appendChild(newScript);
-            }
-        })
+    memory.addEventListener('click', function() {
+        document.location.href = "#memory-content";
+        location.reload();
     });
+    morpion.addEventListener('click', function() {
+        document.location.href = "#morpion-content";
+        location.reload();
+    });
+    pong.addEventListener('click', function() {
+        document.location.href = "#pong-content";
+        location.reload();
+    });
+
+
+
+    
+    // let gamesLength = <%# parsed_lab_desc.images.length %>;
+    // let rawTab = <%# JSON.stringify(parsed_lab_desc.images) %>;
+    // let tab = [];
+
+    // for (let i = 0; i < gamesLength ; i++){
+    //     tab[i] = rawTab[i];
+    // }
+    
+    // [memory, morpion, pong].forEach(elm => {
+    //     elm.addEventListener("click", () => {
+    //         if(elm.id=="memory") {
+    //             var newScript = document.createElement("script");
+    //             newScript.src = tab[0];
+    //             game.innerHTML = "";
+    //             game.appendChild(newScript);
+    //         } else if (elm.id=="morpion") {
+    //             var newScript = document.createElement("script");
+    //             newScript.src = tab[1];
+    //             game.innerHTML = "";
+    //             game.appendChild(newScript);
+    //         }else{
+    //             var newScript = document.createElement("script");
+    //             newScript.src = tab[2];
+    //             game.innerHTML = "";
+    //             game.appendChild(newScript);
+    //         }
+    //     })
+    // });
 </script>
 
 
@@ -88,22 +123,9 @@
         width: 400px;
         height: 400px;
         position: absolute;
-        top: 20px;
+        top: calc(50% - 200px);
         left: calc(50% - 200px);
         overflow: hidden;
-
-    }
-
-    iframe{
-        position: absolute;
-        top: 373px;
-        left: calc(50% - 200px);
-    }
-
-    .game iframe{
-        position: absolute;
-        top: 0;
-        left: 0;
     }
 
     .games-content {
@@ -160,7 +182,20 @@
     background-color: whitesmoke;
     border: 1px solid #121212;
     color: #121212;
-  }
+    }
+
+    #memory-content, #morpion-content, #pong-content {
+        display: none;
+    }
+    #memory-content:target{
+        display: flex;
+    }
+    #morpion-content:target{
+        display: flex;
+    }
+    #pong-content:target{
+        display: flex;
+    }
 </style>
 
 <%- include('../partials/artworks/artworksFiltersScript.ejs'); %>
