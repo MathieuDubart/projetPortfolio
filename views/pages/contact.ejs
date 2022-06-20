@@ -36,7 +36,9 @@
     </div>
 
     <div id="QRcode">
+        <% if(parsed_setting_desc.qr_code[0] != 'none'){ %>
         <img src="<%- parsed_setting_desc.qr_code[0]%>">
+        <% } %>
     </div>
 
     <div class="row"></div>
