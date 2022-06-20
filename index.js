@@ -77,11 +77,10 @@ app.get('/:name/project/about-me', (request, response)=>{
 
 app.get('/:name/home', (request, response)=>{
   let username = request.params.name;
-  console.log(username);
   if (username == undefined) {
     username = "MATHIEU";
   }
-  // console.log(username);
+  
   let requestUser = dribbbleClient.getRequestForInformationAbout(username);
   let requestShots = dribbbleClient.getRequestForShotsAbout(username);
 

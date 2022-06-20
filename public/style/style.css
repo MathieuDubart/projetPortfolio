@@ -133,6 +133,7 @@ p{
     position: absolute;
     left: calc(50% - 150px);
     top: calc(50% - 150px);
+    object-fit: cover;
 }
 
 .stop-scrolling {
@@ -202,6 +203,7 @@ p{
 }
 .links-container a h1 {
     background-color: transparent;
+    transition: 0.2s;
 }
 .menu-links {
     text-decoration: none;
@@ -212,6 +214,7 @@ p{
 
 .links-container a:hover h1 {
     color: var( --custom-accent-color);
+    transition: 0.2s;
 }
 
 /* _::-webkit-full-page-media, _:future, :root .safari_only {
@@ -272,5 +275,11 @@ p{
 
     #diveButton a p{
         font-size: var(--custom-button-typo-responsive-size);
+    }
+    .loadingPage img {
+        height: 700px;
+        width: 700px;
+        left: calc(50% - 350px);
+        top: calc(50% - 350px);
     }
 }
