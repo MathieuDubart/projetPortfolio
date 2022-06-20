@@ -88,7 +88,6 @@ class DribbbleClient {
         let parsed_lab_desc = parser.parsingInfos(bracketsRemovedLab);
         parsed_lab_desc.images = parser.removeAllTagsFromArray(parsed_lab_desc.images, '');
         parsed_lab_desc.switch = parser.removeAllTagsFromArray(parsed_lab_desc.switch, '');
-        // console.log('LE LAB OEOEOE: ', parsed_lab_desc);
 
         //parsing about post
         let tagRemovedAbout = parser.removePTag(dribbbleAboutDesc);
