@@ -184,20 +184,25 @@ h1{
 
 As we have a lot of css variables, each portfolio is completely different and customizable.
 
-Thank you for reading this, here's the acces to portfolios :
+Thank you for reading this, here's the acces to every portfolio :
 
 
-https://portfolio-gobelins.herokuapp.com/ + **username**
+https://portfolio-gobelins.herokuapp.com/melisse
 
-every possible value for **username** :
+https://portfolio-gobelins.herokuapp.com/clarisse
 
-Melisse /n
-Clarisse
-Theo
-Axel
-Kilian
-Aya
-Maddy
-Baptiste
-Mathieu
-Nils
+https://portfolio-gobelins.herokuapp.com/theo
+
+https://portfolio-gobelins.herokuapp.com/kilian
+
+https://portfolio-gobelins.herokuapp.com/axel
+
+https://portfolio-gobelins.herokuapp.com/maddy
+
+https://portfolio-gobelins.herokuapp.com/baptiste
+
+https://portfolio-gobelins.herokuapp.com/aya
+
+https://portfolio-gobelins.herokuapp.com/mathieu
+
+https://portfolio-gobelins.herokuapp.com/nils
