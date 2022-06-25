@@ -45,8 +45,6 @@ h2{
     color: var(--custom-h2-color);
     letter-spacing: var(--custom-h2-letter-spacing);
 }
-
-
 .no-scroll{
     overflow-x: hidden;
     overflow-y: hidden;

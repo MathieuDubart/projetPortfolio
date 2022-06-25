@@ -170,10 +170,6 @@ app.get('/:name/about-me', (request, response)=>{
       }
       dribbbleClient.fetchApiResponse([requestUser, requestShots], callback, null);
     }
-    
-
-
-
 
 })
 
