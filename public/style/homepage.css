@@ -2,6 +2,10 @@
 	overflow: hidden;
 }
 
+.hometitle{
+	background-color: transparent;
+}
+
 #personnalLogo{
 	width:17em;
 	height:17em;
@@ -12,7 +16,7 @@
 
 #imgHome{
 	height: 100%;
-	width: 100%;
+	width: auto;
 }
 
 #personnalText{
