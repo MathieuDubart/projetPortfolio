@@ -159,6 +159,12 @@ app.get('/:name/about-me', (request, response)=>{
     let requestUser = dribbbleClient.getRequestForInformationAbout(username);
     let requestShots = dribbbleClient.getRequestForShotsAbout(username);
 
+    const callback = (dribbbleResponse, id) => {
+      response.render('pages/lab.ejs', dribbbleResponse);
+    }
+    dribbbleClient.fetchApiResponse([requestUser, requestShots], callback, null);
+
+    
     // if(username == "nils" || username == "mathieu"){
     //   const callback = (dribbbleResponse, id) => {
     //     response.render('pages/games.ejs', dribbbleResponse);
